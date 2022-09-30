@@ -1,0 +1,73 @@
+﻿<Window x:Class="ProcessManager.Views.ProcessTokenAdvancedInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.TokenAdvancedInfoWindowTitle}" Height="450" Width="800" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ContentRendered="Window_ContentRendered">
+    <Grid>
+        <TabControl Margin="10">
+            <TabItem Header="{x:Static p:Resources.TokenAdvancedInfoGeneralTab}">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Token" Height="236" Margin="10,10,10,0" VerticalAlignment="Top">
+                        <Grid Margin="0">
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabUserLabel}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabUserSIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabOwnerLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabPrimaryGroupLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabSessionIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabElevationStatusLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabVirtualizationStatusLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,166,0,0"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.Username, Mode=OneWay}" VerticalAlignment="Top" Margin="116,14,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.UserSID, Mode=OneWay}" VerticalAlignment="Top" Margin="116,40,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.Owner, Mode=OneWay}" VerticalAlignment="Top" Margin="116,66,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.PrimaryGroup, Mode=OneWay}" VerticalAlignment="Top" Margin="116,92,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.SessionID, Mode=OneWay}" VerticalAlignment="Top" Margin="116,118,10,0" IsReadOnly="True"/>
+                            <TextBox x:Name="ElevatedTextBox" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="116,144,10,0" IsReadOnly="True"/>
+                            <TextBox x:Name="VirtualizationTextBox" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="116,167,10,0" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.TokenAdvancedInfoGeneralTabSourceGroupBoxText}" Margin="10,251,10,10">
+                        <Grid Margin="0">
+                            <Label Content="{x:Static p:Resources.TokenAdvancedInfoGeneralTabSourceNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="LUID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.SourceName, Mode=OneWay}" VerticalAlignment="Top" Margin="60,14,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.GeneralInfo.SourceLUID, Mode=OneWay}" VerticalAlignment="Top" Margin="60,40,10,0" IsReadOnly="True"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.TokenAdvancedInfoAdvancedTab}">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="{x:Static p:Resources.TokenAdvancedInfoAdvancedTabTypeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <Label Content="{x:Static p:Resources.TokenAdvancedInfoAdvancedTabImpersonationLevelLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                    <Label Content="Token LUID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                    <Label Content="{x:Static p:Resources.TokenAdvancedInfoAdvancedTabAuthenticationLUIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
+                    <Label Content="{x:Static p:Resources.TokenAdvancedInfoAdvancedTabMemoryUsedLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,134,0,0"/>
+                    <Label Content="{x:Static p:Resources.TokenAdvancedInfoAdvancedTabMemoryAvailableLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,165,0,0"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.Statistics.Type, Mode=OneWay}" VerticalAlignment="Top" Margin="149,14,10,0" IsReadOnly="True"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.Statistics.ImpersonationLevel, Mode=OneWay}" VerticalAlignment="Top" Margin="149,45,10,0" IsReadOnly="True"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.Statistics.TokenLUID, Mode=OneWay}" VerticalAlignment="Top" Margin="149,76,10,0" IsReadOnly="True"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.Statistics.AuthenticationLUID, Mode=OneWay}" VerticalAlignment="Top" Margin="149,107,10,0" IsReadOnly="True"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.Statistics.MemoryUsage, Mode=OneWay}" VerticalAlignment="Top" Margin="149,137,10,0" IsReadOnly="True"/>
+                    <TextBox Height="23" TextWrapping="Wrap" Text="{Binding TokenInfo.Statistics.MemoryAvailable, Mode=OneWay}" VerticalAlignment="Top" Margin="149,168,10,0" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.TokenAdvancedInfoCapabilitiesTab}">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="CapabilitiesDatagrid" Margin="10" AutoGenerateColumns="False" SelectionMode="Single" ItemsSource="{Binding TokenInfo.Capabilities}" SelectedCellsChanged="CapabilitiesDatagrid_SelectedCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabGroupNameHeader}" Width="*" CanUserSort="False" Binding="{Binding TokenInfo.Capabilities.Name, Mode=OneWay}"/>
+                            <DataGridTextColumn Header="Flags" Width="*" CanUserSort="False" Binding="{Binding TokenInfo.Capabilities.Flags, Mode=OneWay}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Claims" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

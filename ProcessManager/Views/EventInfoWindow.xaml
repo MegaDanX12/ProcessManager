@@ -1,0 +1,16 @@
+﻿<Window x:Name="EventInfoWindow1" x:Class="ProcessManager.Views.EventInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.EventInfoWindowTitle}" Height="106.78" Width="296.61" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="EventInfoWindow1_Closing" ContentRendered="EventInfoWindow1_ContentRendered">
+    <Grid>
+        <Label Content="{x:Static p:Resources.EventInfoWindowTypeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Label Content="{x:Static p:Resources.EventInfoWindowStateLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+        <Label Content="{Binding EventType}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,10,0,0"/>
+        <Label Content="{Binding EventState}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,41,0,0"/>
+
+    </Grid>
+</Window>

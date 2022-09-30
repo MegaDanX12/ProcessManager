@@ -1,0 +1,47 @@
+﻿<Window x:Class="ProcessManager.Views.ProcessWindowsInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ProcessWindowsInfoWindowTitle}" Height="450" Width="800" x:Name="ProcessWindowsInfoWindow" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Button Command="{Binding WindowsDataRefreshCommand}" Content="{x:Static p:Resources.RefreshButtonText}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,10,0,0" IsEnabled="False"/>
+        <DataGrid HorizontalAlignment="Stretch" Height="Auto" Margin="10,35,10,10" VerticalAlignment="Stretch" Width="Auto" ItemsSource="{Binding Path = WindowsInfo, Mode=OneWay}" x:Name="WindowsInfoGrid" MouseRightButtonDown="WindowsInfoGrid_MouseRightButtonDown" IsReadOnly="True" AutoGenerateColumns="False" MouseDoubleClick="WindowsInfoGrid_MouseDoubleClick">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuBringToFrontMenuItem}" Command="{Binding BringToFrontCommand}" x:Name="BringToFrontMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuRestoreMenuItem}" Command="{Binding RestoreCommand}" x:Name="RestoreMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuMinimizeMenuItem}" Command="{Binding MinimizeCommand}" x:Name="MinimizeMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuMaximizeMenuItem}" Command="{Binding MaximizeCommand}" x:Name="MaximizeMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuCloseMenuItem}" Command="{Binding CloseCommand}" x:Name="CloseMenuItem"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuVisibleMenuItem}" IsCheckable="True" x:Name="VisibleMenuItem" Command="{Binding VisibleCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuEnabledMenuItem}" IsCheckable="True" x:Name="EnabledMenuItem" Command="{Binding EnabledCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuAlwaysOnTopMenuItem}" IsCheckable="True" x:Name="AlwaysOnTopMenuItem" Command="{Binding AlwaysOnTopCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuOpacityMenuItem}" x:Name="OpacityMenuItem">
+                        <MenuItem Header="0%" x:Name="OpacityPercentage0SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="10%" x:Name="OpacityPercentage10SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="20%" x:Name="OpacityPercentage20SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="30%" x:Name="OpacityPercentage30SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="40%" x:Name="OpacityPercentage40SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="50%" x:Name="OpacityPercentage50SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="60%" x:Name="OpacityPercentage60SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="70%" x:Name="OpacityPercentage70SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="80%" x:Name="OpacityPercentage80SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="90%" x:Name="OpacityPercentage90SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                        <MenuItem Header="100%" x:Name="OpacityPercentage100SubMenuItem" IsCheckable="True" Click="OpacityMenuItem_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="{x:Static p:Resources.WindowsInfoGridContextMenuPropertiesMenuItem}" Command="{Binding WindowPropertiesCommand}" x:Name="WindowPropertiesMenuItem"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding GeneralInfo.ClassName}" Header="{x:Static p:Resources.ProcessWindowsInfoDatagridClassNameColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding GeneralInfo.HandleValue}" Header="{x:Static p:Resources.ProcessWindowsInfoDatagridHandleValueColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding GeneralInfo.Title}" Header="{x:Static p:Resources.ProcessWindowsInfoDatagridTextColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding GeneralInfo.ThreadProcessIDAndName}" Header="{x:Static p:Resources.ProcessWindowsInfoDatagridThreadColumn}" Width="*" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

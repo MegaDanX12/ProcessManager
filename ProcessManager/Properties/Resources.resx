@@ -1,0 +1,3123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcquireSemaphoreErrorMessage" xml:space="preserve">
+    <value>Errore durante l'acquisizione del semaforo.</value>
+  </data>
+  <data name="AcquireSemaphoreErrorTitle" xml:space="preserve">
+    <value>Semaforo non acquisito</value>
+  </data>
+  <data name="AddDisallowedProcessWindowNotificationOnTerminationCheckbox" xml:space="preserve">
+    <value>Notifica al momento della terminazione</value>
+  </data>
+  <data name="AddDisallowedProcessWindowTitle" xml:space="preserve">
+    <value>Aggiungi processo non permesso</value>
+  </data>
+  <data name="AddLimitedAppPathWindowAppPathLabel" xml:space="preserve">
+    <value>Percorso applicazione:</value>
+  </data>
+  <data name="AddLimitedAppPathWindowTitle" xml:space="preserve">
+    <value>Aggiungi percorso</value>
+  </data>
+  <data name="AddLimitWindowHelpMessage" xml:space="preserve">
+    <value>Un limite può avere un valore da 1 a 99 compresi.
+
+Il segno di percentuale non deve essere incluso.
+
+Non è possibile aggiungere limiti duplicati.</value>
+  </data>
+  <data name="AddLimitWindowInvalidLimitValueErrorMessage" xml:space="preserve">
+    <value>Il valore indicato non è valido.</value>
+  </data>
+  <data name="AddLimitWindowInvalidLimitValueErrorTitle" xml:space="preserve">
+    <value>Valore non valido</value>
+  </data>
+  <data name="AddLimitWindowLimitValueLabel" xml:space="preserve">
+    <value>Inserire valore del nuovo limite (in percentuale):</value>
+  </data>
+  <data name="AddLimitWindowTitle" xml:space="preserve">
+    <value>Nuovo limite</value>
+  </data>
+  <data name="AddProcessCPUDefaultSettingWindowAffinityLabel" xml:space="preserve">
+    <value>Affinità:</value>
+  </data>
+  <data name="AddProcessCPUDefaultSettingWindowPriorityLabel" xml:space="preserve">
+    <value>Priorità:</value>
+  </data>
+  <data name="AddProcessCPUDefaultSettingWindowTitle" xml:space="preserve">
+    <value>Aggiungi impostazione</value>
+  </data>
+  <data name="AddProcessEneryUsageRuleWindowTitle" xml:space="preserve">
+    <value>Aggiungi regola utilizzo energetico</value>
+  </data>
+  <data name="AddProcessInstanceLimitWindowInstanceLimitLabel" xml:space="preserve">
+    <value>Limite istanze:</value>
+  </data>
+  <data name="AddProcessInstanceLimitWindowTitle" xml:space="preserve">
+    <value>Aggiungi limite instanze</value>
+  </data>
+  <data name="AddRuleWindowActionsGroupboxHeaderText" xml:space="preserve">
+    <value>Azioni regola</value>
+  </data>
+  <data name="AddRuleWindowCpuActionTypeLabelText" xml:space="preserve">
+    <value>Azione CPU:</value>
+  </data>
+  <data name="AddRuleWindowCpuActionValueText" xml:space="preserve">
+    <value>Valore azione CPU:</value>
+  </data>
+  <data name="AddRuleWindowCpuWatchdogTimeLabelText" xml:space="preserve">
+    <value>Tempo di controllo CPU (s)</value>
+  </data>
+  <data name="AddRuleWindowCpuWatchdogValueLabelText" xml:space="preserve">
+    <value>Utilizzo massimo CPU (%)</value>
+  </data>
+  <data name="AddRuleWindowMemoryActionTypeText" xml:space="preserve">
+    <value>Azione memoria:</value>
+  </data>
+  <data name="AddRuleWindowMemoryWatchdogTimeLabelText" xml:space="preserve">
+    <value>Tempo di controllo memoria (s)</value>
+  </data>
+  <data name="AddRuleWindowMemoryWatchdogValueLabelText" xml:space="preserve">
+    <value>Utilizzo massimo memoria (MB)</value>
+  </data>
+  <data name="AddRuleWindowProcessNameLabelText" xml:space="preserve">
+    <value>Nome processo:</value>
+  </data>
+  <data name="AddRuleWindowRuleSettingsGroupboxHeaderText" xml:space="preserve">
+    <value>Impostazioni regola</value>
+  </data>
+  <data name="AddRuleWindowTitle" xml:space="preserve">
+    <value>Aggiungi regola</value>
+  </data>
+  <data name="AgoText" xml:space="preserve">
+    <value>fa</value>
+  </data>
+  <data name="AllProcessesEmptyWorkingSetErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile pulire la memoria di uno o più processi in esecuzione.</value>
+  </data>
+  <data name="AllProcessesEmptyWorkingSetErrorTitle" xml:space="preserve">
+    <value>Errore durante la pulizia della memoria</value>
+  </data>
+  <data name="ApplicationDebugPrivilegesUnavailableMessage" xml:space="preserve">
+    <value>Impossibile ottenere i privilegi necessari per il funzionamento dell'applicazione.
+
+Riavviare?</value>
+  </data>
+  <data name="ApplicationDebugPrivilegesUnavailableTitle" xml:space="preserve">
+    <value>Privilegi insufficienti</value>
+  </data>
+  <data name="ApplicationMultipleInstancesErrorMessage" xml:space="preserve">
+    <value>Non è permessa l'esecuzione di più di un'istanza.</value>
+  </data>
+  <data name="ApplicationMultipleInstancesErrorTitle" xml:space="preserve">
+    <value>Applicazione già in esecuzione</value>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="CloseButtonText" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="ComputerInfoWindowBootFromVHDLabel" xml:space="preserve">
+    <value>Avvio da VHD:</value>
+  </data>
+  <data name="ComputerInfoWindowComputerNameLabel" xml:space="preserve">
+    <value>Nome del computer:</value>
+  </data>
+  <data name="ComputerInfoWindowCurrentMemoryAvailableLabel" xml:space="preserve">
+    <value>Memoria disponibile:</value>
+  </data>
+  <data name="ComputerInfoWindowFirmwareTypeLabel" xml:space="preserve">
+    <value>Tipo firmware:</value>
+  </data>
+  <data name="ComputerInfoWindowHardwareProfileGUIDLabel" xml:space="preserve">
+    <value>GUID profilo hardware:</value>
+  </data>
+  <data name="ComputerInfoWindowHardwareProfileNameLabel" xml:space="preserve">
+    <value>Nome profilo hardware:</value>
+  </data>
+  <data name="ComputerInfoWindowMemoryCommitLimitPages" xml:space="preserve">
+    <value>Limite pagine mappate:</value>
+  </data>
+  <data name="ComputerInfoWindowMemoryCommitLimitPeakPages" xml:space="preserve">
+    <value>Limite più alto pagine mappate:</value>
+  </data>
+  <data name="ComputerInfoWindowMemoryGroupboxText" xml:space="preserve">
+    <value>Memoria</value>
+  </data>
+  <data name="ComputerInfoWindowMemoryLoadPercentageLabel" xml:space="preserve">
+    <value>Utilizzo memoria:</value>
+  </data>
+  <data name="ComputerInfoWindowMemoryPageSizeLabel" xml:space="preserve">
+    <value>Dimensione pagina in memoria:</value>
+  </data>
+  <data name="ComputerInfoWindowOSInfoGeneralGroupboxText" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="ComputerInfoWindowOSInfoSystemRegistryGroupboxText" xml:space="preserve">
+    <value>Registro di sistema</value>
+  </data>
+  <data name="ComputerInfoWindowOSTabText" xml:space="preserve">
+    <value>Sistema operativo</value>
+  </data>
+  <data name="ComputerInfoWindowOtherInfoGroupboxText" xml:space="preserve">
+    <value>Altre informazioni</value>
+  </data>
+  <data name="ComputerInfoWindowPhysicalMemorySizeLabel" xml:space="preserve">
+    <value>Dimensione memoria fisica: </value>
+  </data>
+  <data name="ComputerInfoWindowProcessorArchitectureLabel" xml:space="preserve">
+    <value>Architettura processore:</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorCoresCountLabel" xml:space="preserve">
+    <value>Numero di core:</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorCountLabel" xml:space="preserve">
+    <value>Numero processori attivi:</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorFeaturesLabel" xml:space="preserve">
+    <value>Funzionalità processore</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorInfoGroupboxText" xml:space="preserve">
+    <value>Processore</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorLevelLabel" xml:space="preserve">
+    <value>Livello processore:</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorPackagesCountLabel" xml:space="preserve">
+    <value>Numero di packages:</value>
+  </data>
+  <data name="ComputerInfoWindowProcessorRevisionLabel" xml:space="preserve">
+    <value>Revisione processore:</value>
+  </data>
+  <data name="ComputerInfoWindowProductNameLabel" xml:space="preserve">
+    <value>Nome prodotto:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemDirectoryPathLabel" xml:space="preserve">
+    <value>Directory di sistema:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemPathsGroupboxText" xml:space="preserve">
+    <value>Percorsi di sistema</value>
+  </data>
+  <data name="ComputerInfoWindowSystemRegistryCurrentSizeLabel" xml:space="preserve">
+    <value>Dimensione attuale:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemRegistryMaximumSizeLabel" xml:space="preserve">
+    <value>Dimensione massima:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemRunTimeLabel" xml:space="preserve">
+    <value>Tempo dall'avvio:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemSharedWindowsDirectoryPathLabel" xml:space="preserve">
+    <value>Directory di Windows condivisa:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemVersionLabel" xml:space="preserve">
+    <value>Versione del sistema:</value>
+  </data>
+  <data name="ComputerInfoWindowSystemWow64DirectoryPathLabel" xml:space="preserve">
+    <value>Directory di sistema WOW64:</value>
+  </data>
+  <data name="ComputerInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni sul computer</value>
+  </data>
+  <data name="ComputerInfoWindowTotalCommittedPagesLabel" xml:space="preserve">
+    <value>Pagine mappate:</value>
+  </data>
+  <data name="ComputerInfoWindowTotalMemoryAvailableLabel" xml:space="preserve">
+    <value>Memoria totale disponibile:</value>
+  </data>
+  <data name="CPUDefaultValuesWindowTitle" xml:space="preserve">
+    <value>Impostazioni predefinite CPU</value>
+  </data>
+  <data name="CpuUsageText" xml:space="preserve">
+    <value>Utilizzo CPU: </value>
+  </data>
+  <data name="CriticalText" xml:space="preserve">
+    <value>Critico</value>
+  </data>
+  <data name="CustomText" xml:space="preserve">
+    <value>Personalizzato</value>
+  </data>
+  <data name="DaysText" xml:space="preserve">
+    <value>giorni</value>
+  </data>
+  <data name="DayText" xml:space="preserve">
+    <value>giorno</value>
+  </data>
+  <data name="DebugProcessErrorMessage" xml:space="preserve">
+    <value>Impossibile avviare il debug del processo, si è verificato un errore durante l'operazione oppure il processo è gia in corso di debug.
+Se il processo è di sistema o quello corrente l'azione non viene eseguita.</value>
+  </data>
+  <data name="DebugProcessErrorTitle" xml:space="preserve">
+    <value>Impossibile avviare il debug del processo</value>
+  </data>
+  <data name="DesktopInfoWindowHeapSizeLabel" xml:space="preserve">
+    <value>Dimensione dell'heap:</value>
+  </data>
+  <data name="DesktopInfoWindowHooksAllowedLabel" xml:space="preserve">
+    <value>Hook da altri account permessi:</value>
+  </data>
+  <data name="DesktopInfoWindowInputLabel" xml:space="preserve">
+    <value>Sta ricevendo input:</value>
+  </data>
+  <data name="DesktopInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali desktop</value>
+  </data>
+  <data name="DisabledText" xml:space="preserve">
+    <value>Disabilitato</value>
+  </data>
+  <data name="DisableVirtualizationErrorMessage" xml:space="preserve">
+    <value>Impossibile disabilitare la virtualizzazione, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="DisableVirtualizationErrorTitle" xml:space="preserve">
+    <value>Impossibile disabilitare la virtualizzazione</value>
+  </data>
+  <data name="DisallowedProcessAlreadyExistsMessageText" xml:space="preserve">
+    <value>Il nome di processo indicato esiste già tra i processi non permessi.</value>
+  </data>
+  <data name="DisallowedProcessAlreadyExistsMessageTitle" xml:space="preserve">
+    <value>Processo già esistente</value>
+  </data>
+  <data name="DisallowedProcessInvalidDataMessageText" xml:space="preserve">
+    <value>Il nome del processo non permesso non è valido.</value>
+  </data>
+  <data name="DisallowedProcessInvalidDataMessageTitle" xml:space="preserve">
+    <value>Nome non valido</value>
+  </data>
+  <data name="DisallowedProcessSettingsWindowTitle" xml:space="preserve">
+    <value>Processi non permessi</value>
+  </data>
+  <data name="DisallowedProcessTerminatedMessageText" xml:space="preserve">
+    <value>Processo non permesso terminato:</value>
+  </data>
+  <data name="DisallowedProcessToastTitle" xml:space="preserve">
+    <value>Processo non permesso</value>
+  </data>
+  <data name="DMTFPowerSupplyInputVoltageRangeSwitchingAutoSwitchText" xml:space="preserve">
+    <value>Cambiamento automatico</value>
+  </data>
+  <data name="DMTFPowerSupplyInputVoltageRangeSwitchingManualText" xml:space="preserve">
+    <value>Manuale</value>
+  </data>
+  <data name="DMTFPowerSupplyInputVoltageRangeSwitchingWideRangeText" xml:space="preserve">
+    <value>Ampio raggio</value>
+  </data>
+  <data name="DMTFPowerSupplyTypeBatteryText" xml:space="preserve">
+    <value>Batteria</value>
+  </data>
+  <data name="DMTFPowerSupplyTypeConverterText" xml:space="preserve">
+    <value>Convertitore</value>
+  </data>
+  <data name="DMTFPowerSupplyTypeLinearText" xml:space="preserve">
+    <value>Lineare</value>
+  </data>
+  <data name="DMTFPowerSupplyTypeRegulatorText" xml:space="preserve">
+    <value>Regolatore</value>
+  </data>
+  <data name="EmptyProcessWorkingSetErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile liberare il working set del processo, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="EmptyProcessWorkingSetErrorTitle" xml:space="preserve">
+    <value>Impossibile liberare il working set</value>
+  </data>
+  <data name="EnabledText" xml:space="preserve">
+    <value>Abilitato</value>
+  </data>
+  <data name="EnableVirtualizationErrorMessage" xml:space="preserve">
+    <value>Impossibile abilitare la virtualizzazione, si è verificato un errore durante l'operazione oppure la virtualizzazione non è permessa per il processo.</value>
+  </data>
+  <data name="EnableVirtualizationErrorTitle" xml:space="preserve">
+    <value>Impossibile abilitare la virtualizzazione</value>
+  </data>
+  <data name="EnergyUsageRuleAlreadyExistMessageTitle" xml:space="preserve">
+    <value>Regola già esistente</value>
+  </data>
+  <data name="EnergyUsageRuleAlreadyExistsMessageText" xml:space="preserve">
+    <value>Esiste già una regola di risparmio energetico con queste impostazioni.</value>
+  </data>
+  <data name="Entries FiltersWindowEndHourLabelText" xml:space="preserve">
+    <value>Ora di fine</value>
+  </data>
+  <data name="EntriesFiltersWindowStartHourLabelText" xml:space="preserve">
+    <value>Ora d'inizio</value>
+  </data>
+  <data name="ETWInitializationFailureErroreTitle" xml:space="preserve">
+    <value>Impossibile inizializzare ETW</value>
+  </data>
+  <data name="ETWInitializationFailureErrorMessage" xml:space="preserve">
+    <value>Errore durante l'inizializzazione di ETW, l'applicazione sarà riavviata, il provider dei dati è stato impostato su WMI.</value>
+  </data>
+  <data name="EventInfoWindowStateLabel" xml:space="preserve">
+    <value>Segnalato:</value>
+  </data>
+  <data name="EventInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali evento</value>
+  </data>
+  <data name="EventInfoWindowTypeLabel" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="FileInfoWindowAllocationSizeLabel" xml:space="preserve">
+    <value>Spazio allocato:</value>
+  </data>
+  <data name="FileInfoWindowAttributesGroupbox" xml:space="preserve">
+    <value>Attributi</value>
+  </data>
+  <data name="FileInfoWindowAttributesLabel" xml:space="preserve">
+    <value>Attributi:</value>
+  </data>
+  <data name="FileInfoWindowCompressedSizeLabel" xml:space="preserve">
+    <value>Dimensione compressa:</value>
+  </data>
+  <data name="FileInfoWindowCreationTimeLabel" xml:space="preserve">
+    <value>Data di creazione:</value>
+  </data>
+  <data name="FileInfoWindowDeletePendingLabel" xml:space="preserve">
+    <value>Da cancellare:</value>
+  </data>
+  <data name="FileInfoWindowDirectoryLabel" xml:space="preserve">
+    <value>Directory:</value>
+  </data>
+  <data name="FileInfoWindowFileIDLabel" xml:space="preserve">
+    <value>Indentificatore:</value>
+  </data>
+  <data name="FileInfoWindowLastAccessTimeLabel" xml:space="preserve">
+    <value>Data ultimo accesso:</value>
+  </data>
+  <data name="FileInfoWindowLastWriteTimeLabel" xml:space="preserve">
+    <value>Data ultima modifica:</value>
+  </data>
+  <data name="FileInfoWindowLinksCountLabel" xml:space="preserve">
+    <value>Numero di collegamenti:</value>
+  </data>
+  <data name="FileInfoWindowOtherInfoGroupbox" xml:space="preserve">
+    <value>Altre informazioni</value>
+  </data>
+  <data name="FileInfoWindowSizeGroupbox" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="FileInfoWindowSizeLabel" xml:space="preserve">
+    <value>Dimensione:</value>
+  </data>
+  <data name="FileInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali file</value>
+  </data>
+  <data name="FileInfoWindowTypeLabel" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="FileInfoWindowVolumeSerialNumberLabel" xml:space="preserve">
+    <value>Numero seriale volume:</value>
+  </data>
+  <data name="FindWindowInfoWindowInfoLabel" xml:space="preserve">
+    <value>Posizionare il cursore sopra una finestra e premere Invio.</value>
+  </data>
+  <data name="FindWindowInfoWindowTitle" xml:space="preserve">
+    <value>Trova finestra</value>
+  </data>
+  <data name="FridayText" xml:space="preserve">
+    <value>Venerdì</value>
+  </data>
+  <data name="HandleClosingErrorMessageText" xml:space="preserve">
+    <value>Non è stato possibile chiudere l'handle.
+
+Non è possibile eseguire questa operazione su processi di sistema o su quello corrente.</value>
+  </data>
+  <data name="HandleClosingErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile chiudere un handle</value>
+  </data>
+  <data name="HandleCountInfoWindowHandleCountHeader" xml:space="preserve">
+    <value>Numero di handle</value>
+  </data>
+  <data name="HandleCountInfoWindowHandleTypeHeader" xml:space="preserve">
+    <value>Tipo handle</value>
+  </data>
+  <data name="HandlePropertiesWindowBasicInfoGroupbox" xml:space="preserve">
+    <value>Informazioni di base</value>
+  </data>
+  <data name="HandlePropertiesWindowGrantedAccessLabel" xml:space="preserve">
+    <value>Tipo di accesso:</value>
+  </data>
+  <data name="HandlePropertiesWindowNameLabel" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="HandlePropertiesWindowObjectAddressLabel" xml:space="preserve">
+    <value>Indirizzo oggetto:</value>
+  </data>
+  <data name="HandlePropertiesWindowQuotaChargesGroupbox" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="HandlePropertiesWindowReferencesGroupbox" xml:space="preserve">
+    <value>Riferimenti</value>
+  </data>
+  <data name="HandlePropertiesWindowReferencesLabel" xml:space="preserve">
+    <value>Riferimenti:</value>
+  </data>
+  <data name="HandlePropertiesWindowSpecificDataButton" xml:space="preserve">
+    <value>Altre informazioni</value>
+  </data>
+  <data name="HandlePropertiesWindowTitle" xml:space="preserve">
+    <value>Proprietà handle</value>
+  </data>
+  <data name="HandlePropertiesWindowTypeLabel" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="HandlesCountInfoWindowTitle" xml:space="preserve">
+    <value>Conteggio handle per tipo</value>
+  </data>
+  <data name="HibernateMachineErrorMessage" xml:space="preserve">
+    <value>Impossibile iniziare la procedura di ibernazione del computer.</value>
+  </data>
+  <data name="HibernateMachineErrorTitle" xml:space="preserve">
+    <value>Errore durane l'ibernazione del computer</value>
+  </data>
+  <data name="HoursText" xml:space="preserve">
+    <value>ore</value>
+  </data>
+  <data name="HourText" xml:space="preserve">
+    <value>ore</value>
+  </data>
+  <data name="IdleText" xml:space="preserve">
+    <value>Inattivo</value>
+  </data>
+  <data name="InfiniteText" xml:space="preserve">
+    <value>Infinito</value>
+  </data>
+  <data name="InstanceLimitAlreadyExistsMessageText" xml:space="preserve">
+    <value>Esiste già un limite con queste impostazioni.</value>
+  </data>
+  <data name="InstanceLimitAlreadyExistsMessageTitle" xml:space="preserve">
+    <value>Limite già esistente</value>
+  </data>
+  <data name="InvalidCPUDefaultSettingMessageText" xml:space="preserve">
+    <value>I dati forniti per l'impostazione predefinita di un processo non sono validi.</value>
+  </data>
+  <data name="InvalidCPUDefaultSettingMessageTitle" xml:space="preserve">
+    <value>Dati non validi</value>
+  </data>
+  <data name="InvalidEnergyUsageRuleDataMessageText" xml:space="preserve">
+    <value>I dati forniti per la regola di utilizzo energetico non sono validi.</value>
+  </data>
+  <data name="InvalidEnergyUsageRuleDataMessageTitle" xml:space="preserve">
+    <value>Dati non validi</value>
+  </data>
+  <data name="InvalidFilterDataErrorMessage" xml:space="preserve">
+    <value>Dati indicati nei filtri non validi.</value>
+  </data>
+  <data name="InvalidFilterDataErrorTitle" xml:space="preserve">
+    <value>Dati non validi</value>
+  </data>
+  <data name="InvalidInstanceLimitMessageText" xml:space="preserve">
+    <value>I dati forniti per il limite non sono validi.</value>
+  </data>
+  <data name="InvalidMemoryWatchdogDataText" xml:space="preserve">
+    <value>Forniti dati non validi per il watchdog processi.</value>
+  </data>
+  <data name="InvalidMemoryWatchdogDataTitle" xml:space="preserve">
+    <value>Impostazioni non valide</value>
+  </data>
+  <data name="InvalidRuleReasonCpuActionNotSelected" xml:space="preserve">
+    <value>nessuna azione per il watchdog CPU selezionata</value>
+  </data>
+  <data name="InvalidRuleReasonCpuActionValueAffinity" xml:space="preserve">
+    <value>affinità indicata non valida</value>
+  </data>
+  <data name="InvalidRuleReasonCpuActionValuePriority" xml:space="preserve">
+    <value>priorità indicata non valida</value>
+  </data>
+  <data name="InvalidRuleReasonCpuControlTimeInvalid" xml:space="preserve">
+    <value>tempo di controllo watchdog CPU non valido</value>
+  </data>
+  <data name="InvalidRuleReasonCpuUsageMaxInvalid" xml:space="preserve">
+    <value>valore utilizzo massimo CPU non valido</value>
+  </data>
+  <data name="InvalidRuleReasonCurrentProcessName" xml:space="preserve">
+    <value>il nome del processo corrisponde a quello del processo attuale</value>
+  </data>
+  <data name="InvalidRuleReasonInvalidPath" xml:space="preserve">
+    <value>solo nomi di processo possono essere usati, nessun percorso deve essere indicato</value>
+  </data>
+  <data name="InvalidRuleReasonMemoryActionNotSelected" xml:space="preserve">
+    <value>nessuna azione per il watchdog memoria selezionata</value>
+  </data>
+  <data name="InvalidRuleReasonMemoryControlTimeInvalid" xml:space="preserve">
+    <value>tempo di controllo watchdog memoria non valido</value>
+  </data>
+  <data name="InvalidRuleReasonMemoryUsageMaxInvalid" xml:space="preserve">
+    <value>valore utilizzo massimo memoria non valido</value>
+  </data>
+  <data name="InvalidRuleReasonNoCpuActionValueAffinity" xml:space="preserve">
+    <value>nessuna affinità CPU indicata</value>
+  </data>
+  <data name="InvalidRuleReasonNoCpuActionValuePriority" xml:space="preserve">
+    <value>nessuna priorità CPU indicata</value>
+  </data>
+  <data name="InvalidRuleReasonNoProcessName" xml:space="preserve">
+    <value>nome del processo non fornito</value>
+  </data>
+  <data name="InvalidRuleReasonProcessNameNoExtension" xml:space="preserve">
+    <value>il nome del processo fornito non presenta l'estensione .exe</value>
+  </data>
+  <data name="InvalidWatchdogRuleDataErrorMessage" xml:space="preserve">
+    <value>Regola non valida.
+
+Motivazione: </value>
+  </data>
+  <data name="InvalidWatchdogRuleDataErrorTitle" xml:space="preserve">
+    <value>Regola non valida</value>
+  </data>
+  <data name="KeepOnlineProcessSettingsWindowTitle" xml:space="preserve">
+    <value>Processi da mantenere in esecuzione</value>
+  </data>
+  <data name="LimitedProcessesListWindowProcessesDatagridLimitValueColumnHeader" xml:space="preserve">
+    <value>Valore limite</value>
+  </data>
+  <data name="LimitedProcessesListWindowProcessesDatagridNameColumnHeader" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="LimitedProcessesListWindowProcessesDatagridShowLimitInfo" xml:space="preserve">
+    <value>Visualizza informazioni sul limite</value>
+  </data>
+  <data name="LimitedProcessesListWindowTitle" xml:space="preserve">
+    <value>Processi limitati</value>
+  </data>
+  <data name="LimitInfoWindowActiveProcessesLabel" xml:space="preserve">
+    <value>Processi attivi:</value>
+  </data>
+  <data name="LimitInfoWindowIODataGroupboxHeader" xml:space="preserve">
+    <value>Dati I/O</value>
+  </data>
+  <data name="LimitInfoWindowJobTimesGroupboxHeader" xml:space="preserve">
+    <value>Tempistiche job</value>
+  </data>
+  <data name="LimitInfoWindowKernelTimeLabel" xml:space="preserve">
+    <value>Tempo kernel:</value>
+  </data>
+  <data name="LimitInfoWindowOtherOperationCountLabel" xml:space="preserve">
+    <value>Altre operazioni:</value>
+  </data>
+  <data name="LimitInfoWindowOtherTransferCountLabel" xml:space="preserve">
+    <value>Byte trasferiti (altro):</value>
+  </data>
+  <data name="LimitInfoWindowPageFaultCountLabel" xml:space="preserve">
+    <value>Numero di page fault:</value>
+  </data>
+  <data name="LimitInfoWindowProcessesDataGroupboxHeader" xml:space="preserve">
+    <value>Conteggi processi</value>
+  </data>
+  <data name="LimitInfoWindowProcessesTabText" xml:space="preserve">
+    <value>Processi</value>
+  </data>
+  <data name="LimitInfoWindowProcessNameLabel" xml:space="preserve">
+    <value>Nome processo:</value>
+  </data>
+  <data name="LimitInfoWindowProcessTimesGroupboxHeader" xml:space="preserve">
+    <value>Tempistiche processo</value>
+  </data>
+  <data name="LimitInfoWindowReadOperationCountLabel" xml:space="preserve">
+    <value>Operazioni di lettura:</value>
+  </data>
+  <data name="LimitInfoWindowReadTransferCountLabel" xml:space="preserve">
+    <value>Byte trasferiti (lettura):</value>
+  </data>
+  <data name="LimitInfoWindowTerminatedProcessesLabel" xml:space="preserve">
+    <value>Processi terminati:</value>
+  </data>
+  <data name="LimitInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni limite</value>
+  </data>
+  <data name="LimitInfoWindowTotalProcessesLabel" xml:space="preserve">
+    <value>Processi totali:</value>
+  </data>
+  <data name="LimitInfoWindowTotalTimeLabel" xml:space="preserve">
+    <value>Tempo totale:</value>
+  </data>
+  <data name="LimitInfoWindowUserTimeLabel" xml:space="preserve">
+    <value>Tempo utente:</value>
+  </data>
+  <data name="LimitInfoWindowWriteOperationCountLabel" xml:space="preserve">
+    <value>Operazioni di scrittura:</value>
+  </data>
+  <data name="LimitInfoWindowWriteTransferCountLabel" xml:space="preserve">
+    <value>Byte trasferiti (scrittura):</value>
+  </data>
+  <data name="LockComputerErrorMessage" xml:space="preserve">
+    <value>Impossibile iniziare la procedura di blocco del computer.</value>
+  </data>
+  <data name="LockComputerErrorTitle" xml:space="preserve">
+    <value>Errore durante il blocco del computer.</value>
+  </data>
+  <data name="LogEntriesFiltersActionFilter" xml:space="preserve">
+    <value>Azione</value>
+  </data>
+  <data name="LogEntriesFiltersDateFilter" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="LogEntriesFiltersSeverityFilter" xml:space="preserve">
+    <value>Gravità</value>
+  </data>
+  <data name="LogEntriesFiltersSourceFilter" xml:space="preserve">
+    <value>Fonte</value>
+  </data>
+  <data name="LogEntriesFiltersTextFilter" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="LogEntriesFiltersTimeFilter" xml:space="preserve">
+    <value>Ora</value>
+  </data>
+  <data name="LogEntriesFiltersWindowCancelButton" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="LogEntriesFiltersWindowTitle" xml:space="preserve">
+    <value>Filtri lista</value>
+  </data>
+  <data name="LogManagerWindowClearLogButton" xml:space="preserve">
+    <value>Pulisci log</value>
+  </data>
+  <data name="LogManagerWindowEntriesDatagridActionColumn" xml:space="preserve">
+    <value>Azione</value>
+  </data>
+  <data name="LogManagerWindowEntriesDatagridDateColumn" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="LogManagerWindowEntriesDatagridSeverityColumn" xml:space="preserve">
+    <value>Gravità</value>
+  </data>
+  <data name="LogManagerWindowEntriesDatagridSourceColumn" xml:space="preserve">
+    <value>Fonte</value>
+  </data>
+  <data name="LogManagerWindowEntriesDatagridTextColumn" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="LogManagerWindowFilterListButton" xml:space="preserve">
+    <value>Filtra lista</value>
+  </data>
+  <data name="LogManagerWindowTitle" xml:space="preserve">
+    <value>Gestore log</value>
+  </data>
+  <data name="LogManagerWindowUpdateLogDataButton" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="LogoffErrorTitle" xml:space="preserve">
+    <value>Errore durante la disconnessione dell'utente</value>
+  </data>
+  <data name="LogoffUserErrorMessage" xml:space="preserve">
+    <value>Impossibile iniziare la disconnessione dell'utente.</value>
+  </data>
+  <data name="LowMemoryConditionNotificationText" xml:space="preserve">
+    <value>La disponibilità della memoria di sistema è ridotta, uso attuale: </value>
+  </data>
+  <data name="LowMemoryConditionNotificationText2" xml:space="preserve">
+    <value>Avviso utilizzo memoria</value>
+  </data>
+  <data name="MainWindowComputerMenuComputerInfoMenuItem" xml:space="preserve">
+    <value>Informazioni sul computer</value>
+  </data>
+  <data name="MainWindowComputerMenuHibernateSystemMenuItem" xml:space="preserve">
+    <value>Iberna</value>
+  </data>
+  <data name="MainWindowComputerMenuHybridShutdownComputerMenuItem" xml:space="preserve">
+    <value>Spegni il computer (ibrido)</value>
+  </data>
+  <data name="MainWindowComputerMenuLockComputerMenuItem" xml:space="preserve">
+    <value>Blocca computer</value>
+  </data>
+  <data name="MainWindowComputerMenuLogoffUserMenuItem" xml:space="preserve">
+    <value>Disconnetti utente</value>
+  </data>
+  <data name="MainWindowComputerMenuRestartComputerMenuItem" xml:space="preserve">
+    <value>Riavvia il computer</value>
+  </data>
+  <data name="MainWindowComputerMenuRestartToBootOptionsComputerMenuItem" xml:space="preserve">
+    <value>Riavvia il computer e visualizza le opzioni di boot</value>
+  </data>
+  <data name="MainWindowComputerMenuShutdownComputerMenuItem" xml:space="preserve">
+    <value>Spegni il computer</value>
+  </data>
+  <data name="MainWindowComputerMenuSuspendSystemMenuItem" xml:space="preserve">
+    <value>Sospendi</value>
+  </data>
+  <data name="MainWindowListMenuItem" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="MainWindowListMenuItemClearListSortingMenuItem" xml:space="preserve">
+    <value>Resetta ordinamento</value>
+  </data>
+  <data name="MainWindowListMenuItemSortByDescriptionMenuItem" xml:space="preserve">
+    <value>In base alla descrizione</value>
+  </data>
+  <data name="MainWindowListMenuItemSortByNameMenuItem" xml:space="preserve">
+    <value>In base al nome</value>
+  </data>
+  <data name="MainWindowListMenuItemSortByPIDMenuItem" xml:space="preserve">
+    <value>In base al PID</value>
+  </data>
+  <data name="MainWindowListMenuItemSortByStartTimeMenuItem" xml:space="preserve">
+    <value>In base alla data di avvio</value>
+  </data>
+  <data name="MainWindowListMenuItemSortListSubMenuItem" xml:space="preserve">
+    <value>Ordina lista</value>
+  </data>
+  <data name="MainWindowLogMenuShowLogMenuItemText" xml:space="preserve">
+    <value>Visualizza log</value>
+  </data>
+  <data name="MainWindowLogMenuStartLoggingMenuItemText" xml:space="preserve">
+    <value>Avvia logging delle attività</value>
+  </data>
+  <data name="MainWindowLogMenuStopLoggingMenuItemText" xml:space="preserve">
+    <value>Interrompi logging delle attività</value>
+  </data>
+  <data name="MainWindowOtherMenuFindLoadedModuleMenuItem" xml:space="preserve">
+    <value>Trova modulo caricato</value>
+  </data>
+  <data name="MainWindowOtherMenuFindWindowAndTerminateOwnerMenuItem" xml:space="preserve">
+    <value>Trova finestra e termina proprietario</value>
+  </data>
+  <data name="MainWindowOtherMenuFindWindowMenuItem" xml:space="preserve">
+    <value>Trova finestra</value>
+  </data>
+  <data name="MainWindowOtherMenuWindowsMenuItem" xml:space="preserve">
+    <value>Finestre</value>
+  </data>
+  <data name="MainWindowProcessMenuCleanProcessesMemoryMenuItem" xml:space="preserve">
+    <value>Pulisci memoria di tutti i processi</value>
+  </data>
+  <data name="MainWindowServicesMenuInitializeServiceMonitoringMenuItemText" xml:space="preserve">
+    <value>Inizializza monitoraggio servizi</value>
+  </data>
+  <data name="MainWindowServicesMenuItemServicesListMenuItemText" xml:space="preserve">
+    <value>Lista servizi</value>
+  </data>
+  <data name="MainWindowServicesMenuNotificationsSubMenuServiceCreationMenuItemText" xml:space="preserve">
+    <value>Abilita notifiche creazione servizi</value>
+  </data>
+  <data name="MainWindowServicesMenuNotificationsSubMenuServiceDeletionMenuItemText" xml:space="preserve">
+    <value>Abilita notifiche eliminazione servizi</value>
+  </data>
+  <data name="MainWindowServicesMenuNotificationsSubMenuText" xml:space="preserve">
+    <value>Notifiche</value>
+  </data>
+  <data name="MainWindowServicesMenuStopServiceMonitoringMenuItemText" xml:space="preserve">
+    <value>Interrompi monitoraggio servizi</value>
+  </data>
+  <data name="MainWindowServicesMenuText" xml:space="preserve">
+    <value>Servizi</value>
+  </data>
+  <data name="MainWindowSettingsItemText" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="MainWindowTitle" xml:space="preserve">
+    <value>Task+</value>
+  </data>
+  <data name="MainWindowUpdateMenuItemText" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="MemoryInfoManipulationEnablementMessage" xml:space="preserve">
+    <value>Manipolare in modo non corretto la memoria di un processo potrebbe causarne il termine imprevisto o un comportamento anormale, se l'operazione viene eseguita su processi di sistema con la modalità sicura disattivata il sistema operativo potrebbe diventare instabile.
+
+Continuare?</value>
+  </data>
+  <data name="MemoryInfoManipulationEnablementTitle" xml:space="preserve">
+    <value>Attivazione manipolazione memoria processi</value>
+  </data>
+  <data name="MemoryRegionChangeProtectionErrorMessage" xml:space="preserve">
+    <value>Impossibile cambiare la protezione di una regione di memoria.
+
+Non è possibile eseguire questa operazione su processi di sistema o su quello corrente.</value>
+  </data>
+  <data name="MemoryRegionChangeProtectionErrorTitle" xml:space="preserve">
+    <value>Impossibile cambiare la protezione di una regione di memoria</value>
+  </data>
+  <data name="MemoryRegionDecommitMemoryErrorMessage" xml:space="preserve">
+    <value>Impossibile annullare la mappatura di una regione di memoria.
+Non è possibile eseguire questa operazione su regioni libere.
+
+Non è possibile eseguire questa operazione su processi di sistema o su quello corrente.</value>
+  </data>
+  <data name="MemoryRegionDecommitMemoryErrorTitle" xml:space="preserve">
+    <value>Impossibile annullare la mappatura di una regione di memoria</value>
+  </data>
+  <data name="MemoryRegionFreeMemoryErrorMessage" xml:space="preserve">
+    <value>Impossibile liberare una regione di memoria.
+
+Non è possibile eseguire questa operazione su processi di sistema o su quello corrente.</value>
+  </data>
+  <data name="MemoryRegionFreeMemoryErrorTitle" xml:space="preserve">
+    <value>Impossibile liberare una regione di memoria</value>
+  </data>
+  <data name="MemoryWatchdogInvalidNameText" xml:space="preserve">
+    <value>Nome fornito non valido, il nome del processo deve contenere l'estensione .exe.</value>
+  </data>
+  <data name="MemoryWatchdogInvalidNameTitle" xml:space="preserve">
+    <value>Nome non valido</value>
+  </data>
+  <data name="MemoryWatchdogNoProcessNameText" xml:space="preserve">
+    <value>Nessun nome di processo inserito.</value>
+  </data>
+  <data name="MemoryWatchdogNoProcessNameTitle" xml:space="preserve">
+    <value>Nessun nome fornito</value>
+  </data>
+  <data name="MemoryWatchdogNoProcessSelectedMessageText" xml:space="preserve">
+    <value>Nessun processo selezionato.</value>
+  </data>
+  <data name="MemoryWatchdogNoProcessSelectedMessageTitle" xml:space="preserve">
+    <value>Seleziona non valida</value>
+  </data>
+  <data name="MemoryWatchdogSettingsWindowTitle" xml:space="preserve">
+    <value>Impostazioni watchdog memoria</value>
+  </data>
+  <data name="MemoryWatchdogUnableToAddProcessText" xml:space="preserve">
+    <value>Il processo indicato è già presente nella lista.</value>
+  </data>
+  <data name="MemoryWatchdogUnableToAddProcessTitle" xml:space="preserve">
+    <value>Processo già presente</value>
+  </data>
+  <data name="MemoryWatchdogUnavailableInfoText" xml:space="preserve">
+    <value>Non è stato possibile recuperare le informazioni necessarie sul sistema, opzione non disponibile.</value>
+  </data>
+  <data name="MemoryWatchdogUnavailableInfoTitle" xml:space="preserve">
+    <value>Opzione non disponibile</value>
+  </data>
+  <data name="MinutesText" xml:space="preserve">
+    <value>minuti</value>
+  </data>
+  <data name="MinuteText" xml:space="preserve">
+    <value>minuto</value>
+  </data>
+  <data name="MitigationPoliciesDetailsWindowDescriptionLabel" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="MitigationPoliciesDetailsWindowPolicyLabel" xml:space="preserve">
+    <value>Politiche</value>
+  </data>
+  <data name="MitigationPoliciesDetailWindowTitle" xml:space="preserve">
+    <value>Dettagli criteri di mitigazione</value>
+  </data>
+  <data name="ModulePropertiesWindowShowErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile aprire la finestra delle proprietà del modulo.</value>
+  </data>
+  <data name="ModulePropertiesWindowShowErrorTitle" xml:space="preserve">
+    <value>Impossibile visualizzare le proprietà</value>
+  </data>
+  <data name="MondayText" xml:space="preserve">
+    <value>Lunedì</value>
+  </data>
+  <data name="MutantInfoWindowAbandonedStateLabel" xml:space="preserve">
+    <value>Abbandonato:</value>
+  </data>
+  <data name="MutantInfoWindowCurrentCountLabel" xml:space="preserve">
+    <value>Conteggio attuale:</value>
+  </data>
+  <data name="MutantInfoWindowOwnedByCallerLabel" xml:space="preserve">
+    <value>Proprietario:</value>
+  </data>
+  <data name="MutantInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali mutante</value>
+  </data>
+  <data name="NoChildrenProcessesErrorMessage" xml:space="preserve">
+    <value>Il processo non ha figli.</value>
+  </data>
+  <data name="NoChildrenProcessesErrorTitle" xml:space="preserve">
+    <value>Processo senza figli</value>
+  </data>
+  <data name="NoDiskDrivesFoundErrorMessage" xml:space="preserve">
+    <value>Nessuna unità disco trovata, l'applicazione non può continuare.</value>
+  </data>
+  <data name="NoDiskDrivesFoundErrorTitle" xml:space="preserve">
+    <value>Nessuna unità disco</value>
+  </data>
+  <data name="NonCriticalText" xml:space="preserve">
+    <value>Non critico</value>
+  </data>
+  <data name="NoneText" xml:space="preserve">
+    <value>Nessuno</value>
+  </data>
+  <data name="NoneText2" xml:space="preserve">
+    <value>Nessuna</value>
+  </data>
+  <data name="NoServicesHostedErrorMessage" xml:space="preserve">
+    <value>Il processo non ospita alcun servizio.</value>
+  </data>
+  <data name="NoServicesHostedErrorTitle" xml:space="preserve">
+    <value>Nessun servizio ospitato</value>
+  </data>
+  <data name="NoSpecificInformationAvailableMessage" xml:space="preserve">
+    <value>Nessun'altra informazione disponibile.</value>
+  </data>
+  <data name="NoSpecificInformationAvailableTitle" xml:space="preserve">
+    <value>Nessuna informazione</value>
+  </data>
+  <data name="NotAssignedText" xml:space="preserve">
+    <value>Non assegnato</value>
+  </data>
+  <data name="NotPermittedText" xml:space="preserve">
+    <value>Non permesso</value>
+  </data>
+  <data name="NotSetText" xml:space="preserve">
+    <value>Non impostato</value>
+  </data>
+  <data name="NoWatchdogActiveErrorMessage" xml:space="preserve">
+    <value>Regola non valida, nessun watchdog attivato.</value>
+  </data>
+  <data name="NoWatchdogActiveErrorTitle" xml:space="preserve">
+    <value>Nessun watchdog attivato</value>
+  </data>
+  <data name="OKButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OpenFileDialogExecutableFilter" xml:space="preserve">
+    <value>File eseguibili|*.exe</value>
+  </data>
+  <data name="OtherInfoText" xml:space="preserve">
+    <value>Altre informazioni:</value>
+  </data>
+  <data name="OtherText" xml:space="preserve">
+    <value>Altro</value>
+  </data>
+  <data name="PagefileChangeSizeErrorMessage" xml:space="preserve">
+    <value>Impossibile cambiare la dimensione del file di paging</value>
+  </data>
+  <data name="PagefileCreationErrorMessage" xml:space="preserve">
+    <value>Impossibile creare un file di paging</value>
+  </data>
+  <data name="PagefileDeletionErrorMessage" xml:space="preserve">
+    <value>Impossibile eliminare un file di paging</value>
+  </data>
+  <data name="PagefileInfoWindowChangePagefileSizeMenuItem" xml:space="preserve">
+    <value>Cambia dimensione minima e massima del file di paging</value>
+  </data>
+  <data name="PagefileInfoWindowCreatePagefileMenuItem" xml:space="preserve">
+    <value>Crea file di paging</value>
+  </data>
+  <data name="PagefileInfoWindowDeletePagefileMenuItem" xml:space="preserve">
+    <value>Elimina file di paging</value>
+  </data>
+  <data name="PagefileInfoWindowFilenameLabel" xml:space="preserve">
+    <value>Percorso del file</value>
+  </data>
+  <data name="PagefileInfoWindowInitialSizeLabel" xml:space="preserve">
+    <value>Dimensione iniziale (minima, in MB)</value>
+  </data>
+  <data name="PagefileInfoWindowMaximumSizeLabel" xml:space="preserve">
+    <value>Dimensione massima (in MB)</value>
+  </data>
+  <data name="PagefileInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni file di paging</value>
+  </data>
+  <data name="PagefileOperationErrorTitle" xml:space="preserve">
+    <value>Errore durante un operazione sul file di paging</value>
+  </data>
+  <data name="PagefilesListWindowFileNameColumn" xml:space="preserve">
+    <value>Nome file</value>
+  </data>
+  <data name="PagefilesListWindowPeakUsageColumn" xml:space="preserve">
+    <value>Uso massimo</value>
+  </data>
+  <data name="PagefilesListWindowTitle" xml:space="preserve">
+    <value>Lista file di paging</value>
+  </data>
+  <data name="PagefilesListWindowTotalColumn" xml:space="preserve">
+    <value>Dimensione totale</value>
+  </data>
+  <data name="PagefilesListWindowUsageColumn" xml:space="preserve">
+    <value>Uso</value>
+  </data>
+  <data name="PeHeaderWindowCharacteristicsLabel" xml:space="preserve">
+    <value>Caratteristiche:</value>
+  </data>
+  <data name="PeHeaderWindowDllCharacteristicsLabel" xml:space="preserve">
+    <value>Caratteristiche Dll:</value>
+  </data>
+  <data name="PeHeaderWindowImageBaseLabel" xml:space="preserve">
+    <value>Base immagine:</value>
+  </data>
+  <data name="PeHeaderWindowSectionNameHeader" xml:space="preserve">
+    <value>Nome sezione</value>
+  </data>
+  <data name="PeHeaderWindowSectionSizeHeader" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="PeHeaderWindowSubsystemLabel" xml:space="preserve">
+    <value>Sottosistema:</value>
+  </data>
+  <data name="PeHeaderWindowSubsystemVersionLabel" xml:space="preserve">
+    <value>Versione sottosistema:</value>
+  </data>
+  <data name="PeHeaderWindowTargetMachineLabel" xml:space="preserve">
+    <value>Macchina di destinazione:</value>
+  </data>
+  <data name="PeHeaderWindowTitle" xml:space="preserve">
+    <value>Informazioni intestazione PE</value>
+  </data>
+  <data name="PeParsingErrorMessageText" xml:space="preserve">
+    <value>Impossibile leggere l'intestazione PE dell'eseguibile.</value>
+  </data>
+  <data name="PeParsingErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile leggere l'intestazione</value>
+  </data>
+  <data name="PermanentProcessRestartedMessageText" xml:space="preserve">
+    <value>Processo permanente riavviato: </value>
+  </data>
+  <data name="PermanentProcessToastTitle" xml:space="preserve">
+    <value>Processo permanente</value>
+  </data>
+  <data name="PermittedText" xml:space="preserve">
+    <value>Permesso</value>
+  </data>
+  <data name="ProcessChildrenListWindowTitle" xml:space="preserve">
+    <value>Processi figlio</value>
+  </data>
+  <data name="ProcessCPUDefaultSettingAlreadyExistMessageText" xml:space="preserve">
+    <value>L'impostazione predefinita esiste già per questo processo.</value>
+  </data>
+  <data name="ProcessCPUDefaultSettingAlreadyExistMessageTitle" xml:space="preserve">
+    <value>Impostazione già esistente</value>
+  </data>
+  <data name="ProcessDescriptionHeader" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="ProcessEnergyUsageSettingsWindowTitle" xml:space="preserve">
+    <value>Impostazioni uso energetico processi</value>
+  </data>
+  <data name="ProcessesCountText" xml:space="preserve">
+    <value>Processi: </value>
+  </data>
+  <data name="ProcessGridContextMenuAboveNormalPriorityItem" xml:space="preserve">
+    <value>Sopra il normale</value>
+  </data>
+  <data name="ProcessGridContextMenuAffinityItem" xml:space="preserve">
+    <value>Cambia affinità</value>
+  </data>
+  <data name="ProcessGridContextMenuCpuLimitsItem" xml:space="preserve">
+    <value>Limite utilizzo CPU</value>
+  </data>
+  <data name="ProcessGridContextMenuDebugItem" xml:space="preserve">
+    <value>Esegui debug del processo</value>
+  </data>
+  <data name="ProcessGridContextMenuDisableVirtualizationItem" xml:space="preserve">
+    <value>Disabilita virtualizzazione</value>
+  </data>
+  <data name="ProcessGridContextMenuEmptyWorkingSetMenuItem" xml:space="preserve">
+    <value>Pulisci working set</value>
+  </data>
+  <data name="ProcessGridContextMenuEnableVirtualizationItem" xml:space="preserve">
+    <value>Abilita virtualizzazione</value>
+  </data>
+  <data name="ProcessGridContextMenuHighPriorityItem" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="ProcessGridContextMenuIdlePriorityItem" xml:space="preserve">
+    <value>Inattivo</value>
+  </data>
+  <data name="ProcessGridContextMenuLowPriorityItem" xml:space="preserve">
+    <value>Bassa</value>
+  </data>
+  <data name="ProcessGridContextMenuNormalPriorityItem" xml:space="preserve">
+    <value>Normale</value>
+  </data>
+  <data name="ProcessGridContextMenuPriorityItem" xml:space="preserve">
+    <value>Cambia priorità</value>
+  </data>
+  <data name="ProcessGridContextMenuPropertiesItem" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="ProcessGridContextMenuRealTimePriorityItem" xml:space="preserve">
+    <value>Tempo reale</value>
+  </data>
+  <data name="ProcessGridContextMenuSetMaximumWorkingSetSizeMenuItem" xml:space="preserve">
+    <value>Imposta il working set massimo</value>
+  </data>
+  <data name="ProcessGridContextMenuSetMinimumWorkingSetSizeMenuItem" xml:space="preserve">
+    <value>Imposta il working set minimo</value>
+  </data>
+  <data name="ProcessGridContextMenuShowChildrenItem" xml:space="preserve">
+    <value>Mostra processi figlio</value>
+  </data>
+  <data name="ProcessGridContextMenuShowHostedServicesMenuItem" xml:space="preserve">
+    <value>Mostra servizi ospitati</value>
+  </data>
+  <data name="ProcessGridContextMenuShowProcessWindowsItem" xml:space="preserve">
+    <value>Mostra finestre aperte</value>
+  </data>
+  <data name="ProcessGridContextMenuTerminateProcessItem" xml:space="preserve">
+    <value>Termina processo</value>
+  </data>
+  <data name="ProcessGridContextMenuTerminateProcessTreeItem" xml:space="preserve">
+    <value>Termina processo e tutti i suoi figli</value>
+  </data>
+  <data name="ProcessInstanceLimitSettingsWindowTitle" xml:space="preserve">
+    <value>Impostazioni limite istanze processi</value>
+  </data>
+  <data name="ProcessIs32BitText" xml:space="preserve">
+    <value>Il processo è a 32 bit</value>
+  </data>
+  <data name="ProcessIsElevatedText" xml:space="preserve">
+    <value>Il processo è eseguito come amministratore</value>
+  </data>
+  <data name="ProcessIsInAJobText" xml:space="preserve">
+    <value>Il processo fa parte di un job</value>
+  </data>
+  <data name="ProcessLimiterAddLimitAlreadyExistsMessage" xml:space="preserve">
+    <value>Esiste già un limite con il valore indicato.</value>
+  </data>
+  <data name="ProcessLimiterAddLimitAlreadyExistsTitle" xml:space="preserve">
+    <value>Limite già esistente</value>
+  </data>
+  <data name="ProcessLimiterAddLimitErrorMessage" xml:space="preserve">
+    <value>Impossibile aggungere un nuovo limite.</value>
+  </data>
+  <data name="ProcessLimiterApplicationAlreadyLimitedErrorMessage" xml:space="preserve">
+    <value>L'applicazione è già stata limitata.</value>
+  </data>
+  <data name="ProcessLimiterApplicationAlreadyLimitedErrorTitle" xml:space="preserve">
+    <value>Applicazione già limitata</value>
+  </data>
+  <data name="ProcessLimiterLimitsEditErrorTitle" xml:space="preserve">
+    <value>Errore durante la modifica dei limiti</value>
+  </data>
+  <data name="ProcessLimiterPathSelectionDialogTitle" xml:space="preserve">
+    <value>Selezionare l'eseguibile del processo da limitare</value>
+  </data>
+  <data name="ProcessLimiterRemoveLimitErrorMessage" xml:space="preserve">
+    <value>Impossibile rimuovere il limite.</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowAddLimitButton" xml:space="preserve">
+    <value>Aggiungi limite</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowAddPathButton" xml:space="preserve">
+    <value>Aggiungi percorso</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowApplicationsLabel" xml:space="preserve">
+    <value>Applicazioni limitate</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowCpuLimitLabel" xml:space="preserve">
+    <value>Limiti CPU</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowRemoveLimitButton" xml:space="preserve">
+    <value>Rimuovi limite</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowRemovePathButton" xml:space="preserve">
+    <value>Rimuovi percorso</value>
+  </data>
+  <data name="ProcessLimiterSettingsWindowTitle" xml:space="preserve">
+    <value>Impostazioni limitatore processi</value>
+  </data>
+  <data name="ProcessMainMenuItem" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ProcessMainMenuItemShowLimiterSettings" xml:space="preserve">
+    <value>Impostazioni limitatore processi</value>
+  </data>
+  <data name="ProcessMainMenuItemStartLimitedProcess" xml:space="preserve">
+    <value>Avvia processo limitato</value>
+  </data>
+  <data name="ProcessMainMenuItemStartProcess" xml:space="preserve">
+    <value>Avvia processo</value>
+  </data>
+  <data name="ProcessMainMenuItemStartProcessAsUser" xml:space="preserve">
+    <value>Avvia processo come utente</value>
+  </data>
+  <data name="ProcessMainMenuListCurrentlyLimitedProcessesMenuItem" xml:space="preserve">
+    <value>Visualizza processi limitati in esecuzione</value>
+  </data>
+  <data name="ProcessMainMenuProcessLimiterMenuItem" xml:space="preserve">
+    <value>Limitatore processi</value>
+  </data>
+  <data name="ProcessNameHeader" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ProcessNameWindowProcessListLabel" xml:space="preserve">
+    <value>Oppure selezionare un processo tra quelli in esecuzione</value>
+  </data>
+  <data name="ProcessNameWindowProcessNameLabel" xml:space="preserve">
+    <value>Inserire il nome del processo</value>
+  </data>
+  <data name="ProcessNameWindowTitle" xml:space="preserve">
+    <value>Nome processo</value>
+  </data>
+  <data name="ProcessOpenFileDialogTitle" xml:space="preserve">
+    <value>Seleziona il programma da avviare</value>
+  </data>
+  <data name="ProcessPriorityAboveNormalText" xml:space="preserve">
+    <value>Sopra il normale</value>
+  </data>
+  <data name="ProcessPriorityBelowNormalText" xml:space="preserve">
+    <value>Sotto il normale</value>
+  </data>
+  <data name="ProcessPriorityHeader" xml:space="preserve">
+    <value>Priorità</value>
+  </data>
+  <data name="ProcessPriorityHighText" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="ProcessPriorityIdleText" xml:space="preserve">
+    <value>Inattivo</value>
+  </data>
+  <data name="ProcessPriorityLowText" xml:space="preserve">
+    <value>Bassa</value>
+  </data>
+  <data name="ProcessPriorityNormalText" xml:space="preserve">
+    <value>Normale</value>
+  </data>
+  <data name="ProcessPriorityRealTimeText" xml:space="preserve">
+    <value>Tempo reale</value>
+  </data>
+  <data name="ProcessPrivateMemoryHeader" xml:space="preserve">
+    <value>Memoria privata</value>
+  </data>
+  <data name="ProcessPropertiesErrorMessage" xml:space="preserve">
+    <value>Impossibile recuperare le proprietà del processo.</value>
+  </data>
+  <data name="ProcessPropertiesErrorTitle" xml:space="preserve">
+    <value>Impossibile completare l'operazione</value>
+  </data>
+  <data name="ProcessPropertiesModuleFilePropertiesContextMenuItem" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="ProcessPropertiesModuleLocationContextMenuItem" xml:space="preserve">
+    <value>Apri cartella</value>
+  </data>
+  <data name="ProcessPropertiesModulePropertiesContextMenuItem" xml:space="preserve">
+    <value>Informazioni intestazione PE</value>
+  </data>
+  <data name="ProcessPropertiesOpenFolderButtonTooltip" xml:space="preserve">
+    <value>Apri cartella eseguibile</value>
+  </data>
+  <data name="ProcessPropertiesPeHeaderInfoButtonTooltip" xml:space="preserve">
+    <value>Visualizza informazioni sull'intestazione PE</value>
+  </data>
+  <data name="ProcessPropertiesWindowBindingErrorText" xml:space="preserve">
+    <value>Errore durante il recupero dell'informazione.</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabCommandLineLabel" xml:space="preserve">
+    <value>Linea di comando:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabCurrentDirectoryLabel" xml:space="preserve">
+    <value>Directory corrente:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabDescriptionLabel" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabDetailsButton" xml:space="preserve">
+    <value>Dettagli</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabHeader" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabImageFilenameLabel" xml:space="preserve">
+    <value>Nome immagine:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabMitigationPoliciesLabel" xml:space="preserve">
+    <value>Mitigazione:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabParentLabel" xml:space="preserve">
+    <value>Processo padre:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabPEBAddressLabel" xml:space="preserve">
+    <value>Indirizzo del PEB:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabProtectionLabel" xml:space="preserve">
+    <value>Protezione:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabStartedLabel" xml:space="preserve">
+    <value>Avviato:</value>
+  </data>
+  <data name="ProcessPropertiesWindowGeneralTabVersionLabel" xml:space="preserve">
+    <value>Versione:</value>
+  </data>
+  <data name="ProcessPropertiesWindowHandleCloseMenuItem" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="ProcessPropertiesWindowHandlePropertiesMenuItem" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryDatagridChangeProtectionContextMenu" xml:space="preserve">
+    <value>Cambia protezione</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryDatagridDecommitMemoryContextMenu" xml:space="preserve">
+    <value>Annulla mappatura</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryDatagridFreeMemoryContextMenu" xml:space="preserve">
+    <value>Libera</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryTabCurrentProtectionHeader" xml:space="preserve">
+    <value>Protezione attuale</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryTabHeader" xml:space="preserve">
+    <value>Memoria</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryTabInitialProtectionHeader" xml:space="preserve">
+    <value>Protezione iniziale</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryTabStateHeader" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="ProcessPropertiesWindowMemoryTabTypeHeader" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="ProcessPropertiesWindowModulesTabBaseAddressHeader" xml:space="preserve">
+    <value>Indirizzo di base</value>
+  </data>
+  <data name="ProcessPropertiesWindowModulesTabHeader" xml:space="preserve">
+    <value>Moduli</value>
+  </data>
+  <data name="ProcessPropertiesWindowModulesTabSizeHeader" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceAllocatedBytesPerSecond" xml:space="preserve">
+    <value>Bytes allocati al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceAppdomainsRate" xml:space="preserve">
+    <value>Conteggio domini applicazione caricati al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceAssembliesRate" xml:space="preserve">
+    <value>Conteggio assembly caricati al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceBytesReceived" xml:space="preserve">
+    <value>Byte ricevuti</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceBytesSent" xml:space="preserve">
+    <value>Byte inviati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceCatchDepth" xml:space="preserve">
+    <value>Profondità catch</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceCCWsCount" xml:space="preserve">
+    <value>Conteggio CCW</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceClassesLoadedRate" xml:space="preserve">
+    <value>Conteggio classi caricate al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceConnectionsEstablished" xml:space="preserve">
+    <value>Connessioni stabilite</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceContentionRatePerSec" xml:space="preserve">
+    <value>Conteggio tentativi di acquisire un lock falliti</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceCurrentAppdomansCount" xml:space="preserve">
+    <value>Conteggio domini applicazione attualmente caricati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceCurrentAssembliesCount" xml:space="preserve">
+    <value>Conteggio assembly attualmente caricati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceCurrentClassesLoadedCount" xml:space="preserve">
+    <value>Conteggio classi attualmente caricate</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceCurrentQueueLength" xml:space="preserve">
+    <value>Lunghezza attuale della coda</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceDatagramsReceived" xml:space="preserve">
+    <value>Datagrammi ricevuti</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceDatagramsSent" xml:space="preserve">
+    <value>Datagrammi inviati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceExceptionsCount" xml:space="preserve">
+    <value>Conteggio eccezioni generate</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceExceptionsPerSec" xml:space="preserve">
+    <value>Conteggio eccezioni al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceFiltersPerSec" xml:space="preserve">
+    <value>Conteggio filtri al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceFinalizazionSurvivors" xml:space="preserve">
+    <value>Sopravvissuti alla finalizzazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceFinallysPerSec" xml:space="preserve">
+    <value>Conteggio blocchi finally al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGCHandles" xml:space="preserve">
+    <value>Conteggio handle del Garbage Collector</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen0Collections" xml:space="preserve">
+    <value>Conteggio pulizia generazione 0 dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen0HeapSize" xml:space="preserve">
+    <value>Dimensione dell'heap della generazione 0</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen0PromotedBytesPerSec" xml:space="preserve">
+    <value>Bytes promossi alla generazione 1 al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen1Collections" xml:space="preserve">
+    <value>Conteggio pulizia generazione 1 dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen1HeapSize" xml:space="preserve">
+    <value>Dimensione dell'heap della generazione 1</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen1PromotedBytesPerSec" xml:space="preserve">
+    <value>Bytes promossi alla generazione 2 al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen2Collections" xml:space="preserve">
+    <value>Conteggio pulizia generazione 2 dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceGen2HeapSize" xml:space="preserve">
+    <value>Dimensione dell'heap della generazione 2</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHeapsBytes" xml:space="preserve">
+    <value>Bytes in tutti gli heap</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHWRAbortedPerSec" xml:space="preserve">
+    <value>Oggetti HWR annullati al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHWRAverageLifetime" xml:space="preserve">
+    <value>Tempo medio di vita di oggetti HWR</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHWRAverageQueueTime" xml:space="preserve">
+    <value>Tempo medio nel quale gli oggetti HWR sono in coda</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHWRCreatedPerSec" xml:space="preserve">
+    <value>Oggetti HWR creati al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHWRFailedPerSec" xml:space="preserve">
+    <value>Oggetti HWR che hanno riscontrato un errore al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceHWRQueuedPerSec" xml:space="preserve">
+    <value>Oggetti HWR messi in coda al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceILBytesJittedCount" xml:space="preserve">
+    <value>Conteggio jitted IL bytes</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceILBytesJittedPerSec" xml:space="preserve">
+    <value>Jitted IL bytes al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceInducedGC" xml:space="preserve">
+    <value>Conteggio pulizia indotta</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceLargeObjectHeapSize" xml:space="preserve">
+    <value>Dimensione dell'heap per grandi oggetti</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceLinkTimeChecksCount" xml:space="preserve">
+    <value>Conteggio controlli a tempo di link</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceLoaderHeapBytes" xml:space="preserve">
+    <value>Conteggio byte dell'heap del caricatore</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceLoadFailuresRate" xml:space="preserve">
+    <value>Conteggio errori di caricamento al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceLoadFailuresTotalCount" xml:space="preserve">
+    <value>Conteggio totale errori di caricamento dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceLogicalThreadsCount" xml:space="preserve">
+    <value>Conteggio thread logici</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceMarshallingCount" xml:space="preserve">
+    <value>Conteggio marshalling</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceMethodsJittedCount" xml:space="preserve">
+    <value>Conteggio metodi jitted</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformancePhysicalThreadsCount" xml:space="preserve">
+    <value>Conteggio thread fisici</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformancePinnedObjectsCount" xml:space="preserve">
+    <value>Conteggio oggetti bloccati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformancePromotedFinalizationMemoryFromGen0" xml:space="preserve">
+    <value>Memoria promossa dalla generazione 0 sopravvissuta alla finalizzazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformancePromotedMemoryFromGen0" xml:space="preserve">
+    <value>Memoria promossa dalla generazione 0</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformancePromotedMemoryFromGen1" xml:space="preserve">
+    <value>Memoria promossa dalla generazione 1</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceQueueLengthPeak" xml:space="preserve">
+    <value>Massima lunghezza della coda</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceQueueLengthPerSec" xml:space="preserve">
+    <value>Lunghezza della coda al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceRecognizedThreadsCount" xml:space="preserve">
+    <value>Conteggio thread riconosciuti</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceRecognizedThreadsRatePerSec" xml:space="preserve">
+    <value>Numero di thread riconosciuti al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceStackWalkDepth" xml:space="preserve">
+    <value>Profondità dello stack</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceStandardJitFailures" xml:space="preserve">
+    <value>Errori JIT</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceStubsCount" xml:space="preserve">
+    <value>Conteggio stub</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceSyncBlocksInUseCount" xml:space="preserve">
+    <value>Conteggio blocchi di sincronizzazione in uso</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabCategoriesLabel" xml:space="preserve">
+    <value>Categorie:</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabCounterHeader" xml:space="preserve">
+    <value>Contatore</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabHeader" xml:space="preserve">
+    <value>Prestazioni .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetExceptionsCategory" xml:space="preserve">
+    <value>Eccezioni CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetInteropCategory" xml:space="preserve">
+    <value>Interoperabilità CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetJITCategory" xml:space="preserve">
+    <value>JIT CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetLoadingCategory" xml:space="preserve">
+    <value>Caricamento CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetLocksAndThreadsCategory" xml:space="preserve">
+    <value>LocksAndThreads CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetMemoryCategory" xml:space="preserve">
+    <value>Memoria CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetNetworkingCategory" xml:space="preserve">
+    <value>Rete CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabNetSecurityCategory" xml:space="preserve">
+    <value>Protezione CLR .NET</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTabValueHeader" xml:space="preserve">
+    <value>Valore</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTimeInGCPercentage" xml:space="preserve">
+    <value>Percentuale tempo in garbage collection</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTimeInJitPercentage" xml:space="preserve">
+    <value>Percentuale di tempo JIT</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTimeInRTChecksPercentage" xml:space="preserve">
+    <value>Percentuale di tempo passata a eseguire controlli a runtime</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalAppdomainsCount" xml:space="preserve">
+    <value>Conteggio totale dei domini applicazione caricati dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalAppdomainsUnloadedCount" xml:space="preserve">
+    <value>Conteggio totale dei domini applicazione scaricati dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalAssembliesCount" xml:space="preserve">
+    <value>Conteggio totale assembly caricati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalClassesLoadedCount" xml:space="preserve">
+    <value>Conteggio totale classi caricate dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalCommittedBytesCount" xml:space="preserve">
+    <value>Conteggio byte nel file di paging</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalContentionsCount" xml:space="preserve">
+    <value>Conteggio totale di acquisire un lock falliti</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalRecognizedThreadsCount" xml:space="preserve">
+    <value>Conteggio totale thread riconosciuti dall'avvio dell'applicazione</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalReservedBytesCount" xml:space="preserve">
+    <value>Conteggio byte riservati</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceTotalRuntimeChecks" xml:space="preserve">
+    <value>Conteggio totale di controlli a runtime</value>
+  </data>
+  <data name="ProcessPropertiesWindowNetPerformanceUnloadedAppdomainsRate" xml:space="preserve">
+    <value>Conteggio domini applicazione scaricati al secondo</value>
+  </data>
+  <data name="ProcessPropertiesWindowProcessGroupboxHeader" xml:space="preserve">
+    <value>Processo</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabCPUCyclesLabel" xml:space="preserve">
+    <value>Cicli</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabCPUKernelTimeLabel" xml:space="preserve">
+    <value>Tempo kernel</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabCPUPriorityLabel" xml:space="preserve">
+    <value>Priorità</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabCPUTotalTimeLabel" xml:space="preserve">
+    <value>Tempo totale</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabCPUUserTimeLabel" xml:space="preserve">
+    <value>Tempo utente</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabHeader" xml:space="preserve">
+    <value>Statistiche</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabMemoryGroupbox" xml:space="preserve">
+    <value>Memoria</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabOtherBytesLabel" xml:space="preserve">
+    <value>Altri byte</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabOtherLabel" xml:space="preserve">
+    <value>Altro</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabPeakPrivateBytesLabel" xml:space="preserve">
+    <value>Massimi byte privati</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabPeakVirtualSizeLabel" xml:space="preserve">
+    <value>Massimi byte virtuali</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabPeakWorkingSetLabel" xml:space="preserve">
+    <value>Massimo working set</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabPrivateBytesLabel" xml:space="preserve">
+    <value>Byte privati</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabReadBytesLabel" xml:space="preserve">
+    <value>Byte letti</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabReadsLabel" xml:space="preserve">
+    <value>Letture</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabVirtualSizeLabel" xml:space="preserve">
+    <value>Byte virtuali</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabWriteBytesLabel" xml:space="preserve">
+    <value>Byte scritti</value>
+  </data>
+  <data name="ProcessPropertiesWindowStatisticsTabWritesLabel" xml:space="preserve">
+    <value>Scritture</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadAffinityContextMenuOption" xml:space="preserve">
+    <value>Affinità</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityAboveNormalOption" xml:space="preserve">
+    <value>Sopra il normale</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityBelowNormalOption" xml:space="preserve">
+    <value>Sotto al normale</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityContextMenuOption" xml:space="preserve">
+    <value>Priorità</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityHighOption" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityIdleOption" xml:space="preserve">
+    <value>Inattivo</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityLowOption" xml:space="preserve">
+    <value>Bassa</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityNormalOption" xml:space="preserve">
+    <value>Normale</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadPriorityTimeCriticalOption" xml:space="preserve">
+    <value>Critica</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadResumeContextMenuOption" xml:space="preserve">
+    <value>Riprendi thread</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadSuspendContextMenuOption" xml:space="preserve">
+    <value>Sospendi thread</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabBasePriorityLabel" xml:space="preserve">
+    <value>Priorità base:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabCyclesLabel" xml:space="preserve">
+    <value>Cicli:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabDynamicPriorityLabel" xml:space="preserve">
+    <value>Priorità dinamica:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabIdealProcessorLabel" xml:space="preserve">
+    <value>Processore ideale:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabKernelTimeLabel" xml:space="preserve">
+    <value>Tempo kernel:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabPriorityHeader" xml:space="preserve">
+    <value>Priorità</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabStartAddressHeader" xml:space="preserve">
+    <value>Indirizzo di partenza</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabStartedLabel" xml:space="preserve">
+    <value>Data di creazione:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabStateLabel" xml:space="preserve">
+    <value>Stato:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTabUserTimeLabel" xml:space="preserve">
+    <value>Tempo utente:</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadTerminateContextMenuOption" xml:space="preserve">
+    <value>Termina thread</value>
+  </data>
+  <data name="ProcessPropertiesWindowThreadWindowsContextMenuOption" xml:space="preserve">
+    <value>Finestre</value>
+  </data>
+  <data name="ProcessPropertiesWindowTitle" xml:space="preserve">
+    <value>Proprietà processo</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabAdvancedDetailsButton" xml:space="preserve">
+    <value>Avanzato</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabDisablePrivilegeMenuItem" xml:space="preserve">
+    <value>Disabilita</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabElevatedLabel" xml:space="preserve">
+    <value>Elevazione:</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabEnablePrivilegeMenuItem" xml:space="preserve">
+    <value>Abilita</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabGroupFlagsHeader" xml:space="preserve">
+    <value>Caratteristiche</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabGroupNameHeader" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabPrivilegeDescriptionHeader" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabPrivilegeStatusHeader" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabRemovePrivilegeMenuItem" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabSessionLabel" xml:space="preserve">
+    <value>Session:</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabUserLabel" xml:space="preserve">
+    <value>Utente:</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabUserSIDLabel" xml:space="preserve">
+    <value>SID utente:</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabVirtualizationAllowedLabel" xml:space="preserve">
+    <value>Virtualizzazione permessa:</value>
+  </data>
+  <data name="ProcessPropertiesWindowTokenTabVirtualizationEnabledLabel" xml:space="preserve">
+    <value>Virtualizzazione abilitata:</value>
+  </data>
+  <data name="ProcessRulesWatchdogSettingsWindowTitle" xml:space="preserve">
+    <value>Regole watchdog processi</value>
+  </data>
+  <data name="ProcessStartDateTimeHeader" xml:space="preserve">
+    <value>Data e ora di avvio</value>
+  </data>
+  <data name="ProcessTerminationFailedMessage" xml:space="preserve">
+    <value>Impossibile terminare il processo oppure il processo è di sistema e non può essere terminato.
+
+Questa azione non può essere eseguita sul processo corrente.</value>
+  </data>
+  <data name="ProcessTerminationFailedTitle" xml:space="preserve">
+    <value>Impossibile terminare il processo</value>
+  </data>
+  <data name="ProcessTerminationWarningMessage" xml:space="preserve">
+    <value>Il processo è terminato, la finestra verrà chiusa.</value>
+  </data>
+  <data name="ProcessTerminationWarningTitle" xml:space="preserve">
+    <value>Processo terminato</value>
+  </data>
+  <data name="ProcessTreeTerminationFailedMessage" xml:space="preserve">
+    <value>Impossibile terminare il processo padre o uno dei suoi figli.
+
+Questa azione non può essere eseguita sul processo corrente.</value>
+  </data>
+  <data name="ProcessWindowsInfoDatagridClassNameColumn" xml:space="preserve">
+    <value>Classe</value>
+  </data>
+  <data name="ProcessWindowsInfoDatagridHandleValueColumn" xml:space="preserve">
+    <value>Handle</value>
+  </data>
+  <data name="ProcessWindowsInfoDatagridTextColumn" xml:space="preserve">
+    <value>Titolo o contenuto</value>
+  </data>
+  <data name="ProcessWindowsInfoDatagridThreadColumn" xml:space="preserve">
+    <value>Thread</value>
+  </data>
+  <data name="ProcessWindowsInfoWindowTitle" xml:space="preserve">
+    <value>Finestre</value>
+  </data>
+  <data name="RebootText" xml:space="preserve">
+    <value>Riavvio del computer</value>
+  </data>
+  <data name="RefreshButtonText" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="RefreshDataCommandText" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="ReleaseSemaphoreErrorMessage" xml:space="preserve">
+    <value>Errore durante il rilascio del semaforo.</value>
+  </data>
+  <data name="ReleaseSemaphoreErrorTitle" xml:space="preserve">
+    <value>Semaforo non rilasciato</value>
+  </data>
+  <data name="RemoveLimitProcessesRunningWarningMessage" xml:space="preserve">
+    <value>Il limite è stato rimosso ma esistono dei processi in esecuzione associati ad esso, questi resteranno limitati fino al loro termine.</value>
+  </data>
+  <data name="RemoveLimitProcessesRunningWarningTitle" xml:space="preserve">
+    <value>Limite rimosso</value>
+  </data>
+  <data name="RestartServiceText" xml:space="preserve">
+    <value>Riavvio del servizio</value>
+  </data>
+  <data name="RestartSystemErrorMessage" xml:space="preserve">
+    <value>Impossibile iniziare la procedura di riavvio del sistema.</value>
+  </data>
+  <data name="RestartSystemErrorTitle" xml:space="preserve">
+    <value>Errore durante il riavvio del sistema</value>
+  </data>
+  <data name="RestrictedText" xml:space="preserve">
+    <value>Limitato</value>
+  </data>
+  <data name="ResumeThreadErrorMessageText" xml:space="preserve">
+    <value>Impossibile riprendere l'esecuzione del thread.</value>
+  </data>
+  <data name="ResumeThreadErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile riprendere l'esecuzione del thread</value>
+  </data>
+  <data name="RunCommandText" xml:space="preserve">
+    <value>Esegui un comando</value>
+  </data>
+  <data name="SafeModeDisablementMessage" xml:space="preserve">
+    <value>Disattivando la modalità sicura non verrà eseguito più alcun controllo se si tenta di eseguire azioni su processi di sistema, se un processo di sistema termina in modo imprevisto il sistema operativo potrebbe risentirne.
+
+Avviso: anche con la modalità sicura disattivata il sistema operativo potrebbe comunque bloccare l'operazione in corso.
+
+Continuare?</value>
+  </data>
+  <data name="SafeModeDisablementTitle" xml:space="preserve">
+    <value>Disattivazione modalità sicura</value>
+  </data>
+  <data name="SaturdayText" xml:space="preserve">
+    <value>Sabato</value>
+  </data>
+  <data name="SectionInfoWindowAttributesLabel" xml:space="preserve">
+    <value>Attributi:</value>
+  </data>
+  <data name="SectionInfoWindowBasicInfoGroupbox" xml:space="preserve">
+    <value>Informazioni base</value>
+  </data>
+  <data name="SectionInfoWindowDllCharacteristicsLabel" xml:space="preserve">
+    <value>Caratteristiche DLL:</value>
+  </data>
+  <data name="SectionInfoWindowEntryPointLabel" xml:space="preserve">
+    <value>Punto di entrata:</value>
+  </data>
+  <data name="SectionInfoWindowImageInfoGroupbox" xml:space="preserve">
+    <value>Informazioni immagine</value>
+  </data>
+  <data name="SectionInfoWindowImageSubsystemLabel" xml:space="preserve">
+    <value>Sottosistema:</value>
+  </data>
+  <data name="SectionInfoWindowMachineTypeLabel" xml:space="preserve">
+    <value>Tipo macchina:</value>
+  </data>
+  <data name="SectionInfoWindowSizeLabel" xml:space="preserve">
+    <value>Dimensione:</value>
+  </data>
+  <data name="SectionInfoWindowStackCommitLabel" xml:space="preserve">
+    <value>Dimensione iniziale dello stack (bytes):</value>
+  </data>
+  <data name="SectionInfoWindowStackReservedLabel" xml:space="preserve">
+    <value>Dimensione totale dello stack (bytes):</value>
+  </data>
+  <data name="SectionInfoWindowStackZeroBitsLabel" xml:space="preserve">
+    <value>Numero bit con valore 0:</value>
+  </data>
+  <data name="SectionInfoWindowSubsystemVersionLabel" xml:space="preserve">
+    <value>Versione sottosistema:</value>
+  </data>
+  <data name="SectionInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali sezione</value>
+  </data>
+  <data name="SelectLimitWindowSelectLimitLabel" xml:space="preserve">
+    <value>Seleziona il limite di utilizzo CPU:</value>
+  </data>
+  <data name="SelectLimitWindowTitle" xml:space="preserve">
+    <value>Seleziona limite</value>
+  </data>
+  <data name="SemaphoreInfoWindowAcquireButtonText" xml:space="preserve">
+    <value>Acquisisci semaforo</value>
+  </data>
+  <data name="SemaphoreInfoWindowCurrentCountLabel" xml:space="preserve">
+    <value>Conteggio attuale:</value>
+  </data>
+  <data name="SemaphoreInfoWindowMaximumCountLabel" xml:space="preserve">
+    <value>Conteggio massimo:</value>
+  </data>
+  <data name="SemaphoreInfoWindowReleaseButtonText" xml:space="preserve">
+    <value>Rilascia semaforo</value>
+  </data>
+  <data name="SemaphoreInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali semaforo</value>
+  </data>
+  <data name="ServiceAddedToastText" xml:space="preserve">
+    <value>Servizio creato</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowDependenciesLabel" xml:space="preserve">
+    <value>Dipendenze:</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowErrorControlModeLabel" xml:space="preserve">
+    <value>Modalità gestione errori:</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowLoadOrderGroupLabel" xml:space="preserve">
+    <value>Gruppo di caricamento:</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowShowOtherConfigurationInfoButtonText" xml:space="preserve">
+    <value>Mostra altre informazioni</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowStartNameLabel" xml:space="preserve">
+    <value>Account utente:</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowStartTypeLabel" xml:space="preserve">
+    <value>Modalità di avvio:</value>
+  </data>
+  <data name="ServiceConfigurationInfoWindowTypeLabel" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowCommandLabel" xml:space="preserve">
+    <value>Linea di comando:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowDelayColumn" xml:space="preserve">
+    <value>Tempo di attesa (millisecondi)</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowDelayedAutostartLabel" xml:space="preserve">
+    <value>Avvio ritardato:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowFailureActionsDatagridTypeColumn" xml:space="preserve">
+    <value>Tipo azione</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowFailureActionsFlagLabel" xml:space="preserve">
+    <value>Azioni in caso di crash eseguite in altre occasioni:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowFailureActionsGroupBoxHeader" xml:space="preserve">
+    <value>Azioni in caso di crash</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowLaunchProtectedLabel" xml:space="preserve">
+    <value>Protezione:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowPreferredNodeLabel" xml:space="preserve">
+    <value>Nodo preferito:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowPreshutdownTimeoutLabel" xml:space="preserve">
+    <value>Timeout pre-spegnimento (millisecondi):</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowRebootMessageLabel" xml:space="preserve">
+    <value>Messaggio di riavvio:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowRequiredPrivilegesLabel" xml:space="preserve">
+    <value>Privilegi richiesti:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowResetPeriodLabel" xml:space="preserve">
+    <value>Tempo di reset:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowSidTypeLabel" xml:space="preserve">
+    <value>Tipo SID:</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowTitle" xml:space="preserve">
+    <value>Configurazione opzionale servizio</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowTriggersDatagridActionColumn" xml:space="preserve">
+    <value>Azione</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowTriggersDatagridTriggerSubtypeColumn" xml:space="preserve">
+    <value>Sottotipo trigger</value>
+  </data>
+  <data name="ServiceConfigurationOptionalInfoWindowTriggersDatagridTriggerTypeColumn" xml:space="preserve">
+    <value>Tipo trigger</value>
+  </data>
+  <data name="ServiceControlCodesHardwareProfileChange" xml:space="preserve">
+    <value>Cambio profilo hardware</value>
+  </data>
+  <data name="ServiceControlCodesNetBindChange" xml:space="preserve">
+    <value>Cambio di rete</value>
+  </data>
+  <data name="ServiceControlCodesParamChange" xml:space="preserve">
+    <value>Cambio parametri</value>
+  </data>
+  <data name="ServiceControlCodesPauseContinue" xml:space="preserve">
+    <value>Pausa e ripresa</value>
+  </data>
+  <data name="ServiceControlCodesPowerEvent" xml:space="preserve">
+    <value>Cambio stato energetico</value>
+  </data>
+  <data name="ServiceControlCodesPreshutdown" xml:space="preserve">
+    <value>Operazioni prespegnimento</value>
+  </data>
+  <data name="ServiceControlCodesSessionChange" xml:space="preserve">
+    <value>Cambio stato sessione</value>
+  </data>
+  <data name="ServiceControlCodesShutdown" xml:space="preserve">
+    <value>Operazioni durante lo spegnimento</value>
+  </data>
+  <data name="ServiceControlCodesStop" xml:space="preserve">
+    <value>Arresto</value>
+  </data>
+  <data name="ServiceErrorControlCriticalText" xml:space="preserve">
+    <value>Errore critico</value>
+  </data>
+  <data name="ServiceErrorControlIgnoreText" xml:space="preserve">
+    <value>Errore ignorato</value>
+  </data>
+  <data name="ServiceErrorControlNormalText" xml:space="preserve">
+    <value>Errore normale</value>
+  </data>
+  <data name="ServiceErrorControlSevereText" xml:space="preserve">
+    <value>Errore grave</value>
+  </data>
+  <data name="ServiceMonitoringStartErrorMessage" xml:space="preserve">
+    <value>Impossibile avviare il monitoraggio del servizio.</value>
+  </data>
+  <data name="ServiceMonitoringStartErrorTitle" xml:space="preserve">
+    <value>Monitoraggio non avviato</value>
+  </data>
+  <data name="ServiceMonitoringStopErrorMessage" xml:space="preserve">
+    <value>Impossibile arrestare il monitoraggio del servizio.</value>
+  </data>
+  <data name="ServiceMonitoringStopErrorTitle" xml:space="preserve">
+    <value>Monitoraggio ancora in corso</value>
+  </data>
+  <data name="ServiceMonitoringUnavailableErrorMessage" xml:space="preserve">
+    <value>Monitoraggio servizi non disponibile, errore durante l'inizializzazione del componente dedicato.</value>
+  </data>
+  <data name="ServiceMonitoringUnavailableErrorTitle" xml:space="preserve">
+    <value>Monitoraggio non disponibile</value>
+  </data>
+  <data name="ServiceNotificationsReasonsWindowTitle" xml:space="preserve">
+    <value>Notifiche servizi</value>
+  </data>
+  <data name="ServicePausedToastText" xml:space="preserve">
+    <value>Servizio in pausa</value>
+  </data>
+  <data name="ServiceRemovedToastText" xml:space="preserve">
+    <value>Servizio eliminato</value>
+  </data>
+  <data name="ServiceRunningText" xml:space="preserve">
+    <value>In esecuzione</value>
+  </data>
+  <data name="ServicesConfigurationInfoWindowTitle" xml:space="preserve">
+    <value>Configurazione servizio</value>
+  </data>
+  <data name="ServicesControlCodesHelpText" xml:space="preserve">
+    <value>I seguenti sono i comandi accettabili dai servizi:
+
+SERVICE_ACCEPT_NETBINDCHANGE: il servizio accetta cambiamenti nei suoi binding di rete senza riavviarsi
+SERVICE_ACCEPT_PARAMCHANGE: il servizio può leggere nuovamente i suoi parametri di avvio senza riavviarsi
+SERVICE_ACCEPT_PAUSE_CONTINUE: il servizio può essere messo in pausa o la sua attività può essere ripresa
+SERVICE_ACCEPT_PRESHUTDOWN: il servizio può eseguire operazioni pre-spegnimento
+SERVICE_ACCEPT_SHUTDOWN: il servizio è notificato quando l'arresto del sistema è in corso
+SERVICE_ACCEPT_STOP: il servizio può essere arrestato
+SERVICE_ACCEPT_HARDWAREPROFILECHANGE: il servizio è notificato quando il profilo hardware del computer cambia
+SERVICE_ACCEPT_POWEREVENT: il servizio è notificato quando lo stato energetico del computer cambia
+SERVICE_ACCEPT_SESSIONCHANGE: il servizio è notificato quando lo stato della sessione cambia
+SERVICE_ACCEPT_TIMECHANGE: l'ora di sistema è cambiata
+SERVICE_ACCEPT_TRIGGER_EVENT
+SERVICE_ACCEPT_USER_LOGOFF: disconnessione utente
+SERVICE_ACCEPT_LOWRESOURCES: poche risorse disponibili
+SERVICE_ACCEPT_SYSTEM_LOW_RESOURCES: basse risorse di sistema</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridContextMenuListenForServiceEvents" xml:space="preserve">
+    <value>Monitora stato del servizio</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridContextMenuShowServiceConfigurationMenuItemText" xml:space="preserve">
+    <value>Mostra configurazione del servizio</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridContextMenuShowServiceStatusInfoMenuItemText" xml:space="preserve">
+    <value>Mostra stato del servizio</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridContextMenuStopListeningForServiceEventsMenuItem" xml:space="preserve">
+    <value>Interrompi monitoraggio del servizio</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridDescriptionColumn" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridDisplayNameColumn" xml:space="preserve">
+    <value>Nome descrittivo</value>
+  </data>
+  <data name="ServicesInfoWindowServicesDatagridNameColumn" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="ServicesInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni servizi</value>
+  </data>
+  <data name="ServicesListWindowServicesInfoDatagridMonitoredColumnHeader" xml:space="preserve">
+    <value>Controllo attivo</value>
+  </data>
+  <data name="ServicesListWindowTitle" xml:space="preserve">
+    <value>Lista servizi</value>
+  </data>
+  <data name="ServicesStatusInfoWindowTitle" xml:space="preserve">
+    <value>Stato servizio</value>
+  </data>
+  <data name="ServiceStartedToastText" xml:space="preserve">
+    <value>Servizio avviato</value>
+  </data>
+  <data name="ServiceStartPendingText" xml:space="preserve">
+    <value>In avvio</value>
+  </data>
+  <data name="ServiceStartText" xml:space="preserve">
+    <value>Avvio del servizio</value>
+  </data>
+  <data name="ServiceStartTypeAutoStartText" xml:space="preserve">
+    <value>Avvio automatico</value>
+  </data>
+  <data name="ServiceStartTypeDemandStartText" xml:space="preserve">
+    <value>Avvio su richiesta</value>
+  </data>
+  <data name="ServiceStartTypeDisabledText" xml:space="preserve">
+    <value>Disabilitato</value>
+  </data>
+  <data name="ServiceStateContinuePendingText" xml:space="preserve">
+    <value>In ripresa</value>
+  </data>
+  <data name="ServiceStatePausedText" xml:space="preserve">
+    <value>In pausa</value>
+  </data>
+  <data name="ServiceStatePausePendingText" xml:space="preserve">
+    <value>In corso di pausa</value>
+  </data>
+  <data name="ServiceStatusInfoWindowControlsAcceptedLabel" xml:space="preserve">
+    <value>Comandi accettati:</value>
+  </data>
+  <data name="ServiceStatusInfoWindowCurrentStateLabel" xml:space="preserve">
+    <value>Stato:</value>
+  </data>
+  <data name="ServiceStatusInfoWindowServiceFlagsLabel" xml:space="preserve">
+    <value>Servizio di sistema:</value>
+  </data>
+  <data name="ServiceStoppedText" xml:space="preserve">
+    <value>Non in esecuzione</value>
+  </data>
+  <data name="ServiceStoppedToastText" xml:space="preserve">
+    <value>Servizio arrestato</value>
+  </data>
+  <data name="ServiceStopPendingText" xml:space="preserve">
+    <value>In arresto</value>
+  </data>
+  <data name="ServiceStopText" xml:space="preserve">
+    <value>Arresto del servizio</value>
+  </data>
+  <data name="ServiceTriggerSubTypeCustomText" xml:space="preserve">
+    <value>Peronalizzato</value>
+  </data>
+  <data name="ServiceTriggerSubTypeDomainJoinText" xml:space="preserve">
+    <value>Unione a un dominio</value>
+  </data>
+  <data name="ServiceTriggerSubTypeDomainLeaveText" xml:space="preserve">
+    <value>Disconnessione da un dominio</value>
+  </data>
+  <data name="ServiceTriggerSubTypeFirewallPortCloseText" xml:space="preserve">
+    <value>Chiusura porta firewall</value>
+  </data>
+  <data name="ServiceTriggerSubTypeFirewallPortOpenText" xml:space="preserve">
+    <value>Apertura porta firewall</value>
+  </data>
+  <data name="ServiceTriggerSubTypeFirstIPAvailableText" xml:space="preserve">
+    <value>Primo indirizzo IP nello stack disponibile</value>
+  </data>
+  <data name="ServiceTriggerSubTypeLastIPUnavailableText" xml:space="preserve">
+    <value>Ultimo indirizzo IP nello stack non disponibile</value>
+  </data>
+  <data name="ServiceTriggerSubTypeNetworkEndpointNamedPipeText" xml:space="preserve">
+    <value>Richiesta ricevuta da una named pipe</value>
+  </data>
+  <data name="ServiceTriggerSubTypeNetworkEndpointRPCInterfaceText" xml:space="preserve">
+    <value>Richiesta ricevuta da interfaccia RPC</value>
+  </data>
+  <data name="ServiceTriggerSubTypeSystemPolicyChangeText" xml:space="preserve">
+    <value>Modifica criteri di gruppo di sistema</value>
+  </data>
+  <data name="ServiceTriggerSubTypeUserPolicyChangeText" xml:space="preserve">
+    <value>Modifica criteri di gruppo utente</value>
+  </data>
+  <data name="ServiceTriggerTypeCustom" xml:space="preserve">
+    <value>Personalizzato</value>
+  </data>
+  <data name="ServiceTriggerTypeDeviceInterfaceArrival" xml:space="preserve">
+    <value>Connessione di un dispositivo</value>
+  </data>
+  <data name="ServiceTriggerTypeDomainJoin" xml:space="preserve">
+    <value>Unione a o disconnessione da un dominio</value>
+  </data>
+  <data name="ServiceTriggerTypeFirewallPort" xml:space="preserve">
+    <value>Apertura o chiusura di un porta del firewall</value>
+  </data>
+  <data name="ServiceTriggerTypeGroupPolicy" xml:space="preserve">
+    <value>Cambiamento dei criteri di gruppo del dispositivo</value>
+  </data>
+  <data name="ServiceTriggerTypeIPAddressAvailability" xml:space="preserve">
+    <value>Cambio disponibilità indirizzo IP</value>
+  </data>
+  <data name="ServiceTriggerTypeNetworkEndpoint" xml:space="preserve">
+    <value>Arrivo di un pacchetto o di una richiesta su un protocollo di rete</value>
+  </data>
+  <data name="SettingsWindowAllowProcessMemoryManipulationCheckboxText" xml:space="preserve">
+    <value>Modifica stato memoria permesso</value>
+  </data>
+  <data name="SettingsWindowAutomaticUpdatesCheckCheckboxText" xml:space="preserve">
+    <value>Controlla automaticamente gli aggiornamenti</value>
+  </data>
+  <data name="SettingsWindowDataSourceLabel" xml:space="preserve">
+    <value>Fonte dei dati</value>
+  </data>
+  <data name="SettingsWindowForceCurrentSessionLogoffOnShutdownCheckboxText" xml:space="preserve">
+    <value>Forza la disconnessione dell'utente corrente durante lo spegnimento</value>
+  </data>
+  <data name="SettingsWindowForceLogoffIfHungCheckboxText" xml:space="preserve">
+    <value>Forza la chiusura delle applicazioni se non rispondono durante la disconnessione</value>
+  </data>
+  <data name="SettingsWindowForceOtherSessionsLogoffOnShutdownCheckboxText" xml:space="preserve">
+    <value>Forza la disconnessione degli altri utenti durante lo spegnimento</value>
+  </data>
+  <data name="SettingsWindowGeneralGroupboxText" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="SettingsWindowGeneralTabText" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="SettingsWindowInstallUpdatesBeforeShutdownCheckboxText" xml:space="preserve">
+    <value>Installa gli aggiornamenti prima dello spegnimento</value>
+  </data>
+  <data name="SettingsWindowKeepOldLogsCheckboxText" xml:space="preserve">
+    <value>Conserva i vecchi log</value>
+  </data>
+  <data name="SettingsWindowLoggingLevelLabel" xml:space="preserve">
+    <value>Livello log:</value>
+  </data>
+  <data name="SettingsWindowLogProgramActivityCheckboxText" xml:space="preserve">
+    <value>Logging abilitato</value>
+  </data>
+  <data name="SettingsWindowLogsPathLabel" xml:space="preserve">
+    <value>Percorso log:</value>
+  </data>
+  <data name="SettingsWindowManualPowerDownCheckboxText" xml:space="preserve">
+    <value>Spegnimento manuale</value>
+  </data>
+  <data name="SettingsWindowMaxLogSizeLabel" xml:space="preserve">
+    <value>Dimensiona massima log:</value>
+  </data>
+  <data name="SettingsWindowProcessUpdateRateLabel" xml:space="preserve">
+    <value>Tempo di aggiornamento dati:</value>
+  </data>
+  <data name="SettingsWindowProcessUpdateRateMillisecondsLabel" xml:space="preserve">
+    <value>(in millisecondi)</value>
+  </data>
+  <data name="SettingsWindowRestartAfterUpdateCheckboxText" xml:space="preserve">
+    <value>Riavvia l'applicazione dopo l'aggiornamento</value>
+  </data>
+  <data name="SettingsWindowSafeModeCheckboxText" xml:space="preserve">
+    <value>Modalità sicura</value>
+  </data>
+  <data name="SettingsWindowServiceMonitoringCheckboxText" xml:space="preserve">
+    <value>Monitoraggio servizi abilitato</value>
+  </data>
+  <data name="SettingsWindowShutdownLogoffGroupboxText" xml:space="preserve">
+    <value>Spegnimento / disconnessione</value>
+  </data>
+  <data name="SettingsWindowTitle" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="SettingsWindowUpdateCheckRateLabel" xml:space="preserve">
+    <value>Frequenza di controllo aggiornamenti:</value>
+  </data>
+  <data name="SettingsWindowUpdateDayOfWeekLabel" xml:space="preserve">
+    <value>Giorno:</value>
+  </data>
+  <data name="SettingsWindowUpdateDownloadAfterConfirmationCheckboxText" xml:space="preserve">
+    <value>Chiedi conferma prima di scaricare gli aggiornamenti</value>
+  </data>
+  <data name="SettingsWindowUpdateDownloadCompleteNotificationsCheckboxText" xml:space="preserve">
+    <value>Notifica quando il download è completato</value>
+  </data>
+  <data name="SettingsWindowUpdateDownloadOnlyCheckboxText" xml:space="preserve">
+    <value>Scarica senza installare</value>
+  </data>
+  <data name="SettingsWindowUpdateHourLabel" xml:space="preserve">
+    <value>Ora di aggiornamento:</value>
+  </data>
+  <data name="SettingsWindowUpdateInstallAfterConfirmationCheckboxText" xml:space="preserve">
+    <value>Chiedi conferma prima di iniziare l'installazione</value>
+  </data>
+  <data name="SettingsWindowUpdateInstallStartedNotificationsCheckboxText" xml:space="preserve">
+    <value>Notifica quando l'installazione sta per iniziare</value>
+  </data>
+  <data name="SettingsWindowUpdateTabText" xml:space="preserve">
+    <value>Aggiornamento</value>
+  </data>
+  <data name="SetWorkingSetSizeErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile cambiare i limiti di dimensione del working set del processo, si è verifica un errore durante l'operazione.</value>
+  </data>
+  <data name="SetWorkingSetSizeErrorTitle" xml:space="preserve">
+    <value>Impossibile cambiare i limiti del working set</value>
+  </data>
+  <data name="ShutdownSystemErrorMessage" xml:space="preserve">
+    <value>Impossibile iniziare la procedura di arresto del sistema.</value>
+  </data>
+  <data name="ShutdownSystemErrorTitle" xml:space="preserve">
+    <value>Errore durante l'arresto del sistema</value>
+  </data>
+  <data name="SleepMachineErrorMessage" xml:space="preserve">
+    <value>Impossibile iniziare la procedura di sospensione del computer.</value>
+  </data>
+  <data name="SleepMachineErrorTitle" xml:space="preserve">
+    <value>Errore durante la sospensione del computer</value>
+  </data>
+  <data name="SMBIOSCacheConfigurationLocationExternal" xml:space="preserve">
+    <value>Esterna</value>
+  </data>
+  <data name="SMBIOSCacheConfigurationLocationInternal" xml:space="preserve">
+    <value>Interna</value>
+  </data>
+  <data name="SMBIOSCacheConfigurationOperationalModeVariesWithMemoryAddress" xml:space="preserve">
+    <value>Cambia in base all'indirizzo di memoria</value>
+  </data>
+  <data name="SMBIOSProcessorSocketStatusBIOSDisabled" xml:space="preserve">
+    <value>Disattivato dal BIOS</value>
+  </data>
+  <data name="SMBIOSProcessorSocketStatusPopulated" xml:space="preserve">
+    <value>Occupato</value>
+  </data>
+  <data name="SMBIOSProcessorSocketStatusUnpopulated" xml:space="preserve">
+    <value>Non occupato</value>
+  </data>
+  <data name="SMBIOSProcessorSocketStatusUserDisabled" xml:space="preserve">
+    <value>Disattivato dall'utente</value>
+  </data>
+  <data name="StartLimitedProcessJobAddNotTerminatedErrorMessage" xml:space="preserve">
+    <value>Processo avviato, ma non è stato possibile limitare l'utilizzo della CPU.</value>
+  </data>
+  <data name="StartLimitedProcessJobAddTerminatedErrorMessage" xml:space="preserve">
+    <value>Processo non avviato, non è stato possibile limitare l'utilizzo della CPU.
+Il processo è stato terminato.</value>
+  </data>
+  <data name="StartLimitedProcessNotResumedNotTerminatedErrorMessage" xml:space="preserve">
+    <value>Il processo è in stato sospeso, un errore ha impedito il completamento dell'avvio.
+Non è stato possibile terminare il processo, necessaria terminazione manuale.</value>
+  </data>
+  <data name="StartLimitedProcessNotResumedTerminatedErrorMessage" xml:space="preserve">
+    <value>Il processo non è stato avviato a causa di un errore.
+Il processo è stato terminato.</value>
+  </data>
+  <data name="StartProcessFailureErrorMessage" xml:space="preserve">
+    <value>Impossibile avviare il  processo.</value>
+  </data>
+  <data name="StartProcessFailureErrorTitle" xml:space="preserve">
+    <value>Avvio non riuscito</value>
+  </data>
+  <data name="SundayText" xml:space="preserve">
+    <value>Domenica</value>
+  </data>
+  <data name="SuspendThreadErrorMessageText" xml:space="preserve">
+    <value>Impossibile sospendere il thread.
+
+I thread appartenenti a processi di sistema o al processo corrente non possono essere sospesi.</value>
+  </data>
+  <data name="SuspendThreadErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile sospendere il thread</value>
+  </data>
+  <data name="SystemErrorUserEnumAccessDeniedText" xml:space="preserve">
+    <value>L'utente non ha accesso all'informazione richiesta</value>
+  </data>
+  <data name="SystemErrorUserEnumBufferToSmallText" xml:space="preserve">
+    <value>Il buffer è troppo piccolo</value>
+  </data>
+  <data name="SystemErrorUserEnumDCNotFoundText" xml:space="preserve">
+    <value>Controller di dominio non trovato</value>
+  </data>
+  <data name="SystemErrorUserEnumInsufficientMemoryText" xml:space="preserve">
+    <value>Memoria insufficiente</value>
+  </data>
+  <data name="SystemErrorUserEnumInvalidComputerText" xml:space="preserve">
+    <value>Nome del computer non valido</value>
+  </data>
+  <data name="SystemErrorUserEnumInvalidLevelText" xml:space="preserve">
+    <value>Livello della system call non corretto</value>
+  </data>
+  <data name="SystemErrorUserEnumInvalidParameterText" xml:space="preserve">
+    <value>Parametro non corretto</value>
+  </data>
+  <data name="SystemErrorUserEnumRPCServerUnavailableText" xml:space="preserve">
+    <value>Server RPC non disponibile</value>
+  </data>
+  <data name="SystemErrorUserEnumUserNotFoundText" xml:space="preserve">
+    <value>Utente non trovato</value>
+  </data>
+  <data name="SystemMemoryUsageText" xml:space="preserve">
+    <value>Utilizzo memoria: </value>
+  </data>
+  <data name="TerminateThreadErrorMessageText" xml:space="preserve">
+    <value>Impossibile terminare il thread.
+
+I thread appartenenti a processi di sistema o al processo corrente non possono essere terminati.</value>
+  </data>
+  <data name="TerminateThreadErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile terminare il thread</value>
+  </data>
+  <data name="ThursdayText" xml:space="preserve">
+    <value>Giovedì</value>
+  </data>
+  <data name="TimerInfoWindowRemainingTimeLabel" xml:space="preserve">
+    <value>Tempo rimanente:</value>
+  </data>
+  <data name="TimerInfoWindowStateLabel" xml:space="preserve">
+    <value>Segnalato:</value>
+  </data>
+  <data name="TimerInfoWindowTimeSinceLastSignalLabel" xml:space="preserve">
+    <value>Tempo dall'ultima segnalazione:</value>
+  </data>
+  <data name="TimerInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali timer</value>
+  </data>
+  <data name="TokenAdvancedInfoAdvancedTab" xml:space="preserve">
+    <value>Avanzato</value>
+  </data>
+  <data name="TokenAdvancedInfoAdvancedTabAuthenticationLUIDLabel" xml:space="preserve">
+    <value>LUID autenticazione:</value>
+  </data>
+  <data name="TokenAdvancedInfoAdvancedTabImpersonationLevelLabel" xml:space="preserve">
+    <value>Livello impersonazione:</value>
+  </data>
+  <data name="TokenAdvancedInfoAdvancedTabMemoryAvailableLabel" xml:space="preserve">
+    <value>Memoria disponibile:</value>
+  </data>
+  <data name="TokenAdvancedInfoAdvancedTabMemoryUsedLabel" xml:space="preserve">
+    <value>Memoria usata:</value>
+  </data>
+  <data name="TokenAdvancedInfoAdvancedTabTypeLabel" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="TokenAdvancedInfoCapabilitiesTab" xml:space="preserve">
+    <value>Capacità</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTab" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabElevationStatusLabel" xml:space="preserve">
+    <value>Amministrativo:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabOwnerLabel" xml:space="preserve">
+    <value>Proprietario:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabPrimaryGroupLabel" xml:space="preserve">
+    <value>Gruppo primario:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabSessionIDLabel" xml:space="preserve">
+    <value>ID sessione:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabSourceGroupBoxText" xml:space="preserve">
+    <value>Fonte</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabSourceNameLabel" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabUserLabel" xml:space="preserve">
+    <value>Utente:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabUserSIDLabel" xml:space="preserve">
+    <value>SID utente:</value>
+  </data>
+  <data name="TokenAdvancedInfoGeneralTabVirtualizationStatusLabel" xml:space="preserve">
+    <value>Virtualizzazione:</value>
+  </data>
+  <data name="TokenAdvancedInfoWindowTitle" xml:space="preserve">
+    <value>Proprietà del token</value>
+  </data>
+  <data name="TokenPrivilegeChangeErrorMessageText" xml:space="preserve">
+    <value>Impossibile cambiare lo stato di un privilegio in un token di accesso.
+
+Non è possibile eseguire questa operazione su un token di un processo di sistema o sul token del processo corrente.</value>
+  </data>
+  <data name="TokenPrivilegeChangeErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile cambiare lo stato di un privilegio</value>
+  </data>
+  <data name="TokenPrivilegeRemoveErrorMessageText" xml:space="preserve">
+    <value>Impossibile rimuovere un privilegio da un token di accesso.
+
+Non è possibile eseguire questa operazione su un token di un processo di sistema o sul token del processo corrente.</value>
+  </data>
+  <data name="TokenPrivilegeRemoveErrorMessageTitle" xml:space="preserve">
+    <value>Impossibile rimuovere un privilegio da un token di accesso.</value>
+  </data>
+  <data name="TokenPrivilegeRemoveWarningMessageText" xml:space="preserve">
+    <value>ATTENZIONE!
+
+Non è possibile aggiungere nuovamente un privilegio rimosso.
+Continuare?</value>
+  </data>
+  <data name="TokenPrivilegeRemoveWarningMessageTitle" xml:space="preserve">
+    <value>I privilegi rimossi non possono essere reinseriti</value>
+  </data>
+  <data name="TuesdayText" xml:space="preserve">
+    <value>Martedì</value>
+  </data>
+  <data name="UnableToRetrieveInfoWatchdogErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile recuperare le necessarie informazioni sul sistema, non è possibile aggiugere o modificare regole al momento.</value>
+  </data>
+  <data name="UnableToRetrieveInfoWatchdogErrorTitle" xml:space="preserve">
+    <value>Informazioni necessaria non disponibili</value>
+  </data>
+  <data name="UnavailableText" xml:space="preserve">
+    <value>Non disponibile</value>
+  </data>
+  <data name="UnknownText" xml:space="preserve">
+    <value>Sconosciuto</value>
+  </data>
+  <data name="UnrestrictedText" xml:space="preserve">
+    <value>Illimitato</value>
+  </data>
+  <data name="UpdateConnectionErrorMessage" xml:space="preserve">
+    <value>Errore durante la connessione al server.</value>
+  </data>
+  <data name="UpdateConnectionErrorTitle" xml:space="preserve">
+    <value>Impossibile connettersi al server</value>
+  </data>
+  <data name="UpdateDailyText" xml:space="preserve">
+    <value>Giornaliero</value>
+  </data>
+  <data name="UpdateDownloadConfirmationMessage" xml:space="preserve">
+    <value>Nuova versione disponibile per il download, continuare?</value>
+  </data>
+  <data name="UpdateDownloadConfirmationMessageTitle" xml:space="preserve">
+    <value>Nuova versione disponibile</value>
+  </data>
+  <data name="UpdateDownloadedNotificationText" xml:space="preserve">
+    <value>Nuovo aggiornamento scaricato.</value>
+  </data>
+  <data name="UpdateGenericErrorMessage" xml:space="preserve">
+    <value>Errore durante la ricerca degli aggiornamenti.</value>
+  </data>
+  <data name="UpdateGenericErrorTitle" xml:space="preserve">
+    <value>Impossibile ricercare gli aggiornamenti</value>
+  </data>
+  <data name="UpdateInstallConfirmationMessage" xml:space="preserve">
+    <value>Nuova versione pronta per l'installazione, continuare?</value>
+  </data>
+  <data name="UpdateInstallConfirmationMessageTitle" xml:space="preserve">
+    <value>Nuova versione pronta per l'installazione</value>
+  </data>
+  <data name="UpdateMonthlyText" xml:space="preserve">
+    <value>Mensile</value>
+  </data>
+  <data name="UpdateReadyToInstallNotificationText" xml:space="preserve">
+    <value>Nuovo aggiornamento pronto per l'installazione.</value>
+  </data>
+  <data name="UpdateWeeklyText" xml:space="preserve">
+    <value>Settimanale</value>
+  </data>
+  <data name="UserInfoSelectAccountButtonText" xml:space="preserve">
+    <value>Seleziona</value>
+  </data>
+  <data name="UserInfoWindowPasswordLabelText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="UserInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni utente</value>
+  </data>
+  <data name="UserInfoWindowUsernameLabelText" xml:space="preserve">
+    <value>Nome utente</value>
+  </data>
+  <data name="UserListWindowTitle" xml:space="preserve">
+    <value>Lista utenti locali</value>
+  </data>
+  <data name="WaitWindowSecondLabel" xml:space="preserve">
+    <value>L'operazione sarà completeta tra alcuni minuti.</value>
+  </data>
+  <data name="WaitWindowTitle" xml:space="preserve">
+    <value>Operazione in corso...</value>
+  </data>
+  <data name="WatchdogActionsChangeAffinityText" xml:space="preserve">
+    <value>Cambia affinità</value>
+  </data>
+  <data name="WatchdogActionsChangePriorityText" xml:space="preserve">
+    <value>Cambia priorità</value>
+  </data>
+  <data name="WatchdogActionsEmptyWorkingSetText" xml:space="preserve">
+    <value>Pulisci working set</value>
+  </data>
+  <data name="WatchdogActionsTerminateProcessText" xml:space="preserve">
+    <value>Termina processo</value>
+  </data>
+  <data name="WatchdogMainMenuItemDisallowedProcessesMenuItem" xml:space="preserve">
+    <value>Processi non permessi</value>
+  </data>
+  <data name="WatchdogMainMenuItemMemoryWatchdogSettingsMenuItem" xml:space="preserve">
+    <value>Watchdog memoria</value>
+  </data>
+  <data name="WatchdogMainMenuItemPermanentProcessesMenuItem" xml:space="preserve">
+    <value>Processi da mantenere in esecuzione</value>
+  </data>
+  <data name="WatchdogMainMenuItemProcessCPUDefaultsMenuItem" xml:space="preserve">
+    <value>Impostazioni predefinite CPU processi</value>
+  </data>
+  <data name="WatchdogMainMenuItemProcessEnergyUsageSettingsMenuItem" xml:space="preserve">
+    <value>Utilizzo energetico processi</value>
+  </data>
+  <data name="WatchdogMainMenuItemProcessInstanceLimitsSettingsMenuItem" xml:space="preserve">
+    <value>Limite istanze processi</value>
+  </data>
+  <data name="WatchdogMainMenuItemProcessWatchdogRulesSettingsMenuItem" xml:space="preserve">
+    <value>Regole processi</value>
+  </data>
+  <data name="WatchdogMainMenuItemStartWatchdogMenuItem" xml:space="preserve">
+    <value>Abilita watchdog</value>
+  </data>
+  <data name="WatchdogMainMenuItemStopWatchdogMenuItem" xml:space="preserve">
+    <value>Arresta watchdog</value>
+  </data>
+  <data name="WatchdogMainMenuItemWatchdogSettingsMenuItem" xml:space="preserve">
+    <value>Impostazioni watchdog</value>
+  </data>
+  <data name="WatchdogSettingsWindowAddLimitButton" xml:space="preserve">
+    <value>Aggiungi limite</value>
+  </data>
+  <data name="WatchdogSettingsWindowAddProcessButton" xml:space="preserve">
+    <value>Aggiungi processo</value>
+  </data>
+  <data name="WatchdogSettingsWindowAddRuleButton" xml:space="preserve">
+    <value>Aggiungi regola</value>
+  </data>
+  <data name="WatchdogSettingsWindowCPUProcessDefaultSettingsTabHeaderText" xml:space="preserve">
+    <value>Affinità/priorità predefinite</value>
+  </data>
+  <data name="WatchdogSettingsWindowCPUSettingsAddSettingButton" xml:space="preserve">
+    <value>Aggiungi impostazione</value>
+  </data>
+  <data name="WatchdogSettingsWindowCpuSettingsDatagridDefaultAffinityColumn" xml:space="preserve">
+    <value>Affinità predefinita</value>
+  </data>
+  <data name="WatchdogSettingsWindowCpuSettingsDatagridDefaultPriorityColumn" xml:space="preserve">
+    <value>Priorità predefinita</value>
+  </data>
+  <data name="WatchdogSettingsWindowCPUSettingsRemoveSettingButton" xml:space="preserve">
+    <value>Rimuovi impostazione</value>
+  </data>
+  <data name="WatchdogSettingsWindowDisallowedProcessesDatagridContextMenuDisableTerminationNotificationMenuItem" xml:space="preserve">
+    <value>Disabilita notifica</value>
+  </data>
+  <data name="WatchdogSettingsWindowDisallowedProcessesDatagridContextMenuEnableTerminationNotificationMenuItem" xml:space="preserve">
+    <value>Abilita notifica</value>
+  </data>
+  <data name="WatchdogSettingsWindowDisallowedProcessesDatagridShowNotificationWhenTerminatedColumn" xml:space="preserve">
+    <value>Notifica quando terminato</value>
+  </data>
+  <data name="WatchdogSettingsWindowDisallowedProcessesTabHeader" xml:space="preserve">
+    <value>Processi non permessi</value>
+  </data>
+  <data name="WatchdogSettingsWindowEmptyProcessesWorkingSetCheckbox" xml:space="preserve">
+    <value>Pulisci i working set dei processi in esecuzione</value>
+  </data>
+  <data name="WatchdogSettingsWindowEnableLowSystemMemoryConditionMonitoringCheckbox" xml:space="preserve">
+    <value>Abilita il monitoraggio della memoria per una condizione di bassa disponibilità</value>
+  </data>
+  <data name="WatchdogSettingsWindowEnableProcessWatchdogCheckbox" xml:space="preserve">
+    <value>Watchdog processi abilitato</value>
+  </data>
+  <data name="WatchdogSettingsWindowEnableSystemMemoryWatchdogCheckbox" xml:space="preserve">
+    <value>Watchdog memoria di sistema abilitato</value>
+  </data>
+  <data name="WatchdogSettingsWindowInstanceCountColumn" xml:space="preserve">
+    <value>Numero massimo istanze</value>
+  </data>
+  <data name="WatchdogSettingsWindowInstanceLimitTabHeaderText" xml:space="preserve">
+    <value>Limiti istanze</value>
+  </data>
+  <data name="WatchdogSettingsWindowKeepOnlineProcessesTabHeader" xml:space="preserve">
+    <value>Processi permanenti</value>
+  </data>
+  <data name="WatchdogSettingsWindowLowSystemMemoryCleanMemoryCheckbox" xml:space="preserve">
+    <value>Pulisci la memoria di sistema quando la disponibilità è bassa</value>
+  </data>
+  <data name="WatchdogSettingsWindowLowSystemMemoryShowNotificationCheckbox" xml:space="preserve">
+    <value>Mostra una notifica quando la disponibilità di memoria è bassa</value>
+  </data>
+  <data name="WatchdogSettingsWindowMemoryMaxUsageLabelText" xml:space="preserve">
+    <value>Quando l'utilizzo della memoria supera</value>
+  </data>
+  <data name="WatchdogSettingsWindowMemoryMaxUsageLabelText2" xml:space="preserve">
+    <value>% esegui le seguenti azioni:</value>
+  </data>
+  <data name="WatchdogSettingsWindowPermanentProcessesDatagridShowNotificationOnProcessStart" xml:space="preserve">
+    <value>Notifica al momento dell'avvio</value>
+  </data>
+  <data name="WatchdogSettingsWindowProcessPowerSettingsAddEnergyUsageRuleButton" xml:space="preserve">
+    <value>Aggiungi regola di uso energetico</value>
+  </data>
+  <data name="WatchdogSettingsWindowProcessPowerSettingsPreventDisplayShutdownColumn" xml:space="preserve">
+    <value>Previeni spegnimento display</value>
+  </data>
+  <data name="WatchdogSettingsWindowProcessPowerSettingsPreventSleepColumn" xml:space="preserve">
+    <value>Previeni sospensione</value>
+  </data>
+  <data name="WatchdogSettingsWindowProcessPowerSettingsRemoveEnergyUsageRuleButton" xml:space="preserve">
+    <value>Rimuovi regola di uso energetico</value>
+  </data>
+  <data name="WatchdogSettingsWindowProcessPowerSettingsTabHeaderText" xml:space="preserve">
+    <value>Utilizzo energetico</value>
+  </data>
+  <data name="WatchdogSettingsWindowRemoveLimitButton" xml:space="preserve">
+    <value>Rimuovi limite</value>
+  </data>
+  <data name="WatchdogSettingsWindowRemoveProcessButton" xml:space="preserve">
+    <value>Rimuovi processo</value>
+  </data>
+  <data name="WatchdogSettingsWindowRemoveRuleButton" xml:space="preserve">
+    <value>Rimuovi regola</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesGridActionColumn" xml:space="preserve">
+    <value>Azione</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesGridActionValueColumn" xml:space="preserve">
+    <value>Valore azione</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesGridMemoryWatchdogColumn" xml:space="preserve">
+    <value>Watchdog memoria</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesGridProcessNameColumn" xml:space="preserve">
+    <value>Nome processo</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesGridTimeColumn" xml:space="preserve">
+    <value>Tempo (s)</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesGridValueColumn" xml:space="preserve">
+    <value>Valore</value>
+  </data>
+  <data name="WatchdogSettingsWindowRulesLabelText" xml:space="preserve">
+    <value>Regole processi</value>
+  </data>
+  <data name="WatchdogSettingsWindowSystemMemoryTabHeaderText" xml:space="preserve">
+    <value>Memoria</value>
+  </data>
+  <data name="WatchdogSettingsWindowTerminateNamedProcessesCheckbox" xml:space="preserve">
+    <value>Termina i processi con i seguenti nomi:</value>
+  </data>
+  <data name="WatchdogSettingsWindowTerminateProcessesHighMemoryUsageCheckbox" xml:space="preserve">
+    <value>Termina i processi con un utilizzo di memoria superiore a</value>
+  </data>
+  <data name="WatchdogSettingsWindowWatchdogEnabledCheckboxText" xml:space="preserve">
+    <value>Watchdog abilitato</value>
+  </data>
+  <data name="WednesdayText" xml:space="preserve">
+    <value>Mercoledì</value>
+  </data>
+  <data name="WindowBringToFrontErrorMessage" xml:space="preserve">
+    <value>Impossibile portare la finestra in primo piano, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowBringToFrontErrorTitle" xml:space="preserve">
+    <value>Impossibile portare la finestra in primo piano</value>
+  </data>
+  <data name="WindowCloseErrorMessage" xml:space="preserve">
+    <value>Impossibile chiudere la finestra, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowCloseErrorTitle" xml:space="preserve">
+    <value>Impossibile chiudere la finestra</value>
+  </data>
+  <data name="WindowEnableStatusErrorMessage" xml:space="preserve">
+    <value>Impossibile abilitare o disabilitare la finestra, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowEnableStatusErrorTitle" xml:space="preserve">
+    <value>Impossibile abilitare o disabilitare la finestra</value>
+  </data>
+  <data name="WindowMaximizeErrorMessage" xml:space="preserve">
+    <value>Impossibile ingrandire la finestra, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowMaximizeErrorTitle" xml:space="preserve">
+    <value>Impossibile ingrandire la finestra</value>
+  </data>
+  <data name="WindowMinimizeErrorMessage" xml:space="preserve">
+    <value>Impossibile ridurre a icona la finestra, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowMinimizeErrorTitle" xml:space="preserve">
+    <value>Impossibile ridurre a icona la finestra</value>
+  </data>
+  <data name="WindowOwnerNotFoundErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile trovare il processo proprietario della finestra.</value>
+  </data>
+  <data name="WindowOwnerNotFoundErrorTitle" xml:space="preserve">
+    <value>Proprietario non trovato</value>
+  </data>
+  <data name="WindowOwnerTerminationErrorMessage" xml:space="preserve">
+    <value>Non è stato possibile terminare il processo proprietario della finestra.</value>
+  </data>
+  <data name="WindowOwnerTerminationErrorTitle" xml:space="preserve">
+    <value>Impossibile terminare il proprietario</value>
+  </data>
+  <data name="WindowPropertiesClassTabBackgroundBrushHandleLabel" xml:space="preserve">
+    <value>Handle al pennello del background:</value>
+  </data>
+  <data name="WindowPropertiesClassTabCursorHandleLabel" xml:space="preserve">
+    <value>Handle al cursore:</value>
+  </data>
+  <data name="WindowPropertiesClassTabHeader" xml:space="preserve">
+    <value>Classe</value>
+  </data>
+  <data name="WindowPropertiesClassTabIconHandleLabel" xml:space="preserve">
+    <value>Handle all'icona:</value>
+  </data>
+  <data name="WindowPropertiesClassTabInstanceHandleLabel" xml:space="preserve">
+    <value>Handle al modulo:</value>
+  </data>
+  <data name="WindowPropertiesClassTabMenuNameHandle" xml:space="preserve">
+    <value>Handle al nome del menù:</value>
+  </data>
+  <data name="WindowPropertiesClassTabNameLabel" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="WindowPropertiesClassTabSmallIconHandleLabel" xml:space="preserve">
+    <value>Handle all'icona piccola:</value>
+  </data>
+  <data name="WindowPropertiesClassTabStylesLabel" xml:space="preserve">
+    <value>Stili:</value>
+  </data>
+  <data name="WindowPropertiesCloseButtonText" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabClientRectangleLabel" xml:space="preserve">
+    <value>Rettagolo client:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabDialogControlIDLabel" xml:space="preserve">
+    <value>ID controllo:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabDialogProcLabel" xml:space="preserve">
+    <value>Procedura finestra dialogo:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabHeader" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabInstanceHandleLabel" xml:space="preserve">
+    <value>Handle all'istanza:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabMenuHandleLabel" xml:space="preserve">
+    <value>Handle al menù:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabRectangleLabel" xml:space="preserve">
+    <value>Rettangolo:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabTextLabel" xml:space="preserve">
+    <value>Testo:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabUserDataLabel" xml:space="preserve">
+    <value>Dati utente:</value>
+  </data>
+  <data name="WindowPropertiesGeneralTabWindowProcLabel" xml:space="preserve">
+    <value>Procedura finestra:</value>
+  </data>
+  <data name="WindowPropertiesInstancePropertiesTabHeader" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="WindowPropertiesPropertyListNameColumn" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="WindowPropertiesPropertyListTabLabel" xml:space="preserve">
+    <value>Proprietà impostate per la finestra:</value>
+  </data>
+  <data name="WindowPropertiesPropertyListValueColumn" xml:space="preserve">
+    <value>Valore</value>
+  </data>
+  <data name="WindowPropertiesRefreshButtonText" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="WindowPropertiesStylesTabExtendedStylesValueLabel" xml:space="preserve">
+    <value>Stili estesi:</value>
+  </data>
+  <data name="WindowPropertiesStylesTabHeader" xml:space="preserve">
+    <value>Stili</value>
+  </data>
+  <data name="WindowPropertiesStylesTabStylesValueLabel" xml:space="preserve">
+    <value>Stili:</value>
+  </data>
+  <data name="WindowPropertiesWindowTitle" xml:space="preserve">
+    <value>Proprietà finestra</value>
+  </data>
+  <data name="WindowRestoreErrorMessage" xml:space="preserve">
+    <value>Impossibile ripristinare la finestra, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowRestoreErrorTitle" xml:space="preserve">
+    <value>Impossibile ripristinare la finestra</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuAlwaysOnTopMenuItem" xml:space="preserve">
+    <value>Sempre in primo piano</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuBringToFrontMenuItem" xml:space="preserve">
+    <value>Porta in primo piano</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuCloseMenuItem" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuEnabledMenuItem" xml:space="preserve">
+    <value>Attiva</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuMaximizeMenuItem" xml:space="preserve">
+    <value>Ingrandisci</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuMinimizeMenuItem" xml:space="preserve">
+    <value>Riduci a icona</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuOpacityMenuItem" xml:space="preserve">
+    <value>Opacità</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuPropertiesMenuItem" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuRestoreMenuItem" xml:space="preserve">
+    <value>Ripristina in basso</value>
+  </data>
+  <data name="WindowsInfoGridContextMenuVisibleMenuItem" xml:space="preserve">
+    <value>Visibile</value>
+  </data>
+  <data name="WindowStationInfoWindowTitle" xml:space="preserve">
+    <value>Informazioni addizionali Window Station</value>
+  </data>
+  <data name="WindowStationInfoWindowUserNameLabel" xml:space="preserve">
+    <value>Nome utente:</value>
+  </data>
+  <data name="WindowStationInfoWindowUserSIDLabel" xml:space="preserve">
+    <value>SID utente:</value>
+  </data>
+  <data name="WindowStationInfoWindowVisibleSurfacesLabel" xml:space="preserve">
+    <value>Superfici visibili:</value>
+  </data>
+  <data name="WindowTopmostStatusChangeErrorMessage" xml:space="preserve">
+    <value>Impossibile cambiare la posizione della finestra, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowTopmostStatusChangeErrorTitle" xml:space="preserve">
+    <value>Impossibile cambiare la posizione della finestra</value>
+  </data>
+  <data name="WindowVisibilityChangeErrorMessage" xml:space="preserve">
+    <value>Impossibile cambiare lo stato di visibilità, si è verificato un errore durante l'operazione.</value>
+  </data>
+  <data name="WindowVisibilityChangeErrorTitle" xml:space="preserve">
+    <value>Impossibile cambiare lo stato di visibilità</value>
+  </data>
+  <data name="WorkingSetDetailedInfoPrivateWSLabel" xml:space="preserve">
+    <value>Working set privato:</value>
+  </data>
+  <data name="WorkingSetDetailedInfoShareableWSLabel" xml:space="preserve">
+    <value>Working set condivisibile:</value>
+  </data>
+  <data name="WorkingSetDetailedInfoSharedWSLabel" xml:space="preserve">
+    <value>Working set condiviso:</value>
+  </data>
+  <data name="WorkingSetDetailedInfoWindowTitle" xml:space="preserve">
+    <value>Composizione working set</value>
+  </data>
+  <data name="WorkingSetSizeLabel" xml:space="preserve">
+    <value>Nuova dimensione working set</value>
+  </data>
+  <data name="WorkingSetSizeWindowTitle" xml:space="preserve">
+    <value>Dimensione working set</value>
+  </data>
+  <data name="YesText" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+</root>

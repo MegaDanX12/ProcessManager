@@ -1,0 +1,26 @@
+﻿<Window x:Class="ProcessManager.Views.ServiceConfigurationInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ServicesConfigurationInfoWindowTitle}" Height="461.74" Width="800" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="{x:Static p:Resources.ServiceConfigurationInfoWindowTypeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Label Content="{x:Static p:Resources.ServiceConfigurationInfoWindowStartTypeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="373,10,0,0"/>
+        <Label Content="{x:Static p:Resources.ServiceConfigurationInfoWindowErrorControlModeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+        <Label Content="{x:Static p:Resources.ServiceConfigurationInfoWindowLoadOrderGroupLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="373,41,0,0"/>
+        <Label Content="Tag ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+        <Label Content="{x:Static p:Resources.ServiceConfigurationInfoWindowStartNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="373,72,0,0"/>
+        <Label Content="{x:Static p:Resources.ServiceConfigurationInfoWindowDependenciesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
+        <ListBox HorizontalAlignment="Left" Height="252" VerticalAlignment="Top" Width="774" Margin="10,134,0,0" ItemsSource="{Binding Path = CurrentService.Dependencies}"/>
+        <Button x:Name="ShowOptionalConfigurationInfoButton" Content="{x:Static p:Resources.ServiceConfigurationInfoWindowShowOtherConfigurationInfoButtonText}" Margin="10,394,0,0" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentService.Type}" VerticalAlignment="Top" Margin="155,10,0,0" HorizontalAlignment="Left"/>
+        <Label Content="{Binding CurrentService.ErrorControlMode}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,41,0,0"/>
+        <Label Content="{Binding CurrentService.TagID}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,72,0,0"/>
+        <Label Content="{Binding CurrentService.StartType}" VerticalAlignment="Top" Margin="512,10,10,0"/>
+        <Label Content="{Binding CurrentService.LoadOrderGroup}" VerticalAlignment="Top" Margin="512,41,10,0"/>
+        <Label Content="{Binding CurrentService.ServiceStartUserAccountName}" VerticalAlignment="Top" Margin="512,72,10,0"/>
+    </Grid>
+</Window>

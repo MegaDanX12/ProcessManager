@@ -1,0 +1,13 @@
+﻿<Window x:Class="ProcessManager.Views.WaitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.WaitWindowTitle}" Height="157.5" Width="423.37" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="{x:Static p:Resources.WaitWindowTitle}" Margin="85,24,0,0" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+        <Label Content="{x:Static p:Resources.WaitWindowSecondLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,71,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+    </Grid>
+</Window>

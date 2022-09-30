@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProcessManager.Views.DisallowedProcessesSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        xmlns:watchdog="clr-namespace:ProcessManager.Watchdog"
+        xmlns:viewmodels="clr-namespace:ProcessManager.ViewModels"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.DisallowedProcessSettingsWindowTitle}" Height="450" Width="800" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodels:WatchdogSettingVM/>
+    </Window.DataContext>
+    <Grid>
+        <Button Content="{x:Static p:Resources.WatchdogSettingsWindowAddProcessButton}" Margin="10,0,0,10" VerticalAlignment="Bottom" MinWidth="75" HorizontalAlignment="Left" Command="{Binding AddDisallowedProcessCommand}"/>
+        <Button Content="{x:Static p:Resources.WatchdogSettingsWindowRemoveProcessButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" MinWidth="75" Command="{Binding RemoveDisallowedProcessCommand}" CommandParameter="{Binding ElementName=DisallowedProcessesDatagrid, Path=SelectedItem}"/>
+        <DataGrid x:Name="DisallowedProcessesDatagrid" Margin="10,10,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path=(watchdog:WatchdogManager.DisallowedProcesses)}" MouseRightButtonDown="DisallowedProcessesDatagrid_MouseRightButtonDown" >
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="DisallowedProcessEnableNotificationMenuItem" Header="{x:Static p:Resources.WatchdogSettingsWindowDisallowedProcessesDatagridContextMenuEnableTerminationNotificationMenuItem}" Command="{Binding EnableNotificationForDisallowedProcessTermination}"/>
+                    <MenuItem x:Name="DisallowedProcessDisableNotificationMenuItem" Header="{x:Static p:Resources.WatchdogSettingsWindowDisallowedProcessesDatagridContextMenuDisableTerminationNotificationMenuItem}" Command="{Binding DisableNotificationForDisallowedProcessTermination}"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridProcessNameColumn}" Width="*" Binding="{Binding Name, Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="{x:Static p:Resources.WatchdogSettingsWindowDisallowedProcessesDatagridShowNotificationWhenTerminatedColumn}" Width="*" Binding="{Binding NotificationWhenTerminated, Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

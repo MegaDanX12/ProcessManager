@@ -1,0 +1,27 @@
+﻿<Window x:Class="ProcessManager.Views.LimitedProcessesListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        xmlns:viewmodel="clr-namespace:ProcessManager.ViewModels"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.LimitedProcessesListWindowTitle}" Height="450" Width="800" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewmodel:LimitedProcessesListVM/>
+    </Window.DataContext>
+    <Grid>
+        <DataGrid x:Name="ProcessDatagrid" Margin="10" AutoGenerateColumns="False" ColumnWidth="*" SelectionMode="Single" IsReadOnly="True" CanUserSortColumns="False" CanUserReorderColumns="False" MouseRightButtonDown="ProcessDatagrid_MouseRightButtonDown" ItemsSource="{Binding LimitsData}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.LimitedProcessesListWindowProcessesDatagridNameColumnHeader}" Binding="{Binding Item1}"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.LimitedProcessesListWindowProcessesDatagridLimitValueColumnHeader}" Binding="{Binding Item2}"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="TerminateProcessMenuItem" Header="{x:Static p:Resources.ProcessGridContextMenuTerminateProcessItem}" Command="{Binding TerminateProcessCommand}"/>
+                    <MenuItem x:Name="ShowLimitInfoMenuItem" Header="{x:Static p:Resources.LimitedProcessesListWindowProcessesDatagridShowLimitInfo}" Command="{Binding ShowLimitInfoCommand}" IsEnabled="False"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+    </Grid>
+</Window>

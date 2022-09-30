@@ -1,0 +1,27 @@
+﻿<Window x:Class="ProcessManager.Views.LogManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        xmlns:viewModel="clr-namespace:ProcessManager.ViewModels"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.LogManagerWindowTitle}" Height="483" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" SizeToContent="Manual" WindowState="Maximized">
+    <Window.DataContext>
+        <viewModel:LogManagerDataVM/>
+    </Window.DataContext>
+    <Grid>
+        <Button Command="{Binding FilterListCommand}" Content="{x:Static p:Resources.LogManagerWindowFilterListButton}" Margin="10,0,0,10" MinWidth="75" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <Button Command="{Binding ClearLogCommand}" Content="{x:Static p:Resources.LogManagerWindowClearLogButton}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" MinWidth="75"/>
+        <Button Command="{Binding UpdateEntriesCommand}" Content="{x:Static p:Resources.LogManagerWindowUpdateLogDataButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" MinWidth="75"/>
+        <DataGrid Margin="10,10,10,35" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single" ItemsSource="{Binding Path=Entries}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Date}" Header="{x:Static p:Resources.LogManagerWindowEntriesDatagridDateColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Source}" Header="{x:Static p:Resources.LogManagerWindowEntriesDatagridSourceColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Severity}" Header="{x:Static p:Resources.LogManagerWindowEntriesDatagridSeverityColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Action}" Header="{x:Static p:Resources.LogManagerWindowEntriesDatagridActionColumn}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Text}" Header="{x:Static p:Resources.LogManagerWindowEntriesDatagridTextColumn}" Width="*" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

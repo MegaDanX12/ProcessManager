@@ -1,0 +1,82 @@
+﻿<Window x:Class="ProcessManager.Views.WindowPropertiesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.WindowPropertiesWindowTitle}" Height="459.978" Width="800" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="384" Margin="10" VerticalAlignment="Top" Width="772" x:Name="WindowPropertiesTabControl">
+            <TabItem Header="{x:Static p:Resources.WindowPropertiesGeneralTabHeader}">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabTextLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,7,0,0"/>
+                    <TextBox Text="{Binding CurrentInfo.GeneralInfo.Title, Mode=OneWay}" x:Name="WindowTextTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="701" Margin="55,10,0,0" IsReadOnly="True"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabRectangleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,69,0,0" RenderTransformOrigin="0.407,1.565"/>
+                    <Label Content="Thread:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,38,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.RectangleInfo, Mode=OneWay}" x:Name="RectangleDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,69,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.ThreadProcessIDAndName, Mode=OneWay}" x:Name="ThreadDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,38,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabClientRectangleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.ClientAreaRectangleInfo, Mode=OneWay}" x:Name="ClientRectangleDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,100,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabInstanceHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,131,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.ApplicationInstanceHandleValue, Mode=OneWay}" x:Name="InstanceHandleDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,131,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabMenuHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,162,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.MenuHandleValue, Mode=OneWay}" x:Name="MenuHandleDataValue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,162,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabUserDataLabel}" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.UserData, Mode=OneWay}" x:Name="UserDataValueLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,193,0,0"/>
+                    <Label Content="Unicode:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,224,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.IsUnicode, Mode=OneWay}" x:Name="UnicodeDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,224,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabWindowProcLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,255,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.WindowProcedureMemoryAddress, Mode=OneWay}" x:Name="WindowProcedureDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,255,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabDialogProcLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,286,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.DialogProcedureMemoryAddress, Mode=OneWay}" x:Name="DialogProcedureDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,286,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesGeneralTabDialogControlIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,317,0,0"/>
+                    <Label Content="{Binding CurrentInfo.GeneralInfo.DialogControlID, Mode=OneWay}" x:Name="DialogControlIDDataLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="167,317,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.WindowPropertiesStylesTabHeader}">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesStylesTabStylesValueLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <Label x:Name="StylesValueLabel" Content="{Binding CurrentInfo.Styles.WindowStylesValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="79,10,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesStylesTabExtendedStylesValueLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,176,0,0"/>
+                    <Label x:Name="ExtendedStylesValueLabel" Content="{Binding CurrentInfo.Styles.WindowExtendedStylesValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="79,176,0,0"/>
+                    <ListBox x:Name="StylesListBox" Height="130" Width="746" Margin="10,41,10,10" VerticalAlignment="Top" ItemsSource="{Binding CurrentInfo.Styles.WindowStyles, Mode=OneWay}"/>
+                    <ListBox x:Name="ExtendedStylesListBox" Margin="10,207,10,10" ItemsSource="{Binding CurrentInfo.Styles.WindowExtendedStyles, Mode=OneWay}"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.WindowPropertiesClassTabHeader}">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <TextBox Text="{Binding CurrentInfo.GeneralInfo.ClassName, Mode=OneWay}" x:Name="ClassNameTextBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="696" Margin="60,13,10,10" IsReadOnly="True"/>
+                    <Label Content="Atom:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                    <Label Content="{Binding CurrentInfo.ClassInfo.WindowClassAtom, Mode=OneWay}" x:Name="AtomValueLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,41,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabInstanceHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                    <Label x:Name="InstanceHandleValueLabel" Content="{Binding CurrentInfo.ClassInfo.WindowClassModuleInstanceHandleValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,72,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabIconHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
+                    <Label x:Name="IconHandleValueLabel" Content="{Binding CurrentInfo.ClassInfo.WindowClassIconHandleValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,103,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabSmallIconHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,134,0,0"/>
+                    <Label x:Name="SmallIconHandleValueLabel" Content="{Binding CurrentInfo.ClassInfo.WindowClassSmallIconHandleValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,134,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabCursorHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,165,0,0"/>
+                    <Label x:Name="CursorHandleValueLabel" Content="{Binding CurrentInfo.ClassInfo.WindowClassCursorHandleValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,165,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabBackgroundBrushHandleLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,196,0,0"/>
+                    <Label x:Name="BackgroundBrushHandleValueLabel" Content="{Binding CurrentInfo.ClassInfo.WindowClassBackgroundBrushHandleValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,196,0,0"/>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesClassTabMenuNameHandle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,227,0,0"/>
+                    <Label x:Name="MenuNameHandleValueLabel" Content="{Binding CurrentInfo.ClassInfo.WindowClassMenuNameHandleValue, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,227,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.WindowPropertiesInstancePropertiesTabHeader}">
+                <Grid>
+                    <Label Content="{x:Static p:Resources.WindowPropertiesPropertyListTabLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <DataGrid x:Name="WindowPropertiesDataGrid" HorizontalAlignment="Left" Height="305" VerticalAlignment="Top" Width="746" Margin="10,41,10,10" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CurrentInfo.WindowProperties}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static p:Resources.WindowPropertiesPropertyListNameColumn}" Binding="{Binding Name}" CanUserSort="False" Width="*"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.WindowPropertiesPropertyListValueColumn}" Binding="{Binding Value}" CanUserSort="False" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Content="{x:Static p:Resources.WindowPropertiesCloseButtonText}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="707,399,0,0" Click="Button_Click"/>
+        <Button Command="{Binding WindowPropertiesRefreshCommand}" Content="{x:Static p:Resources.WindowPropertiesRefreshButtonText}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="627,399,0,0"/>
+    </Grid>
+</Window>

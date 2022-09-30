@@ -1,0 +1,51 @@
+﻿<Window x:Class="ProcessManager.Views.AddRuleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.AddRuleWindowTitle}" Height="411.278" Width="529.226" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="{x:Static p:Resources.AddRuleWindowProcessNameLabelText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <GroupBox Header="{x:Static p:Resources.AddRuleWindowRuleSettingsGroupboxHeaderText}" Height="161" VerticalAlignment="Top" Margin="10,41,10,0" BorderBrush="#FF060606">
+            <Grid>
+                <Label Content="{x:Static p:Resources.AddRuleWindowCpuWatchdogValueLabelText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                <Label Content="{x:Static p:Resources.AddRuleWindowCpuWatchdogTimeLabelText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,10,0,0"/>
+                <Label Content="{x:Static p:Resources.AddRuleWindowMemoryWatchdogValueLabelText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,69,0,0"/>
+                <Label Content="{x:Static p:Resources.AddRuleWindowMemoryWatchdogTimeLabelText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,69,0,0"/>
+                <TextBox x:Name="CpuUsageMaxPercentageTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Margin="10,41,0,0"/>
+                <TextBox x:Name="CpuWatchdogControlTimeTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Margin="247,41,10,0"/>
+                <TextBox x:Name="MemoryUsageMaxValueTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Margin="10,100,0,0"/>
+                <TextBox x:Name="MemoryWatchdogControlTimeTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232" Margin="247,100,10,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="{x:Static p:Resources.AddRuleWindowActionsGroupboxHeaderText}" Margin="10,207,10,40" BorderBrush="#FF060606">
+            <Grid>
+                <Label Content="{x:Static p:Resources.AddRuleWindowCpuActionTypeLabelText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                <Label Content="{x:Static p:Resources.AddRuleWindowCpuActionValueText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                <Label Content="{x:Static p:Resources.AddRuleWindowMemoryActionTypeText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                <TextBox x:Name="CpuActionValueTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="357" Margin="124,45,0,0">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="IsEnabled" Value="True"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=CpuActionCombobox, Path=SelectedIndex}" Value="-1">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=CpuActionCombobox, Path=SelectedIndex}" Value="2">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <ComboBox x:Name="CpuActionCombobox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="357" Margin="124,14,0,0" IsReadOnly="True"/>
+                <ComboBox x:Name="MemoryActionCombobox" Margin="124,76,10,14" IsReadOnly="True"/>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="OKButton" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="10,0,0,10" Click="OKButton_Click" IsDefault="True"/>
+        <Button x:Name="CancelButton" Content="{x:Static p:Resources.CancelButtonText}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,10,10" Click="CancelButton_Click" IsCancel="True"/>
+        <TextBox x:Name="ProcessNameTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="402" Margin="111,14,0,0"/>
+    </Grid>
+</Window>

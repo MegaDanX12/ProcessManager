@@ -1,0 +1,18 @@
+﻿<Window x:Name="MutantInfoWindow1" x:Class="ProcessManager.Views.MutantInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.MutantInfoWindowTitle}" Height="141.102" Width="381.462" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="MutantInfoWindow1_Closing" ContentRendered="MutantInfoWindow1_ContentRendered">
+    <Grid>
+        <Label Content="{x:Static p:Resources.MutantInfoWindowCurrentCountLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Label Content="{x:Static p:Resources.MutantInfoWindowOwnedByCallerLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+        <Label Content="{x:Static p:Resources.MutantInfoWindowAbandonedStateLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+        <Label Content="{Binding CurrentCount}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,10,0,0"/>
+        <Label Content="{Binding OwnedByCaller}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,41,0,0"/>
+        <Label Content="{Binding AbandonedState}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,72,0,0"/>
+
+    </Grid>
+</Window>

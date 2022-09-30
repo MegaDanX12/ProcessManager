@@ -1,0 +1,16 @@
+﻿<Window x:Class="ProcessManager.Views.WorkingSetSizeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.WorkingSetSizeWindowTitle}" Height="133.112" Width="431.457" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="{x:Static p:Resources.WorkingSetSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <TextBox x:Name="WorkingSetSizeTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="362" Margin="10,41,0,0"/>
+        <Label Content="MB" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="377,37,0,0"/>
+        <Button x:Name="OKButton" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,69,0,0" MinWidth="75" Click="OKButton_Click"/>
+        <Button x:Name="CancelButton" Content="{x:Static p:Resources.CancelButtonText}" HorizontalAlignment="Right" VerticalAlignment="Top" MinWidth="75" Margin="0,69,10,0" Click="CancelButton_Click"/>
+    </Grid>
+</Window>

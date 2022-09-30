@@ -1,0 +1,23 @@
+﻿<Window x:Class="ProcessManager.UsersListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel = "clr-namespace:ProcessManager.ViewModels"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.UserListWindowTitle}" Height="450" Width="800" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <ListBox x:Name="UsersListBox" HorizontalAlignment="Left" Height="357" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" ItemsSource="{Binding Path=Usernames}" x:FieldModifier="public">
+            <ListBox.DataContext>
+                <viewModel:UserListVM/>
+            </ListBox.DataContext>
+        </ListBox>
+        <Button Content="{x:Static p:Resources.OKButtonText}" Margin="10,0,707,25" Command="{Binding ConfirmUserSelectionCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Height="22" VerticalAlignment="Bottom">
+            <Button.DataContext>
+                <viewModel:UserInfoVM/>
+            </Button.DataContext>
+        </Button>
+        <Button Content="{x:Static p:Resources.CancelButtonText}" Margin="707,379,10,20" Click="CancelButton_Click"/>
+    </Grid>
+</Window>

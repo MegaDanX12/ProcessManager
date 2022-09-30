@@ -1,0 +1,79 @@
+﻿<Window x:Name="ProcessRulesSettingsWindow" x:Class="ProcessManager.Views.ProcessRulesWatchdogSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        xmlns:watchdog="clr-namespace:ProcessManager.Watchdog"
+        xmlns:converters="clr-namespace:ProcessManager.Converters"
+        xmlns:viewmodels="clr-namespace:ProcessManager.ViewModels"
+        xmlns:main="clr-namespace:ProcessManager"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ProcessRulesWatchdogSettingsWindowTitle}" Height="450" Width="800" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" Closing="ProcessRulesWatchdogSettingsWindow_Closing">
+    <Window.Resources>
+        <converters:WatchdogActionToStringConverterOneWay x:Key="WatchdogActionToStringConverterOneWay"/>
+        <converters:WatchdogCPUActionValueToStringConverterOneWay x:Key="WatchdogCPUActionValueToStringConverterOneWay"/>
+        <converters:BoolToStringConverter x:Key="BoolToStringConverter"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <viewmodels:WatchdogSettingVM/>
+    </Window.DataContext>
+    <Grid>
+        <DataGrid x:Name="RulesDatagrid" Margin="10,30,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path=(watchdog:WatchdogManager.Rules)}" MouseDoubleClick="RulesDatagrid_MouseDoubleClick">
+            <DataGrid.Style>
+                <Style TargetType="DataGrid">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=ProcessWatchdogEnabledCheckbox, Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Style>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridProcessNameColumn}" Binding="{Binding ProcessName, Mode=OneWay}" Width="Auto"/>
+                <DataGridCheckBoxColumn Header="CPU watchdog" Binding="{Binding Settings.CpuWatchdogEnabled, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridValueColumn}" Binding="{Binding Settings.CpuWatchdogValue, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridTimeColumn}" Binding="{Binding Settings.CpuWatchdogTime, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridActionColumn}" Binding="{Binding CPUAction.ActionType, Converter={StaticResource WatchdogActionToStringConverterOneWay}, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridActionValueColumn}" Width="Auto">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource WatchdogCPUActionValueToStringConverterOneWay}" Mode="OneWay">
+                            <Binding Path="CPUAction.ActionType"/>
+                            <Binding Path="CPUAction.ActionValue"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridMemoryWatchdogColumn}" Binding="{Binding Settings.MemoryWatchdogEnabled, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridValueColumn}" Binding="{Binding Settings.MemoryWatchdogValue, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridTimeColumn}" Binding="{Binding Settings.MemoryWatchdogTime, Mode=OneWay}" Width="Auto"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridActionColumn}" Binding="{Binding MemoryAction.ActionType, Converter={StaticResource WatchdogActionToStringConverterOneWay}, Mode=OneWay}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="{x:Static p:Resources.WatchdogSettingsWindowAddRuleButton}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" MinWidth="75" Command="{Binding AddRuleCommand}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=ProcessWatchdogEnabledCheckbox, Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Content="{x:Static p:Resources.WatchdogSettingsWindowRemoveRuleButton}" VerticalAlignment="Bottom" Margin="0,0,10,10" MinWidth="75" HorizontalAlignment="Right" Command="{Binding RemoveRuleCommand}" CommandParameter="{Binding ElementName=RulesDatagrid, Path=SelectedItem}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=ProcessWatchdogEnabledCheckbox, Path=IsChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <CheckBox x:Name="ProcessWatchdogEnabledCheckbox" IsChecked="{Binding Path=(main:Settings.ProcessWatchdogEnabled), Mode=OneWay}" Content="{x:Static p:Resources.WatchdogSettingsWindowEnableProcessWatchdogCheckbox}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+    </Grid>
+</Window>

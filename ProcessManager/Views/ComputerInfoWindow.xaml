@@ -1,0 +1,105 @@
+﻿<Window x:Class="ProcessManager.Views.ComputerInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:ProcessManager.ViewModels"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ComputerInfoWindowTitle}" Height="517.194" Width="849.669" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.DataContext>
+        <viewModel:ComputerInfoVM/>
+    </Window.DataContext>
+    <Grid>
+        <TabControl Margin="10">
+            <TabItem Header="Hardware">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="{x:Static p:Resources.ComputerInfoWindowProcessorInfoGroupboxText}" HorizontalAlignment="Left" Width="379" Margin="10,10,0,10" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorArchitectureLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorCountLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorLevelLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorRevisionLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorCoresCountLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorPackagesCountLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProcessorFeaturesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,166,0,0"/>
+                            <ListBox ItemsSource="{Binding Hardware.ProcessorFeatures}" Margin="10,197,10,10"/>
+                            <Label Content="{Binding Hardware.ProcessorArchitecture}" Margin="158,10,171,348"/>
+                            <Label Content="{Binding Hardware.ActiveProcessors}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,36,0,0"/>
+                            <Label Content="{Binding Hardware.ProcessorLevel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,62,0,0"/>
+                            <Label Content="{Binding Hardware.ProcessorRevision}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,88,0,0"/>
+                            <Label Content="{Binding Hardware.ProcessorNumberOfCores}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,114,0,0"/>
+                            <Label Content="{Binding Hardware.ProcessorNumberOfPackages}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,140,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.ComputerInfoWindowMemoryGroupboxText}" Height="254" VerticalAlignment="Top" Margin="394,10,10,0" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowMemoryPageSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowPhysicalMemorySizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowMemoryLoadPercentageLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowTotalMemoryAvailableLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowCurrentMemoryAvailableLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowTotalCommittedPagesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowMemoryCommitLimitPages}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,166,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowMemoryCommitLimitPeakPages}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,192,0,0"/>
+                            <Label Content="{Binding Hardware.MemoryPageSize}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,10,0,0"/>
+                            <Label Content="{Binding Hardware.PhysicalMemorySize}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,36,0,0"/>
+                            <Label Content="{Binding Hardware.MemoryLoadPercentage}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,62,0,0"/>
+                            <Label Content="{Binding Hardware.TotalMemoryAvailable}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,88,0,0"/>
+                            <Label Content="{Binding Hardware.CurrentMemoryAvailable}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,114,0,0"/>
+                            <Label Content="{Binding Hardware.TotalCommittedPages}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,140,0,0"/>
+                            <Label Content="{Binding Hardware.MemoryCommitLimitPages}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,166,0,0"/>
+                            <Label Content="{Binding Hardware.MemoryCommitPeakPages}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="193,192,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.ComputerInfoWindowOtherInfoGroupboxText}" Margin="394,269,10,10" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowComputerNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowHardwareProfileGUIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowHardwareProfileNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowFirmwareTypeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="{Binding Hardware.ComputerName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,10,0,0"/>
+                            <Label Content="{Binding Hardware.HardwareProfileGUID}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,36,0,0"/>
+                            <Label Content="{Binding Hardware.HardwareProfileName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,62,0,0"/>
+                            <Label Content="{Binding Hardware.FirmwareType}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,88,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.ComputerInfoWindowOSTabText}">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="{x:Static p:Resources.ComputerInfoWindowOSInfoGeneralGroupboxText}" HorizontalAlignment="Left" Height="168" VerticalAlignment="Top" Width="388" Margin="10,10,0,0" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemRunTimeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowProductNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemVersionLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowBootFromVHDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemRunTime}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,10,0,0"/>
+                            <Label Content="{Binding OperatingSystem.ProductName}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,41,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemVersion}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,72,0,0"/>
+                            <Label Content="{Binding OperatingSystem.BootFromVHD}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,103,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.ComputerInfoWindowOSInfoSystemRegistryGroupboxText}" Height="168" VerticalAlignment="Top" Margin="403,10,10,0" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemRegistryCurrentSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemRegistryMaximumSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemRegistryCurrentSize}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,10,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemRegistryMaximumSize}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,41,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.ComputerInfoWindowSystemPathsGroupboxText}" Margin="10,183,10,10" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemDirectoryPathLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemSharedWindowsDirectoryPathLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                            <Label Content="{x:Static p:Resources.ComputerInfoWindowSystemWow64DirectoryPathLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemDirectoryPath}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="194,10,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemSharedWindowsDirectoryPath}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="194,41,0,0"/>
+                            <Label Content="{Binding OperatingSystem.SystemWow64DirectoryPath}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="194,72,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

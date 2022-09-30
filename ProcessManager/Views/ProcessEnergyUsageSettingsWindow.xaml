@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProcessManager.Views.ProcessEnergyUsageSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        xmlns:watchdog="clr-namespace:ProcessManager.Watchdog"
+        xmlns:viewmodels="clr-namespace:ProcessManager.ViewModels"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ProcessEnergyUsageSettingsWindowTitle}" Height="450" Width="800">
+    <Window.DataContext>
+        <viewmodels:WatchdogSettingVM/>
+    </Window.DataContext>
+    <Grid>
+        <Button Content="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsAddEnergyUsageRuleButton}" Margin="10,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" MinWidth="75" Command="{Binding AddProcessEnergyUsageRuleCommand}"/>
+        <Button Content="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsRemoveEnergyUsageRuleButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="75" Margin="0,0,10,10" Command="{Binding RemoveProcessEnergyUsageRuleCommand}" CommandParameter="{Binding ElementName=EnergyUsageRulesDatagrid, Path=SelectedItem}"/>
+        <DataGrid x:Name="EnergyUsageRulesDatagrid" Margin="10,10,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding (watchdog:WatchdogManager.ProcessEnergyUsageData)}" MouseDoubleClick="EnergyUsageRulesDatagrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridProcessNameColumn}" Width="*" Binding="{Binding Name, Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsPreventDisplayShutdownColumn}" Width="*" Binding="{Binding KeepDisplayOn, Mode=OneWay}"/>
+                <DataGridCheckBoxColumn Header="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsPreventSleepColumn}" Width="*" Binding="{Binding KeepSystemInWorkingState, Mode=OneWay}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

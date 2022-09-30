@@ -1,0 +1,18 @@
+﻿<Window x:Class="ProcessManager.Commands.ProcessChildrenListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ProcessChildrenListWindowTitle}" Height="304.646" Width="464.491" SizeToContent="WidthAndHeight" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <DataGrid x:Name="ChildrenProcessesDataGrid" HorizontalAlignment="Left" Height="229" Margin="10,10,10,5" VerticalAlignment="Top" Width="438" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path = ChildrenProcessesInfo, Mode=OneWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.ProcessNameHeader}" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="PID" Binding="{Binding PID}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="{x:Static p:Resources.CloseButtonText}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="189,244,0,10" Click="CloseButton_Click"/>
+    </Grid>
+</Window>
