@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30709.132
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessManager", "ProcessManager\ProcessManager.csproj", "{360035FD-33E5-4E48-B270-AACBA43D3E64}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{E913EE9C-2EF0-447D-8355-11BD5DD0813F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{360035FD-33E5-4E48-B270-AACBA43D3E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360035FD-33E5-4E48-B270-AACBA43D3E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360035FD-33E5-4E48-B270-AACBA43D3E64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E913EE9C-2EF0-447D-8355-11BD5DD0813F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E913EE9C-2EF0-447D-8355-11BD5DD0813F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E913EE9C-2EF0-447D-8355-11BD5DD0813F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E913EE9C-2EF0-447D-8355-11BD5DD0813F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
