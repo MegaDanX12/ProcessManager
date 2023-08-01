@@ -1,0 +1,12 @@
+﻿<Window x:Name="FindWindowInfo" x:Class="ProcessManager.Views.FindWindowInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.FindWindowInfoWindowTitle}" Height="205.83" Width="438.789" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyDown="FindWindowInfo_KeyDown">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{x:Static p:Resources.FindWindowInfoWindowInfoLabel}" VerticalAlignment="Center" FontSize="22" Margin="0" Width="422" Height="63" TextAlignment="Center"/>
+    </Grid>
+</Window>

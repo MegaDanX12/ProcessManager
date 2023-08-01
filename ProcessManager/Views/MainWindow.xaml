@@ -1,0 +1,291 @@
+﻿<Window x:Name="ProcessManagerMainWindow" x:Class="ProcessManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel ="clr-namespace:ProcessManager.ViewModels"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        xmlns:main="clr-namespace:ProcessManager"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.MainWindowTitle}" Height="450" Width="800" WindowStartupLocation="CenterScreen" PreviewKeyDown="ProcessManagerMainWindow_PreviewKeyDown" WindowState="Maximized">
+    <Window.DataContext>
+        <viewModel:ProcessInfoVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <s:Boolean x:Key="FalseValue">False</s:Boolean>
+        <s:Boolean x:Key="TrueValue">True</s:Boolean>
+        <Style x:Key="SeparatorStyle" TargetType="{x:Type Separator}">
+            <Setter Property="Background" Value="#FF3F3F46"/>
+            <Setter Property="Margin" Value="0,2,0,2"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Separator}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Height="1" SnapsToDevicePixels="True"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}" >
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Menu Height="25" VerticalAlignment="Top" Margin="0,0,155,0">
+            <MenuItem Header="Computer">
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuLockComputerMenuItem}" Command="{Binding LockComputerCommand}"/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuLogoffUserMenuItem}" Command="{Binding LogoffUserCommand}"/>
+                <Separator/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuSuspendSystemMenuItem}" Command="{Binding SleepMachineCommand}"/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuHibernateSystemMenuItem}" Command="{Binding HibernateMachineCommand}"/>
+                <Separator/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuRestartComputerMenuItem}" Command="{Binding RestartMachineCommand}" CommandParameter="{StaticResource FalseValue}"/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuRestartToBootOptionsComputerMenuItem}" Command="{Binding RestartMachineCommand}" CommandParameter="{StaticResource TrueValue}"/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuShutdownComputerMenuItem}" Command="{Binding ShutdownMachineCommand}" CommandParameter="{StaticResource FalseValue}"/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuHybridShutdownComputerMenuItem}" Command="{Binding ShutdownMachineCommand}" CommandParameter="{StaticResource TrueValue}"/>
+                <Separator/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowComputerMenuComputerInfoMenuItem}" Command="{Binding ShowComputerInfoCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItemSortListSubMenuItem}">
+                    <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItemSortByNameMenuItem}" Command="{Binding SortListCommand}" CommandParameter="{x:Static p:Resources.ProcessNameHeader}"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItemSortByPIDMenuItem}" Command="{Binding SortListCommand}" CommandParameter="PID"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItemSortByDescriptionMenuItem}" Command="{Binding SortListCommand}" CommandParameter="{x:Static p:Resources.ProcessDescriptionHeader}"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItemSortByStartTimeMenuItem}" Command="{Binding SortListCommand}" CommandParameter="{x:Static p:Resources.ProcessStartDateTimeHeader}"/>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.MainWindowListMenuItemClearListSortingMenuItem}" Command="{Binding SortListCommand}" CommandParameter="Clear"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.ProcessMainMenuItem}">
+                <MenuItem Header="{x:Static p:Resources.ProcessMainMenuItemStartProcess}" Command="{Binding StartProcessCommand}"/>
+                <MenuItem Header="{x:Static p:Resources.ProcessMainMenuItemStartProcessAsUser}" Command="{Binding StartProcessAsUserCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowProcessMenuCleanProcessesMemoryMenuItem}" Command="{Binding CleanAllProcessesMemoryCommand}"/>
+                <MenuItem Header="{x:Static p:Resources.ProcessMainMenuProcessLimiterMenuItem}">
+                    <MenuItem Header="{x:Static p:Resources.ProcessMainMenuItemStartLimitedProcess}" Command="{Binding StartLimitedProcessCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessMainMenuListCurrentlyLimitedProcessesMenuItem}" Command="{Binding ShowActiveLimitedProcessesCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessMainMenuItemShowLimiterSettings}" Command="{Binding ShowProcessLimiterSettingsCommand}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Log">
+                <MenuItem Command="{Binding ShowLogCommand}" Header="{x:Static p:Resources.MainWindowLogMenuShowLogMenuItemText}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="IsEnabled" Value="{Binding Path=(main:Settings.LogProgramActivity)}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.LogProgramActivity)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowLogMenuStartLoggingMenuItemText}" Command="{Binding EnableLoggingCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.LogProgramActivity)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.LogProgramActivity)}" Value="True">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.MainWindowLogMenuStopLoggingMenuItemText}" Command="{Binding DisableLoggingCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.LogProgramActivity)}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.LogProgramActivity)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.MainWindowServicesMenuText}">
+                <MenuItem Header="{x:Static p:Resources.MainWindowServicesMenuInitializeServiceMonitoringMenuItemText}" Command="{Binding InitializeServiceMonitoringCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="True">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.MainWindowServicesMenuStopServiceMonitoringMenuItemText}" Command="{Binding ShutdownServiceMonitoringCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="ServiceCreationNotificationMenuItem" Header="{x:Static p:Resources.MainWindowServicesMenuNotificationsSubMenuServiceCreationMenuItemText}" Checked="ServiceCreationNotificationMenuItem_Checked" Unchecked="ServiceCreationNotificationMenuItem_Unchecked" IsCheckable="True">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="IsEnabled" Value="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <MenuItem x:Name="ServiceDeletionNotificationMenuItem" Header="{x:Static p:Resources.MainWindowServicesMenuNotificationsSubMenuServiceDeletionMenuItemText}" IsCheckable="True" Checked="ServiceDeletionNotificationMenuItem_Checked" Unchecked="ServiceDeletionNotificationMenuItem_Unchecked">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="IsEnabled" Value="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="{x:Static p:Resources.MainWindowServicesMenuItemServicesListMenuItemText}" IsCheckable="False" Command="{Binding ShowServicesListCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="IsEnabled" Value="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.ServiceMonitoringEnabled)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Watchdog" IsEnabled="{Binding Path=(main:Settings.WatchdogEnabled)}">
+                <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemStartWatchdogMenuItem}" Command="{Binding EnableWatchdogCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.WatchdogEnabled)}" Value="False">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemStopWatchdogMenuItem}" Command="{Binding DisableWatchdogCommand}">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Setter Property="IsEnabled" Value="False"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=(main:Settings.WatchdogEnabled)}" Value="True">
+                                    <Setter Property="IsEnabled" Value="True"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemWatchdogSettingsMenuItem}" IsEnabled="{Binding Path=(main:Settings.WatchdogEnabled)}">
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemProcessWatchdogRulesSettingsMenuItem}" Command="{Binding ShowProcessWatchdogRulesSettingsCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemMemoryWatchdogSettingsMenuItem}" Command="{Binding ShowMemoryWatchdogSettingsCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemProcessCPUDefaultsMenuItem}" Command="{Binding ShowProcessCPUDefaultSettingsCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemProcessEnergyUsageSettingsMenuItem}" Command="{Binding ShowProcessEnergyUsageSettingsCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemProcessInstanceLimitsSettingsMenuItem}" Command="{Binding ShowProcessInstanceLimitsSettingsCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemDisallowedProcessesMenuItem}" Command="{Binding ShowDisallowedProcessesSettingsCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.WatchdogMainMenuItemPermanentProcessesMenuItem}" Command="{Binding ShowPermanentProcessesSettingsCommand}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.MainWindowSettingsItemText}" Command="{Binding EditSettingsCommand}"/>
+            <MenuItem Header="{x:Static p:Resources.OtherText}">
+                <MenuItem Header="{x:Static p:Resources.MainWindowOtherMenuWindowsMenuItem}">
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuShowProcessWindowsItem}" Command="{Binding ShowProcessWindowsInfoCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindowOtherMenuFindWindowMenuItem}" Command="{Binding FindWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"/>
+                    <MenuItem Header="{x:Static p:Resources.MainWindowOtherMenuFindWindowAndTerminateOwnerMenuItem}" Command="{Binding FindWindowAndTerminateOwnerCommand}"/>
+                </MenuItem>
+                <MenuItem Header="Pagefiles" Command="{Binding ShowPagefilesInfoCommand}"/>
+            </MenuItem>
+            <MenuItem Header="{x:Static p:Resources.MainWindowUpdateMenuItemText}" Command="{Binding UpdateCommand}" IsEnabled="False" Foreground="White"/>
+        </Menu>
+        <DataGrid x:Name="ProcessDataGrid" Margin="10,25,10,37" AutoGenerateColumns="False" SelectionMode="Single" SelectedItem="{Binding WindowOwner, Mode=OneWay}" ItemsSource="{Binding Path = ActiveProcessesInfo, Mode=OneWay}" MouseDoubleClick="ProcessDataGrid_MouseDoubleClick" MouseRightButtonDown="ProcessDataGrid_MouseRightButtonDown" IsReadOnly="True" LoadingRow="ProcessDataGrid_LoadingRow" SelectionChanged="ProcessDataGrid_SelectionChanged" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuShowChildrenItem}" Command="{Binding ShowChildrenProcessesCommand}" Name="ShowChildrenProcessesMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuPriorityItem}" Name="PrioritySubMenu">
+                        <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuRealTimePriorityItem}" IsCheckable="True" Click="PriorityMenuItem_Click" Name="RealTimePriorityMenuItem"/>
+                        <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuHighPriorityItem}" IsCheckable="True" Click="PriorityMenuItem_Click" Name="HighPriorityMenuItem"/>
+                        <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuAboveNormalPriorityItem}" IsCheckable="True" Click="PriorityMenuItem_Click" Name="AboveNormalPriorityMenuItem"/>
+                        <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuNormalPriorityItem}" IsCheckable="True" Click="PriorityMenuItem_Click" Name="NormalPriorityMenuItem"/>
+                        <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuLowPriorityItem}" IsCheckable="True" Click="PriorityMenuItem_Click" Name="LowPriorityMenuItem"/>
+                        <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuIdlePriorityItem}" IsCheckable="True" Click="PriorityMenuItem_Click" Name="IdlePriorityMenuItem"/>
+                    </MenuItem>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuAffinityItem}" Name="AffinitySubMenu" ItemsSource="{Binding Items}">
+                        <MenuItem.DataContext>
+                            <viewModel:AffinityMenuVM/>
+                        </MenuItem.DataContext>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuEmptyWorkingSetMenuItem}" Name="EmptyWorkingSetMenuItem" Command="{Binding EmptyProcessWorkingSetCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuSetMinimumWorkingSetSizeMenuItem}" Name="SetMinimumWorkingSetSizeMenuItem" Command="{Binding SetMinimumWorkingSetCommand}"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuSetMaximumWorkingSetSizeMenuItem}" Name="SetMaximumWorkingSetSizeMenuItem" Command="{Binding SetMaximumWorkingSetCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuDebugItem}" Command="{Binding DebugProcessCommand}" Name="DebugMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuEnableVirtualizationItem}" Command="{Binding EnableVirtualizationCommand}" Name="EnableVirtualizationMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuDisableVirtualizationItem}" Command="{Binding DisableVirtualizationCommand}" Name="DisableVirtualizationMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuTerminateProcessItem}" Command="{Binding TerminateProcessCommand}" Name="TerminateProcessMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuTerminateProcessTreeItem}" Command="{Binding TerminateProcessTreeCommand}" Name="TerminateProcessTreeMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuShowProcessWindowsItem}" Command="{Binding ShowProcessWindowsInfoCommand}" Name="ShowProcessWindowsInfoMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuShowHostedServicesMenuItem}" Command="{Binding ShowHostedServicesCommand}" Name="ShowHostedServicesMenuItem"/>
+                    <MenuItem Header="{x:Static p:Resources.ProcessGridContextMenuPropertiesItem}" Command="{Binding PropertiesCommand}" Name="PropertiesMenuItem"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn CellStyle="{StaticResource DataGridCellStyle}" Binding="{Binding Name}" Header="{x:Static p:Resources.ProcessNameHeader}" Width="*" CanUserSort="False">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Background" Value="LightCyan"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding PID}" Header="PID" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Description}" Header="{x:Static p:Resources.ProcessDescriptionHeader}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding ProcessorUsage}" Header="CPU" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding PrivateMemory}" Header="{x:Static p:Resources.ProcessPrivateMemoryHeader}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding NumThreads}" Header="Threads" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding Priority}" Header="{x:Static p:Resources.ProcessPriorityHeader}" Width="*" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding StartTime}" Header="{x:Static p:Resources.ProcessStartDateTimeHeader}" Width="*" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="SearchTextbox" TextWrapping="Wrap" Margin="0,0,10,0" VerticalAlignment="Top" Height="25" Width="120" HorizontalAlignment="Right" KeyUp="SearchTextbox_KeyUp"/>
+        <Image HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Width="20" Margin="0,0,130,0" Source="/ProcessManager;component/loupe.png"/>
+        <StatusBar Height="32" VerticalAlignment="Bottom">
+            <Label Content="{x:Static p:Resources.CpuUsageText}"/>
+            <Label Content="{Binding CpuUsagePercentage}" Width="55" ContentStringFormat="{}{0} %"/>
+            <Label Content="{x:Static p:Resources.SystemMemoryUsageText}"/>
+            <Label Content="{Binding MemoryUsage}" Width="57"/>
+            <Label Content="{Binding MemoryUsagePercentage}" Width="40" ContentStringFormat="{}{0} %"/>
+            <Label Content="{x:Static p:Resources.ProcessesCountText}"/>
+            <Label Content="{Binding ProcessesCount}"/>
+        </StatusBar>
+    </Grid>
+</Window>

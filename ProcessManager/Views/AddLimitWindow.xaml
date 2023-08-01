@@ -1,0 +1,16 @@
+﻿<Window x:Class="ProcessManager.Views.AddLimitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.AddLimitWindowTitle}" Height="156.39" Width="276.345" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="{x:Static p:Resources.AddLimitWindowLimitValueLabel}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
+        <TextBox x:Name="LimitValueTextBox" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Margin="0,41,0,0" TextAlignment="Center"/>
+        <Button x:Name="OKButton" Content="OK" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,69,0,0" MinWidth="75" IsDefault="True" Click="OKButton_Click"/>
+        <Button x:Name="CancelButton" Content="{x:Static p:Resources.CancelButtonText}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,94,0,0" MinWidth="75" IsCancel="True" Click="CancelButton_Click"/>
+        <Image HorizontalAlignment="Left" Height="14" VerticalAlignment="Top" Width="16" Margin="39,83,0,0" Source="/ProcessManager;component/question.png" ToolTip="{x:Static p:Resources.AddLimitWindowHelpMessage}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="ProcessManager.Views.WindowStationInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.WindowStationInfoWindowTitle}" Height="144.915" Width="458.686" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="{x:Static p:Resources.WindowStationInfoWindowVisibleSurfacesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+        <Label Content="{x:Static p:Resources.WindowStationInfoWindowUserSIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+        <Label Content="{x:Static p:Resources.WindowStationInfoWindowUserNameLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+        <Label Content="{Binding IsVisible}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,10,0,0"/>
+        <Label Content="{Binding AssociatedUserSID}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,41,0,0"/>
+        <Label Content="{Binding AssociatedUser}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,72,0,0"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{360035FD-33E5-4E48-B270-AACBA43D3E64}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProcessManager</RootNamespace>
+    <AssemblyName>ProcessManager</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <AnalysisMode>Default</AnalysisMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Views\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\LimitedProcessesListWindowCommands\ShowLimitInfoCommand.cs" />
+    <Compile Include="Commands\LimitedProcessesListWindowCommands\TerminateProcessCommand.cs" />
+    <Compile Include="Commands\LimitInfoWindowCommands\FormerProcessCommand.cs" />
+    <Compile Include="Commands\LimitInfoWindowCommands\NextProcessCommand.cs" />
+    <Compile Include="Commands\LogManagerWindowCommands\ClearLogCommand.cs" />
+    <Compile Include="Commands\LogManagerWindowCommands\FilterLogEntriesCommand.cs" />
+    <Compile Include="Commands\LogManagerWindowCommands\UpdateEntriesCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\AffinityChangeCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\CleanAllProcessesMemoryCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\DisableLoggingCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\DisableWatchdogCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\EditSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\EmptyProcessWorkingSetCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\EnableLoggingCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\EnableWatchdogCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\FindWindowAndTerminateOwnerCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\FindWindowCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\HibernateMachineCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\InitializeServiceMonitoringCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\LockComputerCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\LogoffUserCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\RestartSystemCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\SetCpuUsageLimitsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\SetProcessMaximumWorkingSetCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\SetProcessMinimumWorkingSetSizeCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowActiveLimitedProcessesCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowComputerInfoCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowDisallowedProcessesSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowHostedServicesCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowLogCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowMemoryWatchdogSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowPagefilesInfoCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowPermanentProcessesSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowProcessCPUDefaultsSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowProcessEnergyUsageCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowProcessInstanceLimitsSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowProcessLimiterSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowProcessWatchdogRulesSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowServicesListCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShutdownServiceMonitoringCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShutdownSystemCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\SleepMachineCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\SortListCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\StartLimitedProcessCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\UpdateCommand.cs" />
+    <Compile Include="Commands\PagefilesListWindowCommands\ChangePagefileSizeCommand.cs" />
+    <Compile Include="Commands\PagefilesListWindowCommands\CreatePagefileCommand.cs" />
+    <Compile Include="Commands\PagefilesListWindowCommands\DeletePagefileCommand.cs" />
+    <Compile Include="Commands\ProcessLimiterSettingsWindowCommands\AddLimitCommand.cs" />
+    <Compile Include="Commands\ProcessLimiterSettingsWindowCommands\AddPathCommand.cs" />
+    <Compile Include="Commands\ProcessLimiterSettingsWindowCommands\RemoveLimitCommand.cs" />
+    <Compile Include="Commands\ProcessLimiterSettingsWindowCommands\RemovePathCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\CloseHandleCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\DecommitMemoryRegionCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\DisableTokenPrivilegeCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\EnableTokenPrivilegeCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\FreeMemoryRegionCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\HandlesDetailedInfoCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ImageInfoCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\MitigationPoliciesDetailsCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\OpenFolderCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\RefreshDataCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\RemovePrivilegeFromTokenCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ResumeThreadCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ShowFilePropertiesCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ShowHandleOtherPropertiesCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ShowHandlePropertiesCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ShowThreadWindowsInfoCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\ShowTokenPropertiesCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\SuspendThreadCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\TerminateThreadCommand.cs" />
+    <Compile Include="Commands\ProcessPropertiesWindowCommands\WorkingSetDetailedInfoCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\AlwaysOnTopCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\BringToFrontCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\CloseCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\EnabledCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\MaximizeCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\MinimizeCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\RefreshWindowsDataCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\RestoreWindowCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\VisibleCommand.cs" />
+    <Compile Include="Commands\ProcessWindowsInfoWindowCommands\WindowPropertiesCommand.cs" />
+    <Compile Include="Commands\SemaphoreInfoWindowCommands\AcquireSemaphoreCommand.cs" />
+    <Compile Include="Commands\SemaphoreInfoWindowCommands\ReleaseSemaphoreCommand.cs" />
+    <Compile Include="Commands\ServiceConfigurationInfoWindowCommands\ShowServiceOptionalConfigurationCommand.cs" />
+    <Compile Include="Commands\ServicesInfoWindowCommands\ListenForServiceEventsCommand.cs" />
+    <Compile Include="Commands\ServicesInfoWindowCommands\ShowServiceConfigurationCommand.cs" />
+    <Compile Include="Commands\ServicesInfoWindowCommands\ShowServiceStatusCommand.cs" />
+    <Compile Include="Commands\ServicesInfoWindowCommands\StopServiceStatusMonitoringCommand.cs" />
+    <Compile Include="Commands\UserWindowCommands\ConfirmUserSelectionCommand.cs" />
+    <Compile Include="Commands\UserWindowCommands\ConfirmUserSettingsCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\DebugProcessCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\DisableVirtualizationCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\EnableVirtualizationCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\AddCPUDefaultSettingsCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\AddDisallowedProcessCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\AddProcessEnergyUsageRuleCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\AddProcessInstanceLimitCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\AddProcessNameCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\AddRuleCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\DisableNotificationForDisallowedProcessCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\DisableNotificationForPermanentProcessesCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\EnableNotificationForDisallowedProcessTerminationCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\EnableNotificationForPermanentProcessesCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\RemoveCPUDefaultSettingsCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\RemoveDisallowedProcessCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\RemoveProcessEnergyUsageRuleCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\RemoveProcessInstanceLimitCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\RemoveProcessNameCommand.cs" />
+    <Compile Include="Commands\WatchdogSettingsWindowCommands\RemoveRuleCommand.cs" />
+    <Compile Include="Commands\WindowPropertiesWindowCommands\RefreshWindowDataCommand.cs" />
+    <Compile Include="Converters\BoolToStringConverter.cs" />
+    <Compile Include="Converters\MemoryUsageValidConverterOneWay.cs" />
+    <Compile Include="Converters\TimeSpanToStringConverter.cs" />
+    <Compile Include="Converters\EnumToIntConverterOneWay.cs" />
+    <Compile Include="Converters\TimeSpanToStringMultiConverter.cs" />
+    <Compile Include="Converters\WatchdogActionToStringConverterOneWay.cs" />
+    <Compile Include="Converters\WatchdogCPUActionValueToStringConverterOneWay.cs" />
+    <Compile Include="ETW\ETWEventParser.cs" />
+    <Compile Include="ETW\ETWSessionControl.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\DesktopInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\EventInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\FileInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\MutantInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\SectionBasicInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\SectionImageInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\SectionInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\SemaphoreInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\TimerInfo.cs" />
+    <Compile Include="InfoClasses\HandleSpecificInfo\WindowStationInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetExceptionsInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetInteropInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetJitInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetLoadingInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetLockAndThreadInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetMemoryInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetNetworkingInfo.cs" />
+    <Compile Include="InfoClasses\NETPerformanceStatistics\NetSecurityInfo.cs" />
+    <Compile Include="InfoClasses\OtherInfo\ClaimSecurityAttribute.cs" />
+    <Compile Include="InfoClasses\PEFileStructures\Headers.cs" />
+    <Compile Include="InfoClasses\PEHeaderInfo\PEHeaderGeneralInfo.cs" />
+    <Compile Include="InfoClasses\PEHeaderInfo\PESectionInfo.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\CPUStatisticsCumulative.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\CumulativeStatisticsBase.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\HandleCountInfo.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\HandleStatisticsCumulative.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\IOStatisticsCumulative.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\MemoryStatisticsCumulative.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\StatisticsBase.cs" />
+    <Compile Include="InfoClasses\ServicesInfo\Service.cs" />
+    <Compile Include="InfoClasses\ServicesInfo\ServiceFailureAction.cs" />
+    <Compile Include="InfoClasses\ServicesInfo\ServiceFailureActions.cs" />
+    <Compile Include="InfoClasses\ServicesInfo\Services.cs" />
+    <Compile Include="InfoClasses\ServicesInfo\ServiceTrigger.cs" />
+    <Compile Include="InfoClasses\SystemParametersInfoStructures\AccessibilityStructures.cs" />
+    <Compile Include="InfoClasses\SystemParametersInfoStructures\DesktopStructures.cs" />
+    <Compile Include="InfoClasses\SystemParametersInfoStructures\IconStructures.cs" />
+    <Compile Include="Models\HardwareInfo.cs" />
+    <Compile Include="Models\OSInfo.cs" />
+    <Compile Include="InfoClasses\TokensInfo\TokenGeneralInfo.cs" />
+    <Compile Include="InfoClasses\TokensInfo\TokenGroupInfo.cs" />
+    <Compile Include="InfoClasses\TokensInfo\TokenPrivilegeInfo.cs" />
+    <Compile Include="InfoClasses\TokensInfo\TokenStatistics.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoggingEntriesFilteringSettings.cs" />
+    <Compile Include="Models\HandleInfo.cs" />
+    <Compile Include="Models\MemoryRegionInfo.cs" />
+    <Compile Include="Models\ModuleInfo.cs" />
+    <Compile Include="Models\NetPerformanceInfo.cs" />
+    <Compile Include="Models\PageFileInfo.cs" />
+    <Compile Include="Models\PEHeaderInfo.cs" />
+    <Compile Include="Models\SystemGlobalParametersInfo.cs" />
+    <Compile Include="Models\TokenInfo.cs" />
+    <Compile Include="NativeHelpers.cs" />
+    <Compile Include="Network\NetworkAuthentication.cs" />
+    <Compile Include="Network\RemoteComputer.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ViewModels\ComputerInfoVM.cs" />
+    <Compile Include="ViewModels\HostedServicesDataVM.cs" />
+    <Compile Include="ViewModels\JobInfoVM.cs" />
+    <Compile Include="ViewModels\LimitedProcessesListVM.cs" />
+    <Compile Include="ViewModels\LogManagerDataVM.cs" />
+    <Compile Include="ViewModels\PageFileListVM.cs" />
+    <Compile Include="ViewModels\PeHeaderInfoVM.cs" />
+    <Compile Include="ViewModels\ProcessLimiterSettingsVM.cs" />
+    <Compile Include="ViewModels\ProcessPropertiesVM.cs" />
+    <Compile Include="ViewModels\ProcessWindowsInfoVM.cs" />
+    <Compile Include="ViewModels\WatchdogSettingVM.cs" />
+    <Compile Include="Views\AddDisallowedProcessWindow.xaml.cs">
+      <DependentUpon>AddDisallowedProcessWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddLimitedAppPathWindow.xaml.cs">
+      <DependentUpon>AddLimitedAppPathWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddLimitWindow.xaml.cs">
+      <DependentUpon>AddLimitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddProcessCPUDefaultSettingWindow.xaml.cs">
+      <DependentUpon>AddProcessCPUDefaultSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddProcessEnergyUsageRuleWindow.xaml.cs">
+      <DependentUpon>AddProcessEnergyUsageRuleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddProcessInstanceLimitWindow.xaml.cs">
+      <DependentUpon>AddProcessInstanceLimitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddRuleWindow.xaml.cs">
+      <DependentUpon>AddRuleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComputerInfoWindow.xaml.cs">
+      <DependentUpon>ComputerInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DesktopInfoWindow.xaml.cs">
+      <DependentUpon>DesktopInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisallowedProcessesSettingsWindow.xaml.cs">
+      <DependentUpon>DisallowedProcessesSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventInfoWindow.xaml.cs">
+      <DependentUpon>EventInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FileInfoWindow.xaml.cs">
+      <DependentUpon>FileInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FindWindowInfoWindow.xaml.cs">
+      <DependentUpon>FindWindowInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HandlePropertiesWindow.xaml.cs">
+      <DependentUpon>HandlePropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HandlesCountInfoWindow.xaml.cs">
+      <DependentUpon>HandlesCountInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KeepOnlineProcessesSettingsWindow.xaml.cs">
+      <DependentUpon>KeepOnlineProcessesSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LimitedProcessesListWindow.xaml.cs">
+      <DependentUpon>LimitedProcessesListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LimitInfoWindow.xaml.cs">
+      <DependentUpon>LimitInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogEntriesFilterSettingsWindow.xaml.cs">
+      <DependentUpon>LogEntriesFilterSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LogManager.xaml.cs">
+      <DependentUpon>LogManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MemoryWatchdogSettingsWindow.xaml.cs">
+      <DependentUpon>MemoryWatchdogSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MitigationPoliciesDetailsWindow.xaml.cs">
+      <DependentUpon>MitigationPoliciesDetailsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MutantInfoWindow.xaml.cs">
+      <DependentUpon>MutantInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PagefileInfoWindow.xaml.cs">
+      <DependentUpon>PagefileInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PagefilesListWindow.xaml.cs">
+      <DependentUpon>PagefilesListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PeHeaderInfoWindow.xaml.cs">
+      <DependentUpon>PeHeaderInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessCPUDefaultValuesWindow.xaml.cs">
+      <DependentUpon>ProcessCPUDefaultValuesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessEnergyUsageSettingsWindow.xaml.cs">
+      <DependentUpon>ProcessEnergyUsageSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessInstanceLimitSettingsWindow.xaml.cs">
+      <DependentUpon>ProcessInstanceLimitSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessLimiterSettingsWindow.xaml.cs">
+      <DependentUpon>ProcessLimiterSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessNameWindow.xaml.cs">
+      <DependentUpon>ProcessNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessPropertiesWindow.xaml.cs">
+      <DependentUpon>ProcessPropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessPropertiesWindowNoNet.xaml.cs">
+      <DependentUpon>ProcessPropertiesWindowNoNet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessTokenAdvancedInfoWindow.xaml.cs">
+      <DependentUpon>ProcessTokenAdvancedInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessWindowsInfo.xaml.cs">
+      <DependentUpon>ProcessWindowsInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\MainWindowCommands\PropertiesCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowProcessWindowsInfoCommand.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\CPUStatistics.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\HandleStatistics.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\IOStatistics.cs" />
+    <Compile Include="InfoClasses\ProcessStatistics\MemoryStatistics.cs" />
+    <Compile Include="Models\ProcessGeneralInfo.cs" />
+    <Compile Include="Models\ProcessStatistics.cs" />
+    <Compile Include="InfoClasses\WindowsInfo\WindowClassInfo.cs" />
+    <Compile Include="InfoClasses\WindowsInfo\WindowProperty.cs" />
+    <Compile Include="ProcessMitigationPoliciesData.cs" />
+    <Compile Include="Models\ThreadInfo.cs" />
+    <Compile Include="InfoClasses\WindowsInfo\WindowGeneralInfo.cs" />
+    <Compile Include="Models\WindowInfo.cs" />
+    <Compile Include="InfoClasses\WindowsInfo\WindowStylesInfo.cs" />
+    <Compile Include="ViewModels\ChildrenProcessesListVM.cs" />
+    <Compile Include="Views\ProcessChildrenListWindow.xaml.cs">
+      <DependentUpon>ProcessChildrenListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\UserWindowCommands\SelectUserCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\ShowChildrenProcessesCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\StartProcessAsUserCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\StartProcessCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\TerminateProcessCommand.cs" />
+    <Compile Include="Commands\MainWindowCommands\TerminateProcessTreeCommand.cs" />
+    <Compile Include="Views\SectionInfoWindow.xaml.cs">
+      <DependentUpon>SectionInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectLimitWindow.xaml.cs">
+      <DependentUpon>SelectLimitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SemaphoreInfoWindow.xaml.cs">
+      <DependentUpon>SemaphoreInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceConfigurationInfoWindow.xaml.cs">
+      <DependentUpon>ServiceConfigurationInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceNotificationsReasonsWindow.xaml.cs">
+      <DependentUpon>ServiceNotificationsReasonsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceOptionalConfigurationInfoWindow.xaml.cs">
+      <DependentUpon>ServiceOptionalConfigurationInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServicesInfoWindow.xaml.cs">
+      <DependentUpon>ServicesInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceStatusInfoWindow.xaml.cs">
+      <DependentUpon>ServiceStatusInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimerInfoWindow.xaml.cs">
+      <DependentUpon>TimerInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsersListWindow.xaml.cs">
+      <DependentUpon>UsersListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Properties\Resources.en-US.Designer.cs">
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ViewModels\AffinityMenuVM.cs" />
+    <Compile Include="ViewModels\UserInfoVM.cs" />
+    <Compile Include="ViewModels\UserListVM.cs" />
+    <Compile Include="Views\UserInfoWindow.xaml.cs">
+      <DependentUpon>UserInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UtilityMethods.cs" />
+    <Compile Include="Views\WaitWindow.xaml.cs">
+      <DependentUpon>WaitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessRulesWatchdogSettingsWindow.xaml.cs">
+      <DependentUpon>ProcessRulesWatchdogSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowPropertiesWindow.xaml.cs">
+      <DependentUpon>WindowPropertiesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowStationInfoWindow.xaml.cs">
+      <DependentUpon>WindowStationInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkingSetDetailedInfoWindow.xaml.cs">
+      <DependentUpon>WorkingSetDetailedInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkingSetSizeWindow.xaml.cs">
+      <DependentUpon>WorkingSetSizeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Watchdog\CpuUsageLimitsData.cs" />
+    <Compile Include="Models\JobAssociatedProcessActivityInfo.cs" />
+    <Compile Include="Models\JobInfo.cs" />
+    <Compile Include="Watchdog\DisallowedProcess.cs" />
+    <Compile Include="Watchdog\PermanentProcess.cs" />
+    <Compile Include="Watchdog\ProcessDefaultCPUSettings.cs" />
+    <Compile Include="Watchdog\ProcessEnergyUsage.cs" />
+    <Compile Include="Watchdog\ProcessInstanceLimit.cs" />
+    <Compile Include="Watchdog\ProcessLimiter.cs" />
+    <Compile Include="Watchdog\ProcessWatchdogAction.cs" />
+    <Compile Include="Watchdog\ProcessWatchdogConfiguration.cs" />
+    <Compile Include="Watchdog\ProcessWatchdogRule.cs" />
+    <Compile Include="Watchdog\WatchdogManager.cs" />
+    <Compile Include="WMI\WMIProcessInfoMethods.cs" />
+    <Compile Include="WMI\WMISystemInfoMethods.cs" />
+    <Page Include="Views\AddDisallowedProcessWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddLimitedAppPathWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddLimitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddProcessCPUDefaultSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddProcessEnergyUsageRuleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddProcessInstanceLimitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddRuleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComputerInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DesktopInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisallowedProcessesSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FileInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FindWindowInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HandlePropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HandlesCountInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KeepOnlineProcessesSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LimitedProcessesListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LimitInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogEntriesFilterSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MemoryWatchdogSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MitigationPoliciesDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MutantInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PagefileInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PagefilesListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PeHeaderInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessCPUDefaultValuesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessEnergyUsageSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessInstanceLimitSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessLimiterSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessNameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessPropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessPropertiesWindowNoNet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessTokenAdvancedInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessWindowsInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessChildrenListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SectionInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectLimitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SemaphoreInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceConfigurationInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceNotificationsReasonsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceOptionalConfigurationInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServicesInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceStatusInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimerInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UsersListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Views\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\UserInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WaitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProcessRulesWatchdogSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowPropertiesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowStationInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkingSetDetailedInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkingSetSizeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\ProcessInfo.cs" />
+    <Compile Include="ViewModels\ProcessInfoVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <Version>6.0.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent">
+      <Version>2.0.74</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="WindowsAPICodePack-Shell">
+      <Version>1.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="loupe.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
+</Project>

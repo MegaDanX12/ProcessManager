@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProcessManager.Views.AddProcessInstanceLimitWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.AddProcessInstanceLimitWindowTitle}" Height="137.219" Width="356.054" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static p:Resources.AddRuleWindowProcessNameLabelText}" VerticalAlignment="Top" Margin="10,11,0,0"/>
+        <TextBox x:Name="ProcessNameTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,10,0,0"/>
+        <TextBox x:Name="InstanceLimitTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,38,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{x:Static p:Resources.AddProcessInstanceLimitWindowInstanceLimitLabel}" VerticalAlignment="Top" Margin="10,39,0,0"/>
+        <Button x:Name="OKButton" Content="OK" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Margin="10,0,0,10" Click="OKButton_Click" IsDefault="True"/>
+        <Button x:Name="CancelButton" Content="{x:Static p:Resources.CancelButtonText}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,10,10" Click="CancelButton_Click" IsCancel="True"/>
+    </Grid>
+</Window>

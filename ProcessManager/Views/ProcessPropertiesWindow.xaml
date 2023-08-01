@@ -1,0 +1,346 @@
+﻿<Window x:Class="ProcessManager.Views.ProcessPropertiesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p ="clr-namespace:ProcessManager.Properties"
+        xmlns:viewModel ="clr-namespace:ProcessManager.ViewModels"
+        xmlns:main="clr-namespace:ProcessManager"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ProcessPropertiesWindowTitle}" Height="522.938" Width="810.963" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="CanMinimize">
+    <Grid>
+        <TabControl Margin="10">
+            <TabItem x:Name="GeneralTab" Header="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabHeader}">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,4">
+                    <GroupBox Header="File" Height="154" Margin="10,15,10,0" VerticalAlignment="Top" BorderBrush="Black">
+                        <Grid Margin="0,0,-12,3">
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabDescriptionLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabVersionLabel}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabImageFilenameLabel}" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                            <Label Content="{Binding GeneralInfo.Description}" VerticalAlignment="Top" Margin="116,10,10,0" ToolTip="{Binding GeneralInfo.Description}"/>
+                            <Label Content="{Binding GeneralInfo.Version}" VerticalAlignment="Top" Margin="116,41,10,0"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding GeneralInfo.FullPath, Mode=OneWay}" VerticalAlignment="Top" Margin="116,76,75,0" IsReadOnly="True" ToolTip="{Binding GeneralInfo.FullPath, Mode=OneWay}"/>
+                            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="21" Margin="715,76,0,0" Height="23" Command="{Binding OpenFolderCommand}" CommandParameter="{Binding GeneralInfo.FullPath}" ToolTip="{x:Static p:Resources.ProcessPropertiesOpenFolderButtonTooltip}">
+                                <Image Source="/folder.png" ToolTip="{x:Static p:Resources.ProcessPropertiesOpenFolderButtonTooltip}"/>
+                            </Button>
+                            <Button x:Name="ImageInfoButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="21" Margin="689,76,0,0" Height="23" Command="{Binding ImageInfoCommand}" ToolTip="{x:Static p:Resources.ProcessPropertiesPeHeaderInfoButtonTooltip}">
+                                <Image Source="/search.png" ToolTip="{x:Static p:Resources.ProcessPropertiesPeHeaderInfoButtonTooltip}"/>
+                            </Button>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.ProcessPropertiesWindowProcessGroupboxHeader}" Margin="10,169,10,10" BorderBrush="Black">
+                        <Grid Width="748" Margin="0,0,-12,-1">
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabCommandLineLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabStartedLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,43,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabPEBAddressLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,74,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabParentLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,105,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabMitigationPoliciesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,136,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabProtectionLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,175,0,0"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding GeneralInfo.CommandLine, Mode=OneWay}" Margin="124,14,10,0" VerticalAlignment="Top" IsReadOnly="True" ToolTip="{Binding GeneralInfo.CommandLine}"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding GeneralInfo.RunningTime, Mode=OneWay}" VerticalAlignment="Top" Margin="124,47,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding GeneralInfo.PEBAddress, Mode=OneWay}" VerticalAlignment="Top" Margin="124,78,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding GeneralInfo.ParentName, Mode=OneWay}" VerticalAlignment="Top" Margin="124,109,10,0" IsReadOnly="True"/>
+                            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding GeneralInfo.MitigationPolicies, Mode=OneWay}" VerticalAlignment="Top" Margin="124,140,90,0" IsReadOnly="True" ToolTip="{Binding GeneralInfo.MitigationPolicies}"/>
+                            <Label Content="{Binding GeneralInfo.ProtectionType, Mode=OneWay}" VerticalAlignment="Top" Margin="84,175,10,0" Height="9"/>
+                            <Button x:Name="GeneraTabDetailsButton" Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabDetailsButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="663,140,0,0" Command="{Binding MitigationPoliciesDetailCommand}" Height="23"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="StatisticsTab" Header="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabHeader}">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="CPU" Height="177" VerticalAlignment="Top" Width="363" Margin="12,11,0,0" BorderBrush="Black" HorizontalAlignment="Left">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabCPUPriorityLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabCPUCyclesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabCPUKernelTimeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabCPUUserTimeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabCPUTotalTimeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="{Binding Statistics.CPU.BasePriority}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="98,10,0,0"/>
+                            <Label Content="{Binding Statistics.CPU.Cycles}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="98,36,0,0"/>
+                            <Label Content="{Binding Statistics.CPU.KernelTime}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="98,62,0,0"/>
+                            <Label Content="{Binding Statistics.CPU.TotalTime}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="98,88,0,0"/>
+                            <Label Content="{Binding Statistics.CPU.UserTime}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="98,114,0,0"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Handle" HorizontalAlignment="Left" Height="177" VerticalAlignment="Top" Width="380" Margin="378,11,10,0" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="Handles" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="GDI handles" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="USER handles" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{Binding Statistics.Handle.HandleCount}" VerticalAlignment="Top" Margin="97,10,10,0"/>
+                            <Label Content="{Binding Statistics.Handle.GDIHandlesCount}" VerticalAlignment="Top" Margin="97,36,10,0"/>
+                            <Label Content="{Binding Statistics.Handle.USERHandlesCount}" VerticalAlignment="Top" Margin="97,62,10,0"/>
+                            <Button Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabDetailsButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,93,0,0" Command="{Binding HandlesDetailedInfoCommand}"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabMemoryGroupbox}" HorizontalAlignment="Left" Height="227" VerticalAlignment="Top" Width="363" Margin="12,192,0,10" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabPrivateBytesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabPeakPrivateBytesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabVirtualSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabPeakVirtualSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="Page faults" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+                            <Label Content="Working set" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabPeakWorkingSetLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,171,0,0"/>
+                            <Label Content="{Binding Statistics.Memory.PrivateBytes}" Margin="134,10,10,0" VerticalAlignment="Top"/>
+                            <Label Content="{Binding Statistics.Memory.PeakPrivateBytes}" VerticalAlignment="Top" Margin="134,36,10,0"/>
+                            <Label Content="{Binding Statistics.Memory.VirtualSize}" VerticalAlignment="Top" Margin="134,62,10,0"/>
+                            <Label Content="{Binding Statistics.Memory.PeakVirtualSize}" VerticalAlignment="Top" Margin="134,88,10,0"/>
+                            <Label Content="{Binding Statistics.Memory.PageFaultCount}" VerticalAlignment="Top" Margin="134,114,10,0"/>
+                            <Label Content="{Binding Statistics.Memory.WorkingSetSize}" VerticalAlignment="Top" Margin="134,143,90,0"/>
+                            <Label Content="{Binding Statistics.Memory.PrivateBytes}" VerticalAlignment="Top" Margin="134,171,10,0"/>
+                            <Button Content="{x:Static p:Resources.ProcessPropertiesWindowGeneralTabDetailsButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="266,140,0,0" Height="26" Command="{Binding WorkingSetDetailedInfoCommand}"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="I/O" HorizontalAlignment="Left" Height="227" VerticalAlignment="Top" Width="379" Margin="379,192,0,0" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabReadsLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabReadBytesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabWritesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,62,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabWriteBytesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,88,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabOtherLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,114,0,0"/>
+                            <Label Content="{x:Static p:Resources.ProcessPropertiesWindowStatisticsTabOtherBytesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,140,0,0"/>
+                            <Label Content="{Binding Statistics.IO.ReadCount}" VerticalAlignment="Top" Margin="80,10,10,0"/>
+                            <Label Content="{Binding Statistics.IO.ReadBytes}" VerticalAlignment="Top" Margin="80,36,10,0"/>
+                            <Label Content="{Binding Statistics.IO.WriteCount}" VerticalAlignment="Top" Margin="80,62,10,0"/>
+                            <Label Content="{Binding Statistics.IO.WriteBytes}" VerticalAlignment="Top" Margin="80,88,10,0"/>
+                            <Label Content="{Binding Statistics.IO.OtherCount}" VerticalAlignment="Top" Margin="80,114,10,0"/>
+                            <Label Content="{Binding Statistics.IO.OtherBytes}" VerticalAlignment="Top" Margin="80,140,10,0"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ThreadTab" Header="Thread">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,10">
+                    <DataGrid x:Name="ThreadsDatagrid" Margin="10,10,10,194" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path=ThreadsInfo, Mode=OneWay}" MouseUp="ThreadsDatagrid_MouseUp" MouseRightButtonDown="ThreadsDatagrid_MouseRightButtonDown">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="TerminateThreadMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadTerminateContextMenuOption}" Command="{Binding TerminateThreadCommand}"/>
+                                <MenuItem x:Name="SuspendThreadMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadSuspendContextMenuOption}" Command="{Binding SuspendThreadCommand}"/>
+                                <MenuItem x:Name="ResumeThreadMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadResumeContextMenuOption}" Command="{Binding ResumeThreadCommand}"/>
+                                <MenuItem x:Name="AffinitySubMenu" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadAffinityContextMenuOption}" ItemsSource="{Binding Items}" IsEnabled ="False">
+                                    <MenuItem.DataContext>
+                                        <viewModel:AffinityMenuVM/>
+                                    </MenuItem.DataContext>
+                                </MenuItem>
+                                <MenuItem x:Name="WindowsMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadWindowsContextMenuOption}" Command="{Binding ShowAssociatedWindowsCommand}"/>
+                                <MenuItem x:Name="PrioritySubMenu" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityContextMenuOption}">
+                                    <MenuItem x:Name="TimeCriticalPriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityTimeCriticalOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                    <MenuItem x:Name="HighPriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityHighOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                    <MenuItem x:Name="AboveNormalPriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityAboveNormalOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                    <MenuItem x:Name="NormalPriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityNormalOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                    <MenuItem x:Name="BelowNormalPriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityBelowNormalOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                    <MenuItem x:Name="LowPriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityLowOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                    <MenuItem x:Name="IdlePriorityMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowThreadPriorityIdleOption}" IsCheckable="True" Click="PriorityMenuItem_Click"/>
+                                </MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="TID" Width="*" CanUserSort="False" Binding="{Binding TID}"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProcessPropertiesWindowThreadTabStartAddressHeader}" Width="*" CanUserSort="False" Binding="{Binding StartAddress}"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProcessPropertiesWindowThreadTabPriorityHeader}" Width="*" CanUserSort="False" Binding="{Binding Priority}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabStartedLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,260,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabKernelTimeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,290,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabUserTimeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,321,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabCyclesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,352,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabDynamicPriorityLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="384,260,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabBasePriorityLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="3.867,5.277" Margin="384,291,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowThreadTabIdealProcessorLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="384,322,0,0"/>
+                    <Label x:Name="StartLabel" Content="Non disponibile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,260,0,0" Width="260"/>
+                    <Label x:Name="KernelTimeLabel" Content="Non disponibile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,291,0,0" Width="260"/>
+                    <Label x:Name="UserTimeLabel" Content="Non disponibile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="119,321,0,0" Width="260"/>
+                    <Label x:Name="CyclesLabel" Content="Non disponibile" VerticalAlignment="Top" Margin="119,352,10,0"/>
+                    <Label x:Name="DynamicPriorityLabel" Content="Non disponibile" VerticalAlignment="Top" Margin="494,260,10,0"/>
+                    <Label x:Name="BasePriorityLabel" Content="Non disponibile" VerticalAlignment="Top" Margin="494,291,10,0"/>
+                    <Label x:Name="IdealProcessorLabel" Content="Non disponibile" VerticalAlignment="Top" Margin="494,322,10,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TokenTab" Header="Token">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.Resources>
+                        <Style x:Key="InformationUnavailableError" TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="Validation.HasError" Value="True">
+                                    <Setter Property="ToolTip" Value="{x:Static p:Resources.ProcessPropertiesWindowBindingErrorText}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabUserLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabUserSIDLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabSessionLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabElevatedLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,72,0,0"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabVirtualizationAllowedLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306,72,0,0"/>
+                    <Label Content="App container SID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
+                    <DataGrid x:Name="GroupsDatagrid" Margin="10,134,10,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" VerticalAlignment="Top" Height="129" ItemsSource="{Binding Path = TokenInfo.GroupsInfo, Mode=OneWay}" SelectedCellsChanged="GroupsDatagrid_SelectedCellsChanged">
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="IsHitTestVisible" Value="False"/>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn  Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabGroupNameHeader}" Binding="{Binding Name}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabGroupFlagsHeader}" Binding="{Binding Flags}" Width="*" CanUserSort="False"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <DataGrid x:Name="PrivilegesDatagrid" Margin="10,268,10,10" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = TokenInfo.PrivilegesInfo, Mode=OneWay}">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="EnablePrivilegeContextMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabEnablePrivilegeMenuItem}" Command="{Binding EnablePrivilegeCommand}"/>
+                                <MenuItem x:Name="DisablePrivilegeContextMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabDisablePrivilegeMenuItem}" Command="{Binding DisablePrivilegeCommand}"/>
+                                <MenuItem x:Name="RemovePrivilegeContextMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabRemovePrivilegeMenuItem}" Command="{Binding RemovePrivilegeCommand}"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabGroupNameHeader}" Binding="{Binding Name}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabPrivilegeStatusHeader}" Binding="{Binding Status}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabPrivilegeDescriptionHeader}" Binding="{Binding Description}" Width="*" CanUserSort="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabAdvancedDetailsButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="683,106,10,0" Command="{Binding ShowTokenPropertiesCommand}"/>
+                    <Label Content="{Binding TokenInfo.GeneralInfo.Username}" VerticalAlignment="Top" Margin="63,10,10,0"/>
+                    <Label Content="{Binding TokenInfo.GeneralInfo.UserSID}" VerticalAlignment="Top" Margin="83,41,10,0"/>
+                    <Label Content="{Binding TokenInfo.GeneralInfo.SessionID}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="67,72,0,0" Width="54"/>
+                    <Label Content="{Binding TokenInfo.GeneralInfo.AppContainerSID}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="124,103,0,0" Width="554"/>
+                    <CheckBox x:Name="ElevationCheckBox" IsChecked="{Binding TokenInfo.GeneralInfo.IsElevated, Mode=OneWay, ValidatesOnExceptions=True}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="199,78,0,0" Width="19" IsTabStop="False" Focusable="False" Click="GeneralHandler"/>
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowTokenTabVirtualizationEnabledLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="547,72,0,0"/>
+                    <CheckBox x:Name="VirtualizationAllowedCheckBox" IsChecked="{Binding TokenInfo.GeneralInfo.IsVirtualizationAllowed, Mode=OneWay, ValidatesOnExceptions=True}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,78,0,0" Focusable="False" IsTabStop="False" Click="GeneralHandler"/>
+                    <CheckBox x:Name="VirtualizationEnabledCheckBox" IsChecked="{Binding TokenInfo.GeneralInfo.IsVirtualizationEnabled, Mode=OneWay, ValidatesOnExceptions=True}" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="693,78,0,0" Focusable="False" IsTabStop="False" Click="GeneralHandler"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ModulesTab" Header="{x:Static p:Resources.ProcessPropertiesWindowModulesTabHeader}">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name ="ModulesDatagrid" Margin="10" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path=ModulesInfo}">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="PEHeaderInfoContextMenuItem" Header="{x:Static p:Resources.ProcessPropertiesModulePropertiesContextMenuItem}" Command="{Binding ImageInfoCommand}"/>
+                                <MenuItem x:Name="OpenFolderContextMenuItem" Header="{x:Static p:Resources.ProcessPropertiesModuleLocationContextMenuItem}" Command="{Binding OpenFolderCommand}"/>
+                                <MenuItem x:Name="FilePropertiesContextMenuItem" Header="{x:Static p:Resources.ProcessPropertiesModuleFilePropertiesContextMenuItem}" Command="{Binding ShowFilePropertiesCommand}"/>
+                                <MenuItem Header="{x:Static p:Resources.RefreshDataCommandText}" Command="{Binding RefreshDataCommand}" CommandParameter="Modules"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabGroupNameHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding BaseAddress}" Header="{x:Static p:Resources.ProcessPropertiesWindowModulesTabBaseAddressHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding Size}" Header="{x:Static p:Resources.ProcessPropertiesWindowModulesTabSizeHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding Description}" Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabPrivilegeDescriptionHeader}" Width="*" CanUserSort="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="MemoryTab" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryTabHeader}">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="MemoryDatagrid" Margin="10" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = MemoryRegionsInfo}" MouseRightButtonDown="MemoryDatagrid_MouseRightButtonDown">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="ChangeProtectionMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryDatagridChangeProtectionContextMenu}">
+                                    <MenuItem.Style>
+                                        <Style TargetType="MenuItem">
+                                            <Setter Property="IsEnabled" Value="{Binding Path=(main:Settings.AllowProcessMemoryManipulation)}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=(main:Settings.AllowProcessMemoryManipulation)}" Value="True">
+                                                    <Setter Property="IsEnabled" Value="True"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </MenuItem.Style>
+                                    <MenuItem Header="PAGE_EXECUTE" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_EXECUTE_READ" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_EXECUTE_READWRITE" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_EXECUTE_WRITECOPY" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_NOACCESS" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_READONLY" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_READWRITE" Click="ProtectionChangeHandler"/>
+                                    <MenuItem Header="PAGE_WRITECOPY" Click="ProtectionChangeHandler"/>
+                                </MenuItem>
+                                <MenuItem x:Name="FreeMemoryMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryDatagridFreeMemoryContextMenu}" Command="{Binding FreeMemoryRegionCommand}">
+                                    <MenuItem.Style>
+                                        <Style TargetType="MenuItem">
+                                            <Setter Property="IsEnabled" Value="{Binding Path=(main:Settings.AllowProcessMemoryManipulation)}"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=(main:Settings.AllowProcessMemoryManipulation)}" Value="True">
+                                                    <Setter Property="IsEnabled" Value="True"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </MenuItem.Style>
+                                </MenuItem>
+                                <MenuItem x:Name="DecommitMemoryMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryDatagridDecommitMemoryContextMenu}" Command="{Binding DecommitMemoryRegionCommand}"/>
+                                <MenuItem Header="{x:Static p:Resources.RefreshDataCommandText}" Command="{Binding RefreshDataCommand}" CommandParameter="Memory">
+                                    <MenuItem.Style>
+                                        <Style TargetType="MenuItem">
+                                            <Setter Property="IsEnabled" Value="True"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding (main:Settings.DataSource)}">
+                                                    <DataTrigger.Value>
+                                                        <main:ProcessDataSource>ETW</main:ProcessDataSource>
+                                                    </DataTrigger.Value>
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </MenuItem.Style>
+                                </MenuItem>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding BaseAddress}" Header="{x:Static p:Resources.ProcessPropertiesWindowModulesTabBaseAddressHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding PagesType}" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryTabTypeHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding PagesState}" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryTabStateHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding Size}" Header="{x:Static p:Resources.ProcessPropertiesWindowModulesTabSizeHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding InitialProtection}" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryTabInitialProtectionHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding CurrentProtection}" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryTabCurrentProtectionHeader}" Width="Auto" CanUserSort="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="HandleTab" Header="Handle">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="HandlesDatagrid" Margin="10" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path = HandlesInfo}" MouseRightButtonDown="HandlesDatagrid_MouseRightButtonDown">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem x:Name="CloseHandleMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowHandleCloseMenuItem}" Command="{Binding CloseHandleCommand}"/>
+                                <MenuItem x:Name="HandlePropertiesMenuItem" Header="{x:Static p:Resources.ProcessPropertiesWindowHandlePropertiesMenuItem}" Command="{Binding ShowHandlePropertiesCommand}"/>
+                                <MenuItem Header="{x:Static p:Resources.RefreshDataCommandText}" Command="{Binding RefreshDataCommand}" CommandParameter="Handles"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Type}" Header="{x:Static p:Resources.ProcessPropertiesWindowMemoryTabTypeHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="{x:Static p:Resources.ProcessPropertiesWindowTokenTabGroupNameHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding Value}" Header="Handle" Width="*" CanUserSort="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="NetPerformanceTab" Header="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabHeader}">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabCategoriesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                    <ComboBox x:Name="CategoriesComboBox" VerticalAlignment="Top" Margin="79,14,10,0" IsReadOnly="True" SelectionChanged="CategoriesComboBox_SelectionChanged">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetExceptionsCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetInteropCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetJITCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetLoadingCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetLocksAndThreadsCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetMemoryCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetNetworkingCategory}"/>
+                            <ComboBoxItem Content="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabNetSecurityCategory}"/>
+                        </ComboBox.Items>
+                    </ComboBox>
+                    <DataGrid x:Name="CountersDataGrid" Margin="10,41,10,10" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" SelectedCellsChanged="GroupsDatagrid_SelectedCellsChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Key}" Header="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabCounterHeader}" Width="*" CanUserSort="False"/>
+                            <DataGridTextColumn Binding="{Binding Value}" Header="{x:Static p:Resources.ProcessPropertiesWindowNetPerformanceTabValueHeader}" Width="*" CanUserSort="False"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

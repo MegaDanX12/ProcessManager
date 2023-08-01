@@ -1,0 +1,40 @@
+﻿<Window x:Class="ProcessManager.Views.SectionInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProcessManager.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.SectionInfoWindowTitle}" Height="450" Width="800" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="{x:Static p:Resources.SectionInfoWindowBasicInfoGroupbox}" Height="102" VerticalAlignment="Top" Margin="10,10,10,0" BorderBrush="Black">
+            <Grid>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowAttributesLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowSizeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,10"/>
+                <Label Content="{Binding BasicInfo.Attributes}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,10,0,0"/>
+                <Label Content="{Binding BasicInfo.Size}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,41,0,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="{x:Static p:Resources.SectionInfoWindowImageInfoGroupbox}" Margin="10,117,10,10" BorderBrush="Black">
+            <Grid>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowEntryPointLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowStackZeroBitsLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowStackReservedLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowStackCommitLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowImageSubsystemLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,134,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowSubsystemVersionLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,165,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowDllCharacteristicsLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,196,0,0"/>
+                <Label Content="{x:Static p:Resources.SectionInfoWindowMachineTypeLabel}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,227,0,0"/>
+                <Label Content="{Binding ImageInfo.EntryPoint}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,10,0,0"/>
+                <Label Content="{Binding ImageInfo.StackZeroBits}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,41,0,0"/>
+                <Label Content="{Binding ImageInfo.StackReserved}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,72,0,0"/>
+                <Label Content="{Binding ImageInfo.StackCommit}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,103,0,0"/>
+                <Label Content="{Binding ImageInfo.ImageSubsystem}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,134,0,0"/>
+                <Label Content="{Binding ImageInfo.SubsystemVersion}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,165,0,0"/>
+                <Label Content="{Binding ImageInfo.ImageDLLCharacteristics}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,196,0,0"/>
+                <Label Content="{Binding ImageInfo.ImageMachineType}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="228,227,0,0"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
