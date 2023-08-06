@@ -4928,7 +4928,8 @@ namespace ProcessManager
                     -15 => "Idle",
                     -2 => "Lowest",
                     0 => "Normal",
-                    -7 or -6 or -5 or -4 or -3 or 3 or 4 or 5 or 6 or 15 => "TimeCritical"
+                    -7 or -6 or -5 or -4 or -3 or 3 or 4 or 5 or 6 or 15 => "TimeCritical",
+                    _ => "Unknown"
                 };
             }
         }

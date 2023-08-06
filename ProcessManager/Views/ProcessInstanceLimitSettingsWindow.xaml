@@ -12,7 +12,7 @@
         <viewmodels:WatchdogSettingVM/>
     </Window.DataContext>
     <Grid>
-        <DataGrid x:Name="InstanceLimitsDatagrid" Margin="10,10,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding (watchdog:WatchdogManager.ProcessInstanceLimits)}" MouseDoubleClick="InstanceLimitsDatagrid_MouseDoubleClick">
+        <DataGrid x:Name="InstanceLimitsDatagrid" Margin="10,10,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path=(watchdog:WatchdogManager.ProcessInstanceLimits)}" MouseDoubleClick="InstanceLimitsDatagrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridProcessNameColumn}" Width="*" Binding="{Binding Name, Mode=OneWay}"/>
                 <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowInstanceCountColumn}" Width="*" Binding="{Binding InstanceLimit, Mode=OneWay}"/>

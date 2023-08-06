@@ -295,9 +295,9 @@ namespace ProcessManager.ViewModels
             this.Statistics = Statistics;
             this.ThreadsInfo = ThreadsInfo;
             this.TokenInfo = TokenInfo;
-            ModulesInfoValue = new(ModulesInfo);
-            MemoryRegionsInfoValue = new(MemoryRegionsInfo);
-            HandlesInfoValue = new(HandlesInfo);
+            ModulesInfoValue = ModulesInfo is not null ? new(ModulesInfo) : new();
+            MemoryRegionsInfoValue = MemoryRegionsInfo is not null ? new(MemoryRegionsInfo) : new();
+            HandlesInfoValue = HandlesInfo is not null ? new(HandlesInfo) : new();
             this.NetPerformanceInfo = NetPerformanceInfo;
             this.HandleCounters = HandleCounters;
             this.Info = Info;

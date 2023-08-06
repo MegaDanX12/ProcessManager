@@ -14,7 +14,7 @@
     <Grid>
         <Button Content="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsAddEnergyUsageRuleButton}" Margin="10,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" MinWidth="75" Command="{Binding AddProcessEnergyUsageRuleCommand}"/>
         <Button Content="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsRemoveEnergyUsageRuleButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" MinWidth="75" Margin="0,0,10,10" Command="{Binding RemoveProcessEnergyUsageRuleCommand}" CommandParameter="{Binding ElementName=EnergyUsageRulesDatagrid, Path=SelectedItem}"/>
-        <DataGrid x:Name="EnergyUsageRulesDatagrid" Margin="10,10,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding (watchdog:WatchdogManager.ProcessEnergyUsageData)}" MouseDoubleClick="EnergyUsageRulesDatagrid_MouseDoubleClick">
+        <DataGrid VirtualizingPanel.IsVirtualizing="False" x:Name="EnergyUsageRulesDatagrid" Margin="10,10,10,35" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True" ItemsSource="{Binding Path=(watchdog:WatchdogManager.ProcessEnergyUsageData)}" MouseDoubleClick="EnergyUsageRulesDatagrid_MouseDoubleClick" EnableRowVirtualization="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static p:Resources.WatchdogSettingsWindowRulesGridProcessNameColumn}" Width="*" Binding="{Binding Name, Mode=OneWay}"/>
                 <DataGridCheckBoxColumn Header="{x:Static p:Resources.WatchdogSettingsWindowProcessPowerSettingsPreventDisplayShutdownColumn}" Width="*" Binding="{Binding KeepDisplayOn, Mode=OneWay}"/>

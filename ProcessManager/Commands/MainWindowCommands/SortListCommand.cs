@@ -28,25 +28,33 @@ namespace ProcessManager.Commands.MainWindowCommands
         public void Execute(object parameter)
         {
             string SortingColumn = parameter as string;
-            if (!VM.IsDatagridSorted)
+            if (SortingColumn is "Clear")
             {
                 VM.DatagridSortColumn = SortingColumn;
-                VM.DatagridSortOrder = SortOrder.Descending;
-                VM.IsDatagridSorted = true;
                 VM.SortProcessList();
             }
             else
             {
-                if (SortingColumn == VM.DatagridSortColumn)
+                if (!VM.IsDatagridSorted)
                 {
-                    VM.DatagridSortOrder = VM.DatagridSortOrder is SortOrder.Descending ? SortOrder.Ascending : SortOrder.Descending;
+                    VM.DatagridSortColumn = SortingColumn;
+                    VM.DatagridSortOrder = SortOrder.Ascending;
+                    VM.IsDatagridSorted = true;
                     VM.SortProcessList();
                 }
                 else
                 {
-                    VM.DatagridSortColumn = SortingColumn;
-                    VM.DatagridSortOrder = SortOrder.Descending;
-                    VM.SortProcessList();
+                    if (SortingColumn == VM.DatagridSortColumn)
+                    {
+                        VM.DatagridSortOrder = VM.DatagridSortOrder is SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+                        VM.SortProcessList();
+                    }
+                    else
+                    {
+                        VM.DatagridSortColumn = SortingColumn;
+                        VM.DatagridSortOrder = SortOrder.Ascending;
+                        VM.SortProcessList();
+                    }
                 }
             }
         }

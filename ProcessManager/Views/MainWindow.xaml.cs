@@ -408,7 +408,10 @@ namespace ProcessManager
         private void ProcessDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _ = ProcessDataGrid.Focus();
-            ProcessDataGrid.ScrollIntoView(e.AddedItems[0]);
+            if (e.AddedItems.Count > 0)
+            {
+                ProcessDataGrid.ScrollIntoView(e.AddedItems[0]);
+            }
         }
 
         /// <summary>

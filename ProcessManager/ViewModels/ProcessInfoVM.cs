@@ -666,89 +666,100 @@ namespace ProcessManager.ViewModels
         public void SortProcessList()
         {
             _ = ListAvailable.Reset();
-            if (DatagridSortOrder is SortOrder.Ascending)
+            if (DatagridSortColumn is "Clear")
             {
-                if (DatagridSortColumn == Properties.Resources.ProcessNameHeader)
+                ActiveProcessesInfo.Clear();
+                foreach (ProcessInfo info in UnfilteredActiveProcessesInfo)
                 {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.Name);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
-                    {
-                        ActiveProcessesInfo.Add(info);
-                    }
-                }
-                else if (DatagridSortColumn == "PID")
-                {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.PID);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
-                    {
-                        ActiveProcessesInfo.Add(info);
-                    }
-                }
-                else if (DatagridSortColumn == Properties.Resources.ProcessDescriptionHeader)
-                {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.Description);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
-                    {
-                        ActiveProcessesInfo.Add(info);
-                    }
-                }
-                else if (DatagridSortColumn == Properties.Resources.ProcessStartDateTimeHeader)
-                {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.StartTime);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
-                    {
-                        ActiveProcessesInfo.Add(info);
-                    }
+                    ActiveProcessesInfo.Add(info);
                 }
             }
             else
             {
-                if (DatagridSortColumn == Properties.Resources.ProcessNameHeader)
+                if (DatagridSortOrder is SortOrder.Ascending)
                 {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.Name);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
+                    if (DatagridSortColumn == Properties.Resources.ProcessNameHeader)
                     {
-                        ActiveProcessesInfo.Add(info);
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.Name);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
+                    }
+                    else if (DatagridSortColumn == "PID")
+                    {
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.PID);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
+                    }
+                    else if (DatagridSortColumn == Properties.Resources.ProcessDescriptionHeader)
+                    {
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.Description);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
+                    }
+                    else if (DatagridSortColumn == Properties.Resources.ProcessStartDateTimeHeader)
+                    {
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderBy(info => info.StartTime);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
                     }
                 }
-                else if (DatagridSortColumn == "PID")
+                else
                 {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.PID);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
+                    if (DatagridSortColumn == Properties.Resources.ProcessNameHeader)
                     {
-                        ActiveProcessesInfo.Add(info);
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.Name);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
                     }
-                }
-                else if (DatagridSortColumn == Properties.Resources.ProcessDescriptionHeader)
-                {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.Description);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
+                    else if (DatagridSortColumn == "PID")
                     {
-                        ActiveProcessesInfo.Add(info);
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.PID);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
                     }
-                }
-                else if (DatagridSortColumn == Properties.Resources.ProcessStartDateTimeHeader)
-                {
-                    IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.StartTime);
-                    List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
-                    ActiveProcessesInfo.Clear();
-                    foreach (ProcessInfo info in OrderedList)
+                    else if (DatagridSortColumn == Properties.Resources.ProcessDescriptionHeader)
                     {
-                        ActiveProcessesInfo.Add(info);
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.Description);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
+                    }
+                    else if (DatagridSortColumn == Properties.Resources.ProcessStartDateTimeHeader)
+                    {
+                        IOrderedEnumerable<ProcessInfo> OrderedListEnumerable = ActiveProcessesInfo.OrderByDescending(info => info.StartTime);
+                        List<ProcessInfo> OrderedList = new(OrderedListEnumerable);
+                        ActiveProcessesInfo.Clear();
+                        foreach (ProcessInfo info in OrderedList)
+                        {
+                            ActiveProcessesInfo.Add(info);
+                        }
                     }
                 }
             }
@@ -828,6 +839,7 @@ namespace ProcessManager.ViewModels
                             if (Info.Name != Properties.Resources.UnavailableText && Application.Current != null)
                             {
                                 Logger.WriteEntry(BuildLogEntryForInformation("Processo avviato", EventAction.ProcessStart, ProcessHandle));
+                                _ = ListAvailable.WaitOne();
                                 UnfilteredActiveProcessesInfo.Add(Info);
                                 if (Settings.WatchdogEnabled)
                                 {
@@ -853,7 +865,6 @@ namespace ProcessManager.ViewModels
                                         }
                                     }
                                 }
-                                _ = ListAvailable.WaitOne();
                                 if (!string.IsNullOrWhiteSpace(FilterValue))
                                 {
                                     if (Info.Name.IndexOf(FilterValue, StringComparison.CurrentCultureIgnoreCase) is not -1 and 0)
@@ -885,8 +896,8 @@ namespace ProcessManager.ViewModels
                         if (Info != null && Application.Current != null)
                         {
                             Logger.WriteEntry(BuildLogEntryForInformation("Processo terminato", EventAction.ProcessTermination, new SafeProcessHandle(IntPtr.Zero, false)));
-                            _ = UnfilteredActiveProcessesInfo.Remove(Info);
                             _ = ListAvailable.WaitOne();
+                            _ = UnfilteredActiveProcessesInfo.Remove(Info);
                             if (Settings.WatchdogEnabled)
                             {
                                 WatchdogManager.UpdateSystemWakeState(Info.Name, false);
@@ -903,6 +914,7 @@ namespace ProcessManager.ViewModels
                         }
                         break;
                     case "UpdateData":
+                        _ = ListAvailable.WaitOne();
                         _ = Parallel.ForEach(UnfilteredActiveProcessesInfo, Options, CycleActivity);
                         if (!IsTimerDisposed)
                         {
@@ -910,18 +922,14 @@ namespace ProcessManager.ViewModels
                         }
                         break;
                     case "UpdateThreadsNew":
+                        _ = ListAvailable.WaitOne();
                         Info = UnfilteredActiveProcessesInfo.FirstOrDefault(process => process.PID == ProcessID);
-                        if (Info != null)
-                        {
-                            Info.UpdateThreadsValue("Add");
-                        }
+                        Info?.UpdateThreadsValue("Add");
                         break;
                     case "UpdateThreadsEnd":
+                        _ = ListAvailable.WaitOne();
                         Info = UnfilteredActiveProcessesInfo.FirstOrDefault(process => process.PID == ProcessID);
-                        if (Info != null)
-                        {
-                            Info.UpdateThreadsValue("Remove");
-                        }
+                        Info?.UpdateThreadsValue("Remove");
                         break;
                 }
             }
@@ -1101,16 +1109,6 @@ namespace ProcessManager.ViewModels
                     LogEntry Entry = BuildLogEntryForWarning("Errore durante l'avvio di un nuovo processo", EventAction.OtherActions);
                     Logger.WriteEntry(Entry);
                 }
-                /* if (StartProcessAsUser(Username, Password, ProcessOpenFileDialog.FileName))
-                 {
-                     LogEntry Entry = BuildLogEntryForInformation("Avviato nuovo processo, nome processo: " + ProcessOpenFileDialog.SafeFileName + ", nome utente: " + Username, EventAction.OtherActions);
-                     Logger.WriteEntry(Entry);
-                 }
-                 else
-                 {
-
-                 }*/
-
             }
         }
 
@@ -1193,7 +1191,12 @@ namespace ProcessManager.ViewModels
                 {
                     foreach (uint PID in ChildrenPIDs)
                     {
-                        ChildrenInfo.Add(UnfilteredActiveProcessesInfo.First(info => info.PID == PID));
+                        ProcessInfo info;
+                        if ((info = UnfilteredActiveProcessesInfo.FirstOrDefault(info => info.PID == PID)) is not null)
+                        {
+                            ChildrenInfo.Add(info);
+                        }
+                        
                     }
                 }
                 return ChildrenInfo;
